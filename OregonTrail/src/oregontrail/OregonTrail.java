@@ -19,14 +19,15 @@ public class OregonTrail {
     public static void main(String[] args) {
         // TODO code application logic here
         
-       Wagon playerone = new Wagon();   //  Calls contructor
+       Wagon wagon = new Wagon();   //  Calls contructor
        
-       playerone.setQty(1);  // Set Name
+       wagon.setName("Wagon Team 1");  // Set Name
        
-       int playeronename = playerone.getQty();  // Get players name and set to variable
+       String playeronename = wagon.getName();  // Get players name and set to variable
        
-       System.out.println("Wagon(s) Qty: " + playeronename);  // prints name to screen
+       System.out.println("Wagon Name: " + playeronename);  // prints name to screen
        
+       //  THis is a new comment
     }
   
 }

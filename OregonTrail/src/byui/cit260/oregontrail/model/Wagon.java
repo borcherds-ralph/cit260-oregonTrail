@@ -17,6 +17,7 @@ public class Wagon implements Serializable {
     private int qty;
     private int length;
     private int weight;
+    private String name;
 
      public Wagon() {
     }
@@ -44,6 +45,15 @@ public class Wagon implements Serializable {
     public void setWeight(int weight) {
         this.weight = weight;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
 
     @Override
     public int hashCode() {

@@ -47,16 +47,50 @@ public class OregonTrail {
        System.out.println("Weather at the stop is: " + weather);
        
        // Test class Landmarks
+       Landmarks landmark = new Landmarks();
        
+       landmark.setName("Salt Lake City");
+       
+       String landmarkName = landmark.getName();
+       
+       System.out.println("Landmark Name is: " + landmarkName);
        
        // Test class Player
+       Player player = new Player();
+       
+       player.setName("Ralph");
+       
+       String playerName = player.getName();
+       
+       System.out.println("The players name is: " + playerName);
+       
        
        // Test class Rivers
+       Rivers river = new Rivers();
+       
+       river.setName("Ohio River");
+       
+       String riverName = river.getName();
+       
+       System.out.println("The River Name is: " + riverName);
        
        // Test Start Menu
+       StartMenu start = new StartMenu();
        
-       // Test class Towns
+       start.setWelcome("Welcome to the game.  Please select what you would like to do");
        
+       String welcome = start.getWelcome();
+       
+       System.out.println("The welcome message is: " + welcome);
+       
+        // Test class Towns
+       Towns town = new Towns();
+       
+       town.setName("Winter Quarters");
+       
+       String townName = town.getName();
+       
+       System.out.println("The name of the town is: " + townName);
     }
   
 }

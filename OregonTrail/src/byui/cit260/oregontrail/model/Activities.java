@@ -9,7 +9,8 @@ import java.io.Serializable;
 /**
  *
  * @author Br33h3rr3ra
- */ public class Activities implements Serializable {
+ */ 
+public class Activities implements Serializable {
     private String type;
     private String duration;
     private String cost;

@@ -14,5 +14,29 @@ import java.io.Serializable;
     private String type;
     private String cost;
     private String health;
+    
+    public Animals() {
+                
+    }
+
+    public Animals(String cost) {
+        this.cost = cost;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setHealth(String health) {
+        this.health = health;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getHealth() {
+        return health;
+    }
  }
 

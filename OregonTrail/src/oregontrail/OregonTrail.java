@@ -15,6 +15,11 @@ import byui.cit260.oregontrail.model.StartMenu;
 import byui.cit260.oregontrail.model.Towns;
 
 
+// Classes create by Brittany
+
+
+// Classes created by Casey
+
 /**
  *
  * @author ralphb

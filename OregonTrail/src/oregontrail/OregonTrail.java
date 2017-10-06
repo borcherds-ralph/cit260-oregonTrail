@@ -13,6 +13,10 @@ import byui.cit260.oregontrail.model.Player;
 import byui.cit260.oregontrail.model.Rivers;
 import byui.cit260.oregontrail.model.StartMenu;
 import byui.cit260.oregontrail.model.Towns;
+
+
+
+// Classes create by Brittany
 import byui.cit260.oregontrail.model.Forts;
 import byui.cit260.oregontrail.model.Activities;
 import byui.cit260.oregontrail.model.Animals;
@@ -20,10 +24,6 @@ import byui.cit260.oregontrail.model.GamePlayMenu;
 import byui.cit260.oregontrail.model.TeamPaceMenu;
 import byui.cit260.oregontrail.model.Shops;
 import byui.cit260.oregontrail.model.HelpMenu;
-
-
-
-// Classes create by Brittany
 
 
 // Classes created by Casey
@@ -133,15 +133,15 @@ public class OregonTrail {
        
        String shops = shop.getType();
              
-       System.out.println("Welcome to " + shop);
+       System.out.println("Welcome to " + shops);
        
        // Test Forts
        
        Forts fort = new Forts();
        
-       fort.setName("Fort1");
+       fort.setFortName("Fort1");
        
-       String fortName = fort.getName();
+       String fortName = fort.getFortName();
        
        System.out.println("Welcome to: " + fortName);
        
@@ -151,17 +151,17 @@ public class OregonTrail {
        
        teamPace.setPace("Slow");
        
-       String teamPace = teamPace.getPace();
+       String pace = teamPace.getPace();
              
-       System.out.println("Your Team Pace is " + teamPace);
+       System.out.println("Your Team Pace is " + pace);
        
        // Test HelpMenu
        
        HelpMenu help = new HelpMenu();
        
-       help.setList("Menu");
+       help.setTips("Menu");
        
-       String helpMenu = help.getList();
+       String helpMenu = help.getTips();
                      
        System.out.println("Here are some tips" + helpMenu);
        

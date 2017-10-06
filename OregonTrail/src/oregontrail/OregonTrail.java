@@ -127,41 +127,41 @@ public class OregonTrail {
        
        // Test Shops
        
-       Shops shops = new Shops();
+       Shops shop = new Shops();
        
-       shops.setType("Blacksmith");
+       shop.setType("Blacksmith");
        
-       String shops = stop.getShops();
+       String shops = shop.getType();
              
-       System.out.println("Welcome to " + shops);
+       System.out.println("Welcome to " + shop);
        
        // Test Forts
        
-       Forts forts = new Forts();
+       Forts fort = new Forts();
        
-       forts.setFortsName = ("Fort1");
+       fort.setName("Fort1");
        
-       String forts = fort.getFortName();
+       String forts = fort.getName();
        
-       System.out.println("Welcome to: " + forts);
+       System.out.println("Welcome to: " + fort);
        
        // Test Team Pace Menu
        
        TeamPaceMenu teamPace = new TeamPace();
        
-       teamPace.setteamPace("Slow");
+       teamPace.setPace("Slow");
        
-       String teamPace = teamPace.getTeamPace();
+       String teamPace = teamPace.getPace();
              
        System.out.println("Your Team Pace is " + teamPace);
        
        // Test HelpMenu
        
-       HelpMenu helpMenu = new HelpMenu();
+       HelpMenu help = new HelpMenu();
        
-       helpMenu.sethelpMenu("Menu");
+       help.setList("Menu");
        
-       String helpMenu = helpMenu.gethelpMenu();
+       String helpMenu = help.getList();
                      
        System.out.println("Here are some tips" + helpMenu);
        

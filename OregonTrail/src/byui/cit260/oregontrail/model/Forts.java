@@ -11,6 +11,7 @@ import java.io.Serializable;
  * @author Br33h3rr3ra
  */ 
 public class Forts implements Serializable {
+    private String fortName;
     private String location;
     private String trades;
     private String shops;
@@ -18,6 +19,14 @@ public class Forts implements Serializable {
  
     public Forts() {
         
+    }
+
+    public String getFortName() {
+        return fortName;
+    }
+
+    public void setFortName(String fortName) {
+        this.fortName = fortName;
     }
 
     public void setLocation(String location) {
@@ -51,4 +60,6 @@ public class Forts implements Serializable {
     public String getActivities() {
         return activities;
     }
+    
+    
 }

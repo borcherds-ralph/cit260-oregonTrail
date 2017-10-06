@@ -10,35 +10,12 @@ import java.io.Serializable;
  * @author Br33h3rr3ra
  */ 
 public class TeamPaceMenu implements Serializable {
-    private String slow;
-    private String average;
-    private String fast;
+    private String pace;
     
-public TeamPaceMenu() {
+
+    public void setPace(String pace) {
+        this.pace = pace;
+    }
+
     
-}
-
-    public void setSlow(String slow) {
-        this.slow = slow;
-    }
-
-    public void setAverage(String average) {
-        this.average = average;
-    }
-
-    public void setFast(String fast) {
-        this.fast = fast;
-    }
-
-    public String getSlow() {
-        return slow;
-    }
-
-    public String getAverage() {
-        return average;
-    }
-
-    public String getFast() {
-        return fast;
-    }
 }

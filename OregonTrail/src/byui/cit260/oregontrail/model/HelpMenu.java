@@ -12,24 +12,25 @@ import java.io.Serializable;
 public class HelpMenu implements Serializable {
     private String tips;
     private String returnPrevious;
-    
-public HelpMenu() {
-    
-}
 
-    public void setTips(String tips) {
-        this.tips = tips;
-    }
-
-    public void setReturnPrevious(String returnPrevious) {
-        this.returnPrevious = returnPrevious;
+    public HelpMenu() {
     }
 
     public String getTips() {
         return tips;
     }
 
+    public void setTips(String tips) {
+        this.tips = tips;
+    }
+
     public String getReturnPrevious() {
         return returnPrevious;
     }
+
+    public void setReturnPrevious(String returnPrevious) {
+        this.returnPrevious = returnPrevious;
+    }
+    
+
 }

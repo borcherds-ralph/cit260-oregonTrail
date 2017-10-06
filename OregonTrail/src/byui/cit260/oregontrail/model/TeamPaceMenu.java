@@ -11,15 +11,18 @@ import java.io.Serializable;
  */ 
 public class TeamPaceMenu implements Serializable {
     private String pace;
-    
+
+    public TeamPaceMenu() {
+    }
+
+    public String getPace() {
+        return pace;
+    }
 
     public void setPace(String pace) {
         this.pace = pace;
     }
     
-    public void getPace(String pace) {
-        this.pace = pace;
-    }
 
     
 }

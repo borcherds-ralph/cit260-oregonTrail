@@ -13,7 +13,7 @@ import java.io.Serializable;
 public class Activities implements Serializable {
     private String type;
     private String duration;
-    private String cost;
+    private Float cost;
     private String effect;
 
     public Activities() {
@@ -35,11 +35,11 @@ public class Activities implements Serializable {
         this.duration = duration;
     }
 
-    public String getCost() {
+    public Float getCost() {
         return cost;
     }
 
-    public void setCost(String cost) {
+    public void setCost(Float cost) {
         this.cost = cost;
     }
 

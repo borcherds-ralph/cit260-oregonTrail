@@ -12,14 +12,14 @@ import java.io.Serializable;
  * @author Br33h3rr3ra
  */public class Animals implements Serializable {
     private String type;
-    private String cost;
+    private Float cost;
     private String health;
     
     public Animals() {
                 
     }
 
-    public Animals(String cost) {
+    public Animals(Float cost) {
         this.cost = cost;
     }
 

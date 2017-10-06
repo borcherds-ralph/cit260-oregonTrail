@@ -107,70 +107,72 @@ public class OregonTrail {
     
     // Test Actvities 
     
-       Activities activities = Activities();
-       start.setActivities("Hunting, Gathering, Spiritual.  Please select what you would like to do");
+       Activities activities = new Activities();
        
-       String Acivities Choice = start.getActivities();
+       activities.setName("activity name");
+       
+       activitiesName = activities.getName();
        
        System.out.println("The Activities are: " + "Hunting, Gathering, Eating, Resting");
      
        // Test Animals
        
-       Animals animals = new animal();   //  Calls contructor
+       Animals animals = new Animals();   //  Calls contructor
        
-       animal.setType("Oxen");  // Set Name
+       animals.setType("Oxen");  // Set Name
        
-       String animal = animal.getType();  // Get animal type and set to variable
+       String animal = animals.getType();  // Get animal type and set to variable
        
        System.out.println("Oxen ");  // prints animal name to screen
        
        // Test Shops
        
-       Shops shops = Shops();
+       Shops shops = new Shops();
        
-       stop.setShop("Shop Type");
+       shops.setName("shops name");
        
-       String Shop = stop.getShop();
-       
-       System.out.println("Welcome to " + name of shop);
+       shopsName = shops.getName();
+             
+       System.out.println("Shop name is: " + shop name);
        
        // Test Forts
        
-       Forts forts = Forts();
+       Forts forts = new Forts();
        
-       stop.Forts("Welcome");
+       forts.setName = ("forts name");
        
-       String Forts = stop.getForts();
+       fortsName = forts.getName();
        
-       System.out.println("Welcome to ") + name of Fort;
+       System.out.println("Fort name is: " + fortsName);
        
        // Test Team Pace Menu
        
-       TeamPaceMenu Pace = TeamPaceMenu();
+       TeamPaceMenu pace = new TeamPaceMenu();
        
-       stop.setPace(Slow, Average, Fast);      
-       String TeamPaceMenu = stop.getPace();
+       pace.setPace("Pace Level");
        
+       pace = pace.getPace();
+               
        System.out.println("Your Team Pace is " + level of pace);
        
        // Test HelpMenu
        
-       HelpMenu menu = HelpMenu();
+       HelpMenu menu = new HelpMenu();
        
-       stop.setHelpMenu(add tips and return);
+       menu.setName("Menu");
        
-       String HelpMenu = stop.HelpMenu();
-       
+       menuName = menu.getName();
+                     
        System.out.println("Here are some tips");
        
        // Test GamePlayMenu
        
-       GamePlayMenu menu= GamePlayMenu();
+       GamePlayMenu menu = new GamePlayMenu();
        
-       stop.setGamePlayMenu(list supplies, team health, team pace, map, date, location, livestock, help menu, main menu);
+       menu.setName("menu name");
        
-       Sting GamePlayMenu = stop.GamePlayMenu();
-       
+       menuName = menu.getName();
+             
        System.out.println(menu options and contents);
     }
   

@@ -111,9 +111,9 @@ public class OregonTrail {
        
        activities.setType("Hunting");
        
-       String activities = activities.getType();
+       String activity = activities.getType();
        
-       System.out.println("The Activities are: " + activities);
+       System.out.println("The Activities are: " + activity);
      
        // Test Animals
        
@@ -157,11 +157,11 @@ public class OregonTrail {
        
        // Test HelpMenu
        
-       HelpMenu menu = new HelpMenu();
+       HelpMenu helpMenu = new HelpMenu();
        
-       menu.setList("Menu");
+       helpMenu.sethelpMenu("Menu");
        
-       menuList = menu.getList();
+       String helpMenu = helpMenu.gethelpMenu();
                      
        System.out.println("Here are some tips" + helpMenu);
        

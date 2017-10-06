@@ -27,7 +27,13 @@ import byui.cit260.oregontrail.model.HelpMenu;
 
 
 // Classes created by Casey
-
+import byui.cit260.oregontrail.model.Supplies;
+import byui.cit260.oregontrail.model.Item;
+import byui.cit260.oregontrail.model.Party;
+import byui.cit260.oregontrail.model.Hotel;
+import byui.cit260.oregontrail.model.MainMenu;
+import byui.cit260.oregontrail.model.Map;
+import byui.cit260.oregontrail.model.Location;
 /**
  *
  * @author ralphb

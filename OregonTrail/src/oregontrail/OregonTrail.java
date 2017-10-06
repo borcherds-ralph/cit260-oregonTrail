@@ -13,6 +13,14 @@ import byui.cit260.oregontrail.model.Player;
 import byui.cit260.oregontrail.model.Rivers;
 import byui.cit260.oregontrail.model.StartMenu;
 import byui.cit260.oregontrail.model.Towns;
+import byui.cit260.oregontrail.model.Forts;
+import byui.cit260.oregontrail.model.Activities;
+import byui.cit260.oregontrail.model.Animals;
+import byui.cit260.oregontrail.model.GamePlayMenu;
+import byui.cit260.oregontrail.model.TeamPaceMenu;
+import byui.cit260.oregontrail.model.Shops;
+import byui.cit260.oregontrail.model.HelpMenu;
+
 
 
 // Classes create by Brittany
@@ -96,8 +104,12 @@ public class OregonTrail {
        String townName = town.getName();
        
        System.out.println("The name of the town is: " + townName);
+    
+    
+    
     }
   
+    
 }
     
 

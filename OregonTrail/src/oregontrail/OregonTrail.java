@@ -105,8 +105,73 @@ public class OregonTrail {
        
        System.out.println("The name of the town is: " + townName);
     
+    // Test Actvities 
     
-    
+       Activities activities = Activities();
+       start.setActivities("Hunting, Gathering, Spiritual.  Please select what you would like to do");
+       
+       String Acivities Choice = start.getActivities();
+       
+       System.out.println("The Activities are: " + "Hunting, Gathering, Eating, Resting");
+     
+       // Test Animals
+       
+       Animals animals = new animal();   //  Calls contructor
+       
+       animal.setType("Oxen");  // Set Name
+       
+       String animal = animal.getType();  // Get animal type and set to variable
+       
+       System.out.println("Oxen ");  // prints animal name to screen
+       
+       // Test Shops
+       
+       Shops shops = Shops();
+       
+       stop.setShop("Shop Type");
+       
+       String Shop = stop.getShop();
+       
+       System.out.println("Welcome to " + name of shop);
+       
+       // Test Forts
+       
+       Forts forts = Forts();
+       
+       stop.Forts("Welcome");
+       
+       String Forts = stop.getForts();
+       
+       System.out.println("Welcome to ") + name of Fort;
+       
+       // Test Team Pace Menu
+       
+       TeamPaceMenu Pace = TeamPaceMenu();
+       
+       stop.setPace(Slow, Average, Fast);      
+       String TeamPaceMenu = stop.getPace();
+       
+       System.out.println("Your Team Pace is " + level of pace);
+       
+       // Test HelpMenu
+       
+       HelpMenu menu = HelpMenu();
+       
+       stop.setHelpMenu(add tips and return);
+       
+       String HelpMenu = stop.HelpMenu();
+       
+       System.out.println("Here are some tips");
+       
+       // Test GamePlayMenu
+       
+       GamePlayMenu menu= GamePlayMenu();
+       
+       stop.setGamePlayMenu(list supplies, team health, team pace, map, date, location, livestock, help menu, main menu);
+       
+       Sting GamePlayMenu = stop.GamePlayMenu();
+       
+       System.out.println(menu options and contents);
     }
   
     

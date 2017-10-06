@@ -16,6 +16,10 @@ public class TeamPaceMenu implements Serializable {
     public void setPace(String pace) {
         this.pace = pace;
     }
+    
+    public void getPace(String pace) {
+        this.pace = pace;
+    }
 
     
 }

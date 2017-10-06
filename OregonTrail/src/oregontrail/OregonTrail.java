@@ -141,13 +141,13 @@ public class OregonTrail {
        
        fort.setName("Fort1");
        
-       String forts = fort.getName();
+       String fortName = fort.getName();
        
-       System.out.println("Welcome to: " + fort);
+       System.out.println("Welcome to: " + fortName);
        
        // Test Team Pace Menu
        
-       TeamPaceMenu teamPace = new TeamPace();
+       TeamPaceMenu teamPace = new TeamPaceMenu();
        
        teamPace.setPace("Slow");
        

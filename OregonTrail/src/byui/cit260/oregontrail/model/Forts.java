@@ -107,6 +107,6 @@ public class Forts implements Serializable {
     public String toString() {
         return "Forts{" + "fortName=" + fortName + ", location=" + location + ", trades=" + trades + ", shops=" + shops + ", activities=" + activities + '}';
     }
-    
+
     
 }

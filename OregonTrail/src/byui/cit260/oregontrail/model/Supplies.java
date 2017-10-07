@@ -6,6 +6,7 @@
 package byui.cit260.oregontrail.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -15,13 +16,16 @@ import java.util.Objects;
 public class Supplies implements Serializable{
 
     //variables
-    public Supplies() {
-    }
-    
+  
     private int weight;
     private int maxcapacity;
     private String type;
+    private Item item;
+    private ArrayList<Item> itemlist;
 
+    public Supplies() {
+    }
+        
     public int getWeight() {
         return weight;
     }

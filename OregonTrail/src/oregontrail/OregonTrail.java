@@ -173,6 +173,14 @@ public class OregonTrail {
        
        System.out.println("Item: " + rifle.toString());
        
+       //Party
+       
+       Party partysize = new Party();
+       
+       partysize.setSizeofparty(6);
+       
+       System.out.println("Size of Party: " + partysize.toString());
+       
        //
     }
   

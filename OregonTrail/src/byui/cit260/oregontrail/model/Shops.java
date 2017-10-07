@@ -5,6 +5,7 @@
  */
 package byui.cit260.oregontrail.model;
 import java.io.Serializable;
+import java.util.Objects;
 /**
  *
  * @author Br33h3rr3ra
@@ -41,4 +42,44 @@ public Shops() {
     public String getSupplies() {
         return supplies;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 37 * hash + Objects.hashCode(this.type);
+        hash = 37 * hash + Objects.hashCode(this.location);
+        hash = 37 * hash + Objects.hashCode(this.supplies);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Shops other = (Shops) obj;
+        if (!Objects.equals(this.type, other.type)) {
+            return false;
+        }
+        if (!Objects.equals(this.location, other.location)) {
+            return false;
+        }
+        if (!Objects.equals(this.supplies, other.supplies)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Shops{" + "type=" + type + ", location=" + location + ", supplies=" + supplies + '}';
+    }
+    
+    
 }

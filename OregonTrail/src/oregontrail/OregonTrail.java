@@ -50,10 +50,8 @@ public class OregonTrail {
        Wagon wagon = new Wagon();   //  Calls contructor
        
        wagon.setName("Wagon Team 1");  // Set Name
-       
-       String playeronename = wagon.getName();  // Get players name and set to variable
-       
-       System.out.println("Wagon Name: " + playeronename);  // prints name to screen
+         
+       System.out.println("Wagon Name: " + wagon.toString());  // prints name to screen
        
        // Test class DailyTrailStop
        
@@ -61,27 +59,21 @@ public class OregonTrail {
        
        stop.setClimate("Clear Skys");
        
-       String weather = stop.getClimate();
-       
-       System.out.println("Weather at the stop is: " + weather);
+       System.out.println("Weather at the stop is: " + stop.toString());
        
        // Test class Landmarks
        Landmarks landmark = new Landmarks();
        
        landmark.setName("Salt Lake City");
        
-       String landmarkName = landmark.getName();
-       
-       System.out.println("Landmark Name is: " + landmarkName);
+       System.out.println("Landmark Name is: " + landmark.toString());
        
        // Test class Player
        Player player = new Player();
        
        player.setName("Ralph");
-       
-       String playerName = player.getName();
-       
-       System.out.println("The players name is: " + playerName);
+        
+       System.out.println("The players name is: " + player.toString());
        
        
        // Test class Rivers
@@ -89,27 +81,21 @@ public class OregonTrail {
        
        river.setName("Ohio River");
        
-       String riverName = river.getName();
-       
-       System.out.println("The River Name is: " + riverName);
+       System.out.println("The River Name is: " + river.toString());
        
        // Test Start Menu
        StartMenu start = new StartMenu();
        
        start.setWelcome("Welcome to the game.  Please select what you would like to do");
-       
-       String welcome = start.getWelcome();
-       
-       System.out.println("The welcome message is: " + welcome);
+      
+       System.out.println("The welcome message is: " + start.toString());
        
         // Test class Towns
        Towns town = new Towns();
        
        town.setName("Winter Quarters");
        
-       String townName = town.getName();
-       
-       System.out.println("The name of the town is: " + townName);
+       System.out.println("The name of the town is: " + town.toString());
     
     // Test Actvities 
     
@@ -117,9 +103,7 @@ public class OregonTrail {
        
        activities.setType("Hunting");
        
-       String activity = activities.getType();
-       
-       System.out.println("The Activities are: " + activity);
+       System.out.println("The Activities are: " + activities.toString());
      
        // Test Animals
        
@@ -127,19 +111,15 @@ public class OregonTrail {
        
        animals.setType("Oxen");  // Set Name
        
-       String animal = animals.getType();  // Get animal type and set to variable
-       
-       System.out.println("Animal Type: " + animal);  // prints animal name to screen
+       System.out.println("Animal Type: " + animals.toString());  // prints animal name to screen
        
        // Test Shops
        
        Shops shop = new Shops();
        
        shop.setType("Blacksmith");
-       
-       String shops = shop.getType();
              
-       System.out.println("Welcome to " + shops);
+       System.out.println("Welcome to " + shop.toString());
        
        // Test Forts
        
@@ -147,39 +127,31 @@ public class OregonTrail {
        
        fort.setFortName("Fort1");
        
-       String fortName = fort.getFortName();
-       
-       System.out.println("Welcome to: " + fortName);
+       System.out.println("Welcome to: " + fort.toString());
        
        // Test Team Pace Menu
        
        TeamPaceMenu teamPace = new TeamPaceMenu();
        
        teamPace.setPace("Slow");
-       
-       String pace = teamPace.getPace();
              
-       System.out.println("Your Team Pace is " + pace);
+       System.out.println("Your Team Pace is " + teamPace.toString());
        
        // Test HelpMenu
        
        HelpMenu help = new HelpMenu();
        
        help.setTips("Menu");
-       
-       String helpMenu = help.getTips();
                      
-       System.out.println("Here are some tips" + helpMenu);
+       System.out.println("Here are some tips" + help.toString());
        
        // Test GamePlayMenu
        
        GamePlayMenu gameMenu = new GamePlayMenu();
        
        gameMenu.setMenuList("list supplies");
-       
-       String gamePlay = gameMenu.getMenuList();
              
-       System.out.println("Game Play Menu Items: " + gamePlay);
+       System.out.println("Game Play Menu Items: " + gameMenu.toString());
     }
   
     

@@ -6,6 +6,7 @@
 package byui.cit260.oregontrail.model;
 
 import java.io.Serializable;
+import java.util.Objects;
 /**
  *
  * @author Br33h3rr3ra
@@ -49,6 +50,48 @@ public class Activities implements Serializable {
 
     public void setEffect(String effect) {
         this.effect = effect;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.type);
+        hash = 97 * hash + Objects.hashCode(this.duration);
+        hash = 97 * hash + Objects.hashCode(this.cost);
+        hash = 97 * hash + Objects.hashCode(this.effect);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Activities other = (Activities) obj;
+        if (!Objects.equals(this.type, other.type)) {
+            return false;
+        }
+        if (!Objects.equals(this.duration, other.duration)) {
+            return false;
+        }
+        if (!Objects.equals(this.effect, other.effect)) {
+            return false;
+        }
+        if (!Objects.equals(this.cost, other.cost)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Activities{" + "type=" + type + ", duration=" + duration + ", cost=" + cost + ", effect=" + effect + '}';
     }
     
     

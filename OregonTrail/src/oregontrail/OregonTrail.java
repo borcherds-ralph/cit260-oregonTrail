@@ -156,7 +156,24 @@ public class OregonTrail {
        //
        //Casey's Classes
        //
+       Supplies supplies = new Supplies();
        
+       supplies.setWeight(50);
+       supplies.setMaxcapacity(1000);
+       supplies.setType("medicine");
+       
+       System.out.println("Supplies: " + supplies.toString());
+       
+       //Item
+       
+       Item rifle = new Item();
+       
+       rifle.setItemtype("gun");
+       rifle.setItemcost(50);
+       
+       System.out.println("Item: " + rifle.toString());
+       
+       //
     }
   
     

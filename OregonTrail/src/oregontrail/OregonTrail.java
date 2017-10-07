@@ -181,6 +181,16 @@ public class OregonTrail {
        
        System.out.println("Size of Party: " + partysize.toString());
        
+       //Hotel
+       
+       Hotel hotel = new Hotel();
+       
+       hotel.setTown("Walla");
+       hotel.setLocation("Walla Walla");
+       hotel.setNewPlayer("Yes");
+       
+       System.out.println("Hotel: " + hotel.toString());
+       
        //
     }
   

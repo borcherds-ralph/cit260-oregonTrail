@@ -13,8 +13,8 @@ import java.util.Objects;
  */ 
 public class Activities implements Serializable {
     private String type;
-    private String duration;
-    private Float cost;
+    private double duration;
+    private double cost;
     private String effect;
 
     public Activities() {
@@ -28,19 +28,19 @@ public class Activities implements Serializable {
         this.type = type;
     }
 
-    public String getDuration() {
+    public double getDuration() {
         return duration;
     }
 
-    public void setDuration(String duration) {
+    public void setDuration(double duration) {
         this.duration = duration;
     }
 
-    public Float getCost() {
+    public double getCost() {
         return cost;
     }
 
-    public void setCost(Float cost) {
+    public void setCost(double cost) {
         this.cost = cost;
     }
 

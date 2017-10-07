@@ -20,5 +20,15 @@ public enum RiverName {
         this.name = name;
         this.width = width;
 }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+    
+    
     
 }

@@ -12,13 +12,14 @@ import byui.cit260.oregontrail.model.Landmarks;
 import byui.cit260.oregontrail.model.Player;
 import byui.cit260.oregontrail.model.Rivers;
 import byui.cit260.oregontrail.model.Towns;
-
+import byui.cit260.oregontrail.model.RiverName;
 
 
 // Classes create by Brittany
 import byui.cit260.oregontrail.model.Forts;
 import byui.cit260.oregontrail.model.Activities;
 import byui.cit260.oregontrail.model.Animals;
+import byui.cit260.oregontrail.model.FortName;
 import byui.cit260.oregontrail.model.Shops;
 
 
@@ -29,6 +30,7 @@ import byui.cit260.oregontrail.model.Party;
 import byui.cit260.oregontrail.model.Hotel;
 import byui.cit260.oregontrail.model.Map;
 import byui.cit260.oregontrail.model.Location;
+
 /**
  *
  * @author ralphb
@@ -45,77 +47,108 @@ public class OregonTrail {
        Wagon wagon = new Wagon();   //  Calls contructor
        
        wagon.setName("Wagon Team 1");  // Set Name
+       wagon.setLength(20);
+       wagon.setQty(2);
+       wagon.setWeight(800);
          
-       System.out.println("Wagon Name: " + wagon.toString());  // prints name to screen
+       System.out.println(wagon.toString());  // prints name to screen
        
        // Test class DailyTrailStop
        
        DailyTrailStop stop = new DailyTrailStop();
        
        stop.setClimate("Clear Skys");
+       stop.setLength(1);
+       stop.setRisk(0);
+       stop.setTerrain("Rolling Hills");
        
-       System.out.println("Weather at the stop is: " + stop.toString());
+       System.out.println(stop.toString());
        
        // Test class Landmarks
        Landmarks landmark = new Landmarks();
        
        landmark.setName("Salt Lake City");
+       landmark.setDistance(1500);
+       landmark.setShops("Country Store");
+       landmark.setTrades("Blacksmith");
        
-       System.out.println("Landmark Name is: " + landmark.toString());
+       System.out.println(landmark.toString());
        
        // Test class Player
        Player player = new Player();
        
        player.setName("Ralph");
+       player.setAge(48);
+       player.setGender('M');
+       player.setLiving(true);
+       player.setMoney(3500);
+       player.setOccupation("Doctor");
         
-       System.out.println("The players name is: " + player.toString());
+       System.out.println(player.toString());
        
        
        // Test class Rivers
        Rivers river = new Rivers();
        
        river.setName("Ohio River");
+       river.setDepth(4);
+       river.setWidth(30);
        
-       System.out.println("The River Name is: " + river.toString());
+       System.out.println(river.toString());
        
         // Test class Towns
        Towns town = new Towns();
        
        town.setName("Winter Quarters");
+       town.setActivites("Throwing Horseshoes");
+       town.setLocation("Middle of nowhere");
+       town.setShops("There are three shops here");
+       town.setTrades("Farming");
        
-       System.out.println("The name of the town is: " + town.toString());
+       System.out.println(town.toString());
     
     // Test Actvities 
     
        Activities activities = new Activities();
        
        activities.setType("Hunting");
+       activities.setCost(2.50);
+       activities.setDuration(3);
+       activities.setEffect("Getting Food");
        
-       System.out.println("The Activities are: " + activities.toString());
+       System.out.println(activities.toString());
      
        // Test Animals
        
        Animals animals = new Animals();   //  Calls contructor
        
        animals.setType("Oxen");  // Set Name
+       animals.setCost(1.25);
+       animals.setHealth("Good");
        
-       System.out.println("Animal Type: " + animals.toString());  // prints animal name to screen
+       System.out.println(animals.toString());  // prints animal name to screen
        
        // Test Shops
        
        Shops shop = new Shops();
        
        shop.setType("Blacksmith");
+       shop.setLocation("End of Town");
+       shop.setSupplies("Metal");
              
-       System.out.println("Welcome to " + shop.toString());
+       System.out.println(shop.toString());
        
        // Test Forts
        
        Forts fort = new Forts();
        
        fort.setFortName("Fort1");
+       fort.setActivities("Target Practice");
+       fort.setLocation("Wyoming");
+       fort.setShops("none");
+       fort.setTrades("Blacksmith");
        
-       System.out.println("Welcome to: " + fort.toString());
+       System.out.println(fort.toString());
        
        //
        //Casey's Classes
@@ -126,7 +159,7 @@ public class OregonTrail {
        supplies.setMaxcapacity(1000);
        supplies.setType("medicine");
        
-       System.out.println("Supplies: " + supplies.toString());
+       System.out.println(supplies.toString());
        
        //Item
        
@@ -135,7 +168,7 @@ public class OregonTrail {
        rifle.setItemtype("gun");
        rifle.setItemcost(50);
        
-       System.out.println("Item: " + rifle.toString());
+       System.out.println(rifle.toString());
        
        //Party
        
@@ -143,7 +176,7 @@ public class OregonTrail {
        
        partysize.setSizeofparty(6);
        
-       System.out.println("Size of Party: " + partysize.toString());
+       System.out.println(partysize.toString());
        
        //Hotel
        
@@ -153,7 +186,7 @@ public class OregonTrail {
        hotel.setLocation("Walla Walla");
        hotel.setNewPlayer("Yes");
        
-       System.out.println("Hotel: " + hotel.toString());
+       System.out.println(hotel.toString());
        
        //Map
        
@@ -162,9 +195,29 @@ public class OregonTrail {
        map.setLocation("Walla Walla");
        map.setMapdetails("Walla Wall is a small town outside of Fort Walla Walla.");
        
-       System.out.println("Map: " + map.toString());
-    }
+       System.out.println(map.toString());
   
+    
+    Location location = new Location();
+    
+    location.setCurrentlocation("Currnet Location Set");
+    System.out.println(location.toString());
+    
+    
+    // Test Enum Classes
+    System.out.println(FortName.WallaWalla.getName());
+    System.out.println(FortName.WallaWalla.getLocation());
+    
+    System.out.println(FortName.Churchill.getName());
+    System.out.println(FortName.Churchill.getLocation());
+    
+    System.out.println(RiverName.Missisppi.getName());
+    System.out.println(RiverName.Missisppi.getWidth());
+    
+    System.out.println(RiverName.Colorado.getName());
+    System.out.println(RiverName.Colorado.getWidth());
+    
+   }
     
 }
     

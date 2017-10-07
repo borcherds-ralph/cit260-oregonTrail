@@ -13,7 +13,7 @@ import java.util.Objects;
  * @author Br33h3rr3ra
  */public class Animals implements Serializable {
     private String type;
-    private Float cost;
+    private double cost;
     private String health;
     
     public Animals() {
@@ -40,11 +40,11 @@ import java.util.Objects;
         return health;
     }
 
-    public Float getCost() {
+    public double getCost() {
         return cost;
     }
 
-    public void setCost(Float cost) {
+    public void setCost(double cost) {
         this.cost = cost;
     }
 

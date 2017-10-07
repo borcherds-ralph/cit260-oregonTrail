@@ -16,7 +16,7 @@ public enum FortName {
     private String name;
     private String location;
 
-    FortName(String name, int width) {
+    FortName(String name, String location) {
         this.name = name;
         this.location = location;
     }

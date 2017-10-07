@@ -152,6 +152,11 @@ public class OregonTrail {
        gameMenu.setMenuList("list supplies");
              
        System.out.println("Game Play Menu Items: " + gameMenu.toString());
+       
+       //
+       //Casey's Classes
+       //
+       
     }
   
     

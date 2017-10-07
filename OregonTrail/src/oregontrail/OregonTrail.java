@@ -191,7 +191,23 @@ public class OregonTrail {
        
        System.out.println("Hotel: " + hotel.toString());
        
-       //
+       //Main Menu
+       
+       MainMenu mainmenu = new MainMenu();
+       
+       mainmenu.setWelcome("Welcome to our game! Type N for New Game, L for Load saved Game, H for Help and X to Exit.");
+       mainmenu.setChoice('N');
+       
+       System.out.println("Welcome: " + mainmenu.toString());
+       
+       //Map
+       
+       Map map = new Map();
+       
+       map.setLocation("Walla Walla");
+       map.setMapdetails("Walla Wall is a small town outside of Fort Walla Walla.");
+       
+       System.out.println("Map: " + map.toString());
     }
   
     

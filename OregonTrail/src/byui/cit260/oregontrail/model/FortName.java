@@ -13,6 +13,7 @@ public enum FortName {
     
     WallaWalla("Fort Walla Walla", "Walla Walla"),
     Churchill("Fort Churchill", "Silver Springs");
+    
     private String name;
     private String location;
 
@@ -20,4 +21,20 @@ public enum FortName {
         this.name = name;
         this.location = location;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+    
+
+    @Override
+    public String toString() {
+        return "FortName{" + "name=" + name + ", location=" + location + '}';
+    }
+    
+    
 }

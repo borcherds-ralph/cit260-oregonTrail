@@ -91,7 +91,7 @@ public class Wagon implements Serializable {
 
     @Override
     public String toString() {
-        return "Wagon{" + "qty=" + qty + ", length=" + length + ", weight=" + weight + '}';
+        return "Wagon{ name=" + name + ", qty=" + qty + ", length=" + length + ", weight=" + weight + '}';
     }
 
    

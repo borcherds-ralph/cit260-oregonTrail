@@ -11,7 +11,6 @@ import byui.cit260.oregontrail.model.Wagon;
 import byui.cit260.oregontrail.model.Landmarks;
 import byui.cit260.oregontrail.model.Player;
 import byui.cit260.oregontrail.model.Rivers;
-import byui.cit260.oregontrail.model.StartMenu;
 import byui.cit260.oregontrail.model.Towns;
 
 
@@ -20,10 +19,7 @@ import byui.cit260.oregontrail.model.Towns;
 import byui.cit260.oregontrail.model.Forts;
 import byui.cit260.oregontrail.model.Activities;
 import byui.cit260.oregontrail.model.Animals;
-import byui.cit260.oregontrail.model.GamePlayMenu;
-import byui.cit260.oregontrail.model.TeamPaceMenu;
 import byui.cit260.oregontrail.model.Shops;
-import byui.cit260.oregontrail.model.HelpMenu;
 
 
 // Classes created by Casey
@@ -31,7 +27,6 @@ import byui.cit260.oregontrail.model.Supplies;
 import byui.cit260.oregontrail.model.Item;
 import byui.cit260.oregontrail.model.Party;
 import byui.cit260.oregontrail.model.Hotel;
-import byui.cit260.oregontrail.model.MainMenu;
 import byui.cit260.oregontrail.model.Map;
 import byui.cit260.oregontrail.model.Location;
 /**
@@ -83,13 +78,6 @@ public class OregonTrail {
        
        System.out.println("The River Name is: " + river.toString());
        
-       // Test Start Menu
-       StartMenu start = new StartMenu();
-       
-       start.setWelcome("Welcome to the game.  Please select what you would like to do");
-      
-       System.out.println("The welcome message is: " + start.toString());
-       
         // Test class Towns
        Towns town = new Towns();
        
@@ -129,30 +117,6 @@ public class OregonTrail {
        
        System.out.println("Welcome to: " + fort.toString());
        
-       // Test Team Pace Menu
-       
-       TeamPaceMenu teamPace = new TeamPaceMenu();
-       
-       teamPace.setPace("Slow");
-             
-       System.out.println("Your Team Pace is " + teamPace.toString());
-       
-       // Test HelpMenu
-       
-       HelpMenu help = new HelpMenu();
-       
-       help.setTips("Menu");
-                     
-       System.out.println("Here are some tips" + help.toString());
-       
-       // Test GamePlayMenu
-       
-       GamePlayMenu gameMenu = new GamePlayMenu();
-       
-       gameMenu.setMenuList("list supplies");
-             
-       System.out.println("Game Play Menu Items: " + gameMenu.toString());
-       
        //
        //Casey's Classes
        //
@@ -190,15 +154,6 @@ public class OregonTrail {
        hotel.setNewPlayer("Yes");
        
        System.out.println("Hotel: " + hotel.toString());
-       
-       //Main Menu
-       
-       MainMenu mainmenu = new MainMenu();
-       
-       mainmenu.setWelcome("Welcome to our game! Type N for New Game, L for Load saved Game, H for Help and X to Exit.");
-       mainmenu.setChoice('N');
-       
-       System.out.println("Welcome: " + mainmenu.toString());
        
        //Map
        

@@ -10,10 +10,10 @@ import java.util.Objects;
  *
  * @author Br33h3rr3ra
  */ 
-public class TeamPaceMenu implements Serializable {
+public class TeamPace implements Serializable {
     private String pace;
 
-    public TeamPaceMenu() {
+    public TeamPace() {
     }
 
     public String getPace() {
@@ -42,7 +42,7 @@ public class TeamPaceMenu implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final TeamPaceMenu other = (TeamPaceMenu) obj;
+        final TeamPace other = (TeamPace) obj;
         if (!Objects.equals(this.pace, other.pace)) {
             return false;
         }

@@ -11,8 +11,8 @@ package byui.cit260.oregontrail.model;
  */
 public enum FortName {
     
-    WallaWalla("Fort Walla Walla", 300),
-    Churchill("Fort Churchill", 150);
+    WallaWalla("Fort Walla Walla", "Walla Walla"),
+    Churchill("Fort Churchill", "Silver Springs");
     private String name;
     private String location;
 

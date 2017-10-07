@@ -83,7 +83,7 @@ import java.util.Objects;
 
     @Override
     public String toString() {
-        return "Animals{" + "type=" + type + ", cost=" + cost + ", health=" + health + '}';
+        return "Animals{" + "type=" + type + ", cost=$" + cost + ", health=" + health + '}';
     }
     
     

@@ -13,6 +13,7 @@ import byui.cit260.oregontrail.model.Player;
 import byui.cit260.oregontrail.model.Rivers;
 import byui.cit260.oregontrail.model.Towns;
 import byui.cit260.oregontrail.model.RiverName;
+import byui.cit260.oregontrail.view.StartMenu;
 
 
 // Classes create by Brittany
@@ -21,6 +22,9 @@ import byui.cit260.oregontrail.model.Activities;
 import byui.cit260.oregontrail.model.Animals;
 import byui.cit260.oregontrail.model.FortName;
 import byui.cit260.oregontrail.model.Shops;
+import byui.cit260.oregontrail.view.GamePlayMenu;
+import byui.cit260.oregontrail.view.HelpMenu;
+
 
 
 // Classes created by Casey
@@ -30,6 +34,7 @@ import byui.cit260.oregontrail.model.Party;
 import byui.cit260.oregontrail.model.Hotel;
 import byui.cit260.oregontrail.model.Map;
 import byui.cit260.oregontrail.model.Location;
+import byui.cit260.oregontrail.view.MainMenu;
 
 /**
  *

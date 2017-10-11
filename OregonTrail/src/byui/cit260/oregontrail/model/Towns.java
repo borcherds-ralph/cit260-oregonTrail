@@ -6,18 +6,20 @@
 package byui.cit260.oregontrail.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
  *
  * @author ralphb
  */
-public class Towns implements Serializable {
+public class Towns extends Landmarks implements Serializable {
     private String name;
-    private String location;
+
     private String shops;
     private String trades;
     private String activites;
+    private ArrayList<Landmarks> landmarks;
 
     public Towns() {
     }
@@ -28,14 +30,6 @@ public class Towns implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
     }
 
     public String getShops() {
@@ -62,14 +56,22 @@ public class Towns implements Serializable {
         this.activites = activites;
     }
 
+    public ArrayList<Landmarks> getLandmarks() {
+        return landmarks;
+    }
+
+    public void setLandmarks(ArrayList<Landmarks> landmarks) {
+        this.landmarks = landmarks;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 89 * hash + Objects.hashCode(this.name);
-        hash = 89 * hash + Objects.hashCode(this.location);
-        hash = 89 * hash + Objects.hashCode(this.shops);
-        hash = 89 * hash + Objects.hashCode(this.trades);
-        hash = 89 * hash + Objects.hashCode(this.activites);
+        int hash = 5;
+        hash = 37 * hash + Objects.hashCode(this.name);
+        hash = 37 * hash + Objects.hashCode(this.shops);
+        hash = 37 * hash + Objects.hashCode(this.trades);
+        hash = 37 * hash + Objects.hashCode(this.activites);
+        hash = 37 * hash + Objects.hashCode(this.landmarks);
         return hash;
     }
 
@@ -78,7 +80,13 @@ public class Towns implements Serializable {
         if (this == obj) {
             return true;
         }
+        if (super.equals(obj) == false) {
+            return false;
+        }
         if (obj == null) {
+            return false;
+        }
+        if (super.equals(obj) == false) {
             return false;
         }
         if (getClass() != obj.getClass()) {
@@ -86,9 +94,6 @@ public class Towns implements Serializable {
         }
         final Towns other = (Towns) obj;
         if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (!Objects.equals(this.location, other.location)) {
             return false;
         }
         if (!Objects.equals(this.shops, other.shops)) {
@@ -100,13 +105,15 @@ public class Towns implements Serializable {
         if (!Objects.equals(this.activites, other.activites)) {
             return false;
         }
+        if (!Objects.equals(this.landmarks, other.landmarks)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Towns{" + "name=" + name + ", location=" + location + ", shops=" + shops + ", trades=" + trades + ", activites=" + activites + '}';
+        return "Towns{" + "name=" + name + ", shops=" + shops + ", trades=" + trades + ", activites=" + activites + ", " + super.toString() + '}';
     }
-    
-    
+
 }

@@ -33,7 +33,7 @@ import byui.cit260.oregontrail.model.Item;
 import byui.cit260.oregontrail.model.Party;
 import byui.cit260.oregontrail.model.Hotel;
 import byui.cit260.oregontrail.model.Map;
-import byui.cit260.oregontrail.model.Location;
+import byui.cit260.oregontrail.model.Locations;
 import byui.cit260.oregontrail.view.MainMenu;
 
 /**
@@ -106,7 +106,6 @@ public class OregonTrail {
        
        town.setName("Winter Quarters");
        town.setActivites("Throwing Horseshoes");
-       town.setLocation("Middle of nowhere");
        town.setShops("There are three shops here");
        town.setTrades("Farming");
        
@@ -139,7 +138,7 @@ public class OregonTrail {
        
        shop.setType("Blacksmith");
        shop.setLocation("End of Town");
-       shop.setSupplies("Metal");
+
              
        System.out.println(shop.toString());
        
@@ -203,22 +202,26 @@ public class OregonTrail {
        System.out.println(map.toString());
   
     
-    Location location = new Location();
+        Locations location = new Locations();
+        location.setName("Winter Quarters");
+        location.setActivites("Throwing Horseshoes");
+        location.setShops("There are three shops here");
+        location.setTrades("Farming");
+        location.setCurrentlocation("Currnet Location Set");
+        
+        System.out.println(location.toString());
     
-    location.setCurrentlocation("Currnet Location Set");
-    System.out.println(location.toString());
     
+        // Test Enum Classes
+        System.out.println("Fort NAme: " + FortName.WallaWalla.getName() + ", Fort Location: " + FortName.WallaWalla.getLocation());
+
+        System.out.println("Fort NAme: " + FortName.Churchill.getName() + ", Fort Location: " + FortName.Churchill.getLocation());
+
+        System.out.println("River Name: " + RiverName.Missisppi.getName() + ", River Width: " + RiverName.Missisppi.getWidth());
+
+        System.out.println("River Name: " + RiverName.Colorado.getName() + ", River Width: " + RiverName.Colorado.getWidth());
     
-    // Test Enum Classes
-    System.out.println("Fort NAme: " + FortName.WallaWalla.getName() + ", Fort Location: " + FortName.WallaWalla.getLocation());
-    
-    System.out.println("Fort NAme: " + FortName.Churchill.getName() + ", Fort Location: " + FortName.Churchill.getLocation());
-    
-    System.out.println("River Name: " + RiverName.Missisppi.getName() + ", River Width: " + RiverName.Missisppi.getWidth());
-    
-    System.out.println("River Name: " + RiverName.Colorado.getName() + ", River Width: " + RiverName.Colorado.getWidth());
-    
-   }
+    }
     
 }
     

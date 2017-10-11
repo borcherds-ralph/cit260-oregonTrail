@@ -6,14 +6,16 @@
 package byui.cit260.oregontrail.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 /**
  *
  * @author Casey
  */
-public class Item implements Serializable{
+public class Item  extends Supplies implements Serializable{
     private String itemtype;
     private int itemcost;
+    private ArrayList<Supplies> supplies;
 
     public Item() {
     }
@@ -36,13 +38,24 @@ public class Item implements Serializable{
         this.itemcost = itemcost;
     }
 
+    public ArrayList<Supplies> getSupplies() {
+        return supplies;
+    }
+
+    public void setSupplies(ArrayList<Supplies> supplies) {
+        this.supplies = supplies;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 5;
+        int hash = 3;
         hash = 53 * hash + Objects.hashCode(this.itemtype);
         hash = 53 * hash + this.itemcost;
+        hash = 53 * hash + Objects.hashCode(this.supplies);
         return hash;
     }
+
+    
 
     @Override
     public boolean equals(Object obj) {
@@ -50,6 +63,9 @@ public class Item implements Serializable{
             return true;
         }
         if (obj == null) {
+            return false;
+        }
+        if (super.equals(obj) == false) {
             return false;
         }
         if (getClass() != obj.getClass()) {
@@ -67,7 +83,7 @@ public class Item implements Serializable{
 
     @Override
     public String toString() {
-        return "Item{" + "itemtype=" + itemtype + ", itemcost=$" + itemcost + '}';
+        return "Item{" + "itemtype=" + itemtype + ", itemcost=$" + itemcost + "supplies=" + super.toString() + '}';
     }
     
 }

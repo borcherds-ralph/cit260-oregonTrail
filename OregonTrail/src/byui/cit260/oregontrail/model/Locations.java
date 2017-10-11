@@ -6,15 +6,17 @@
 package byui.cit260.oregontrail.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 /**
  *
  * @author Casey
  */
-public class Location implements Serializable {
+public class Locations extends Towns implements Serializable {
     private String currentlocation;
+    private ArrayList<Towns> towns;
 
-    public Location() {
+    public Locations() {
     }
 
     public String getCurrentlocation() {
@@ -23,6 +25,14 @@ public class Location implements Serializable {
 
     public void setCurrentlocation(String currentlocation) {
         this.currentlocation = currentlocation;
+    }
+
+    public ArrayList<Towns> getTowns() {
+        return towns;
+    }
+
+    public void setTowns(ArrayList<Towns> towns) {
+        this.towns = towns;
     }
 
     @Override
@@ -37,13 +47,16 @@ public class Location implements Serializable {
         if (this == obj) {
             return true;
         }
+         if (super.equals(obj) == false) {
+            return false;
+        }
         if (obj == null) {
             return false;
         }
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Location other = (Location) obj;
+        final Locations other = (Locations) obj;
         if (!Objects.equals(this.currentlocation, other.currentlocation)) {
             return false;
         }
@@ -52,8 +65,9 @@ public class Location implements Serializable {
 
     @Override
     public String toString() {
-        return "Location{" + "currentlocation=" + currentlocation + '}';
+        return "Location{currentlocation=" + currentlocation + ", " + super.toString()  + '}';
     }
     
+        
     
 }

@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author Br33h3rr3ra
  */ 
-public class Forts implements Serializable {
+public class Forts extends Landmarks implements Serializable {
     private String fortName;
     private String location;
     private String trades;
@@ -38,10 +38,12 @@ public class Forts implements Serializable {
         return location;
     }
 
+    @Override
     public void setTrades(String trades) {
         this.trades = trades;
     }
 
+    @Override
     public void setShops(String shops) {
         this.shops = shops;
     }

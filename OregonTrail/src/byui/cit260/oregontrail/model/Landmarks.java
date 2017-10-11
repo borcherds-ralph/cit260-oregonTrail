@@ -6,6 +6,7 @@
 package byui.cit260.oregontrail.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -17,6 +18,8 @@ public class Landmarks implements Serializable {
     private int distance;
     private String shops;
     private String trades;
+    private ArrayList<Towns> townList;
+    private ArrayList<Forts> fortList;
 
     public Landmarks() {
     }
@@ -53,13 +56,31 @@ public class Landmarks implements Serializable {
         this.trades = trades;
     }
 
+    public ArrayList<Towns> getTownList() {
+        return townList;
+    }
+
+    public void setTownList(ArrayList<Towns> townList) {
+        this.townList = townList;
+    }
+
+    public ArrayList<Forts> getFortList() {
+        return fortList;
+    }
+
+    public void setFortList(ArrayList<Forts> fortList) {
+        this.fortList = fortList;
+    }
+
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 67 * hash + Objects.hashCode(this.name);
-        hash = 67 * hash + this.distance;
-        hash = 67 * hash + Objects.hashCode(this.shops);
-        hash = 67 * hash + Objects.hashCode(this.trades);
+        hash = 59 * hash + Objects.hashCode(this.name);
+        hash = 59 * hash + this.distance;
+        hash = 59 * hash + Objects.hashCode(this.shops);
+        hash = 59 * hash + Objects.hashCode(this.trades);
+        hash = 59 * hash + Objects.hashCode(this.townList);
+        hash = 59 * hash + Objects.hashCode(this.fortList);
         return hash;
     }
 
@@ -87,13 +108,16 @@ public class Landmarks implements Serializable {
         if (!Objects.equals(this.trades, other.trades)) {
             return false;
         }
+        if (!Objects.equals(this.townList, other.townList)) {
+            return false;
+        }
+        if (!Objects.equals(this.fortList, other.fortList)) {
+            return false;
+        }
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "Landmarks{" + "name=" + name + ", distance=" + distance + ", shops=" + shops + ", trades=" + trades + '}';
-    }
+ 
     
     
 }

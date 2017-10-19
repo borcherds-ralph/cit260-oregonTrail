@@ -6,7 +6,6 @@
 package byui.cit260.oregontrail.control;
 
 import byui.cit260.oregontrail.model.Item;
-
 import java.util.Random;
 
 /**
@@ -31,8 +30,14 @@ public class ItemControl {
         return volume;
     }
     
-    public double calcWeightOfItem() {
-        return -1;
+    public double calcWeightOfItem(int qty, String itemtype) {
+        Item item = new Item();
+        
+        double itemWeight = item.getItemweight();
+        
+        double totalWeight = itemWeight * qty;
+        return totalWeight;
+
     }
     
 

@@ -87,7 +87,19 @@ public class ItemControl {
         double volume = Math.pow(radius, 2) * height * Math.PI;
         return volume;
     }
-    
-    
+
+    public double getItemCost(String itemName, double qty, double itemCost) {
+
+        if (itemName == null && itemName.isEmpty()) {
+           return -1;
+        }
+        if (itemCost <=0) {
+           return -1;
+        }
+        if (qty <=0) {
+           return -1;
+        }     
+        return 1;
+    }
     
 }

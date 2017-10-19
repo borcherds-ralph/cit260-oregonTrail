@@ -213,9 +213,9 @@ public class OregonTrail {
     
     
         // Test Enum Classes
-        System.out.println("Fort NAme: " + FortName.WallaWalla.getName() + ", Fort Location: " + FortName.WallaWalla.getLocation());
+        System.out.println("Fort Name: " + FortName.WallaWalla.getName() + ", Fort Location: " + FortName.WallaWalla.getLocation());
 
-        System.out.println("Fort NAme: " + FortName.Churchill.getName() + ", Fort Location: " + FortName.Churchill.getLocation());
+        System.out.println("Fort Name: " + FortName.Churchill.getName() + ", Fort Location: " + FortName.Churchill.getLocation());
 
         System.out.println("River Name: " + RiverName.Missisppi.getName() + ", River Width: " + RiverName.Missisppi.getWidth());
 

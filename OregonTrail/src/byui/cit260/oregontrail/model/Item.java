@@ -16,8 +16,16 @@ public class Item  extends Supplies implements Serializable{
     private String itemtype;
     private int itemcost;
     private ArrayList<Supplies> supplies;
+    private double itemweight;
 
     public Item() {
+    }
+
+    public double getItemweight() {
+        return itemweight;
+    }
+    public void setItemweight(double weight) {
+        this.itemweight = weight;
     }
     
     
@@ -48,14 +56,13 @@ public class Item  extends Supplies implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 53 * hash + Objects.hashCode(this.itemtype);
-        hash = 53 * hash + this.itemcost;
-        hash = 53 * hash + Objects.hashCode(this.supplies);
+        int hash = 7;
+        hash = 89 * hash + Objects.hashCode(this.itemtype);
+        hash = 89 * hash + this.itemcost;
+        hash = 89 * hash + Objects.hashCode(this.supplies);
+        hash = 89 * hash + (int) (Double.doubleToLongBits(this.itemweight) ^ (Double.doubleToLongBits(this.itemweight) >>> 32));
         return hash;
     }
-
-    
 
     @Override
     public boolean equals(Object obj) {
@@ -75,15 +82,23 @@ public class Item  extends Supplies implements Serializable{
         if (this.itemcost != other.itemcost) {
             return false;
         }
+        if (Double.doubleToLongBits(this.itemweight) != Double.doubleToLongBits(other.itemweight)) {
+            return false;
+        }
         if (!Objects.equals(this.itemtype, other.itemtype)) {
+            return false;
+        }
+        if (!Objects.equals(this.supplies, other.supplies)) {
             return false;
         }
         return true;
     }
 
+    
+
     @Override
     public String toString() {
-        return "Item{" + "itemtype=" + itemtype + ", itemcost=$" + itemcost + "supplies=" + super.toString() + '}';
+        return "Item{" + "itemtype=" + itemtype + ", itemcost=$" + itemcost + "supplies=" + super.toString() + "item weight: " + itemweight + '}';
     }
     
 }

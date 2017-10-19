@@ -10,5 +10,18 @@ package byui.cit260.oregontrail.control;
  * @author Casey
  */
 public class SupplyControl {
-    
+           public double getweight(int weight){
+           if(weight <= 0 ) {
+               return -1;
+           }
+           return weight;
+
+           }
+                      
+           public double SupplyControl(int cost){
+               if(cost <= 0 ){
+               return -1;
+           }
+               return cost;
+       }
 }

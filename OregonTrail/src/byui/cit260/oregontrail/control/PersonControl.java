@@ -39,12 +39,21 @@ public class PersonControl {
             return -1;
        else return age;
     }
+    //this compares the gender given to see that if it matches with the enum that is defined in this class
     public String gender (String gender) {
-        if(gender.equalsIgnoreCase(gender)|| gender.isEmpty())
-                return "Error -1";
-    else {
-    return gender;
-            }
-}
+        if (gender.equalsIgnoreCase(gender))
+                return gender;
+        else {
+            return "Error -1";
+        }
+                }
+    //this compares the health given to the health defined in this class
+    public String health (String health){
+        if (health.equalsIgnoreCase(health))
+            return health;
+        else
+        {return "Error -1";
+                }
+    }
 }
 

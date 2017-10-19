@@ -14,7 +14,7 @@ import java.util.Random;
  */
 public class caseygetweight {
 
-       public caseygetweight(int weight){
+       public double caseygetweight(int weight){
            if(weight <= 0 ) {
                return -1;
            }

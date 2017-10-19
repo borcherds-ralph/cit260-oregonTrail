@@ -16,44 +16,47 @@ public class PersonControl {
     public enum gender{
         MALE, FEMALE
     }
+    
     public enum health {
         good, fair, poor, sick
     }
+    
     public String name(String name){
         if ( name == null || name.isEmpty()) {
             return "Error -1";
+        }
+        return name;
         
-            }else {
-             return name;
-            }
     } 
     public int personcount(int personcount) {
-    if (personcount <= 0){
-        return -1;
-        }
-    else {return personcount;
-    }
-}
-    public int age (int age){
-        if(age < 0 || age > 99)
+        if (personcount <= 0){
             return -1;
-       else return age;
+        }
+        return personcount;
+
+    }
+    public int age (int age){
+        if(age < 0 || age > 99) {
+            return -1;
+        }
+        return age;
     }
     //this compares the gender given to see that if it matches with the enum that is defined in this class
     public String gender (String gender) {
-        if (gender.equalsIgnoreCase(gender))
+        if (gender.equalsIgnoreCase(gender)) {
                 return gender;
-        else {
-            return "Error -1";
         }
-                }
+        return "Error -1";
+        
+    }
+    
     //this compares the health given to the health defined in this class
     public String health (String health){
-        if (health.equalsIgnoreCase(health))
+        if (health.equalsIgnoreCase(health)) {
             return health;
-        else
-        {return "Error -1";
-                }
+        }
+        return "Error -1";
+                
     }
 }
 

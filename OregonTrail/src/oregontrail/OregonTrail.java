@@ -84,7 +84,7 @@ public class OregonTrail {
        
        player.setName("Ralph");
        player.setAge(48);
-       player.setGender('M');
+       player.setGender("Male");
        player.setLiving(true);
        player.setMoney(3500);
        player.setOccupation("Doctor");

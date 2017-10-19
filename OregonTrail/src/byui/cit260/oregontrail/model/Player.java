@@ -5,6 +5,7 @@
  */
 package byui.cit260.oregontrail.model;
 
+import byui.cit260.oregontrail.control.PersonControl.gender;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -16,10 +17,11 @@ public class Player implements Serializable {
     private String name;
     private int age;
     private int health;
-    private char gender;
+
     private String occupation;
     private double money;
     private boolean living;
+    private String gender;
 
     public Player() {
     }
@@ -48,11 +50,11 @@ public class Player implements Serializable {
         this.health = health;
     }
 
-    public char getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(char gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
@@ -86,7 +88,6 @@ public class Player implements Serializable {
         hash = 71 * hash + Objects.hashCode(this.name);
         hash = 71 * hash + this.age;
         hash = 71 * hash + this.health;
-        hash = 71 * hash + this.gender;
         hash = 71 * hash + Objects.hashCode(this.occupation);
         hash = 71 * hash + (int) (Double.doubleToLongBits(this.money) ^ (Double.doubleToLongBits(this.money) >>> 32));
         hash = 71 * hash + (this.living ? 1 : 0);

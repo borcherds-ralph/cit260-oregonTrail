@@ -15,7 +15,7 @@ public class ItemControl {
 
      
     public double calcVolumeOfBarrel(double height, double centerDiameter, double topDiameter ){
-    
+        //This is for a barrel that had a bulge in the center like a wood wine barrel today.
         if(height <= 0 || height >= 35) { // height is out of range
             return -1;
         }

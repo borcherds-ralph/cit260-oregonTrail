@@ -148,12 +148,27 @@ public class ItemControlTest {
     @Test
     public void testCalcCylinderVolume() {
         System.out.println("calcCylinderVolume");
-        double diameter = 0.0;
-        double height = 0.0;
+        System.out.println("\tTest 1 - Valid data");
+        double diameter = 20.0;
+        double height = 30.0;
         ItemControl instance = new ItemControl();
-        double expResult = 0.0;
+        double expResult = 9424.77796076938;
         double result = instance.calcCylinderVolume(diameter, height);
-        assertEquals(expResult, result, 0.0);
+        assertEquals(expResult, result, 9424.77796076938);
+        
+        System.out.println("\tTest 2 - inValid data");
+        diameter = 0.0;
+        height = 30.0;
+        expResult = -1.0;
+        result = instance.calcCylinderVolume(diameter, height);
+        assertEquals(expResult, result, -1.0);
+        
+        System.out.println("\tTest 3 - Valid data");
+        diameter = 20.0;
+        height = 35.0;
+        expResult = -1.0;
+        result = instance.calcCylinderVolume(diameter, height);
+        assertEquals(expResult, result, -1.0);
         
     }
     

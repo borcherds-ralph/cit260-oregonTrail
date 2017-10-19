@@ -90,7 +90,7 @@ public class ItemControl {
 
     public double getItemCost(String itemName, double qty, double itemCost) {
 
-        if (itemName == null && itemName.isEmpty()) {
+        if (itemName == null || itemName.isEmpty()) {
            return -1;
         }
         if (itemCost <=0) {

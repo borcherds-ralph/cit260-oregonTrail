@@ -40,7 +40,20 @@ public class ItemControl {
 
     }
     
-
+    public double calcBarrelVolumeToGallons(double barrelvolume) {
+        // 1 cubic inch = 0.00432899 US liquid gallon
+        // 1 US Gallon = 231 Cubic Inches
+        // 231 * .00432899 = 0.99999669 gallons - Excact Answer.
+        
+        double gallons = barrelvolume / 231;
+        return gallons;
+    }
+    
+    public double calcCylinderVolume(double diameter, double height){
+        double radius = diameter / 2;
+        double volume = Math.pow(radius, 2) * height * Math.PI;
+        return volume;
+    }
     
     
     

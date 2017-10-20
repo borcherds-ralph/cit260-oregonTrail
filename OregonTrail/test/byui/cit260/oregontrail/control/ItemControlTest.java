@@ -173,3 +173,14 @@ public class ItemControlTest {
     }
     
 }
+    @Test
+    public void testgetItemCost() {
+        System.out.println("getItemCost");
+        int qty = 1;
+        String itemtype = "test";
+        ItemControl instance = new ItemControl();
+        double expResult = 0.0;
+        double result = instance.getItemCost(qty, itemName, itemCost);
+        assertEquals(expResult, result, 0.0);
+        
+    }

@@ -12,7 +12,16 @@ package byui.cit260.oregontrail.model;
 public enum FortName {
     
     WallaWalla("Fort Walla Walla", "Walla Walla"),
-    Churchill("Fort Churchill", "Silver Springs");
+    Churchill("Fort Churchill", "Silver Springs"),
+    FortBoise("Fort Boise", "Boise, ID"),
+    FortBridge("Fort Bridger", "Fort Bridger"),
+    FortChurch("Fort Churchill", "Fort Churchill"),
+    FortHall("Fort Hall", "Fort Hall"),
+    FortJohn("Fort John", "Fort John"),
+    FortKearney("Fort Kearney", "Fort Kearney"),
+    FortLaramie("Fort Laramie", "Fort Laramie"),
+    FortVancouver("Fort Vancouver", "Fort Vancouver"), 
+    FortWilliam("Fort William", "Fort William");
     
     private String ftname;
     private String ftlocation;

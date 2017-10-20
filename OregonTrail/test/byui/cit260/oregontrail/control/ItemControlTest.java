@@ -185,7 +185,7 @@ public class ItemControlTest {
     }
 
     /**
-     * Test of personcount method, of class PersonControl.
+     * Test of ItemCost method, of class ItemControl.
      */
     @Test
     public void testgetItemName() {

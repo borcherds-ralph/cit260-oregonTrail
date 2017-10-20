@@ -4,40 +4,40 @@
  * and open the template in the editor.
  */
 package byui.cit260.oregontrail.control;
-import byui.cit260.oregontrail.model.Item;
+import byui.cit260.oregontrail.model.Party;
 /**
  *
  * @author ralphb
  */
 public class GroupControl {
-    
-}
-public int getSize() {
 
-int getSize = groupSize
+   public int getSize(int groupSize) {
 
-if groupSize <0 || >8 
-return "Error"
+       
 
-if
-groupSize > 0 || groupSize <=8;
-return groupSize
-}
+       if (groupSize < 0 || groupSize > 8) {
+           return -1;
+       }
 
-public int getPace(){
-
-int getPace == TeamPace
-
-if TeamPace < 1 || > 3
-return "Error"
-
-if TeamPace >=1 || <= 3
-return TeamPace
-}
-
-public String getName(){
-
-String getName == name
+       return groupSize;
+       
+   }
 
 
+   public int getPace(int teamPace) {
+
+
+       if (teamPace < 1 || teamPace > 3) {
+           return -1;
+       }
+
+       return teamPace;
+   }
+
+   public String getName(String name) {
+
+       return name;
+
+   }
+   
 }

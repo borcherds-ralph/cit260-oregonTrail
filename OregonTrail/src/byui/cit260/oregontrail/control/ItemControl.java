@@ -102,23 +102,11 @@ public double getItemCost(String itemName, double qty, double itemCost) {
        }     
        return 1;
    }
-}
-public enum getItemName {
-    item1 ("Rope"),
-    item2 ("Knife");
-    
-private String itemName;
-    
-    itemName(String itemName) {
-        this.itemName = itemName;
-            }
-
 public String getItemName() {
-    if itemName == item1
-       return "Rope";
-    if itemName == item2
-       return "Knife";
-    else 
-       return "Error"; 
-    }
+    
+    String itemName = "Rope";
+    
+    itemName = "Rope";
+    return "Rope"; 
+}
 }

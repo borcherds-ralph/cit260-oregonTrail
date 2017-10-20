@@ -13,10 +13,12 @@ package byui.cit260.oregontrail.control;
 
 public class PersonControl {
 
-    public enum gender{
-        MALE, FEMALE
+    public static class gender {
+
+        public gender() {
+        }
     }
-    
+
     public enum health {
         good, fair, poor, sick
     }
@@ -38,12 +40,12 @@ public class PersonControl {
     }
     public int age (int age){
         if(age < 0 || age > 99) {
-            return -1;
-        }
-        return age;
+            return -1;}
+        else
+            { return age; }
     }
     //this compares the gender given to see that if it matches with the enum that is defined in this class
-    public String gender (String gender) {
+    public String genderentry (String gender) {
         if (gender.equalsIgnoreCase(gender)) {
                 return gender;
         }

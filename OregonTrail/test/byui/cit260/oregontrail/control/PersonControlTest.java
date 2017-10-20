@@ -52,29 +52,45 @@ public class PersonControlTest {
      */
     @Test
     public void testAge() {
+        //valid test
         System.out.println("age");
-        int age = 0;
+        int age = 25;
         PersonControl instance = new PersonControl();
-        int expResult = 0;
+        int expResult = 25;
         int result = instance.age(age);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
+ //bad test
+        System.out.println("age");
+        age = -25;
+        expResult = -1;
+        result = instance.age(age);
+        assertEquals(expResult, result);
+
+        //valid test
+        System.out.println("age");
+        age = 98;
+        expResult = 98;
+        result = instance.age(age);
+        assertEquals(expResult, result);
+    }
     /**
      * Test of gender method, of class PersonControl.
      */
     @Test
     public void testGender() {
         System.out.println("gender");
-        String gender = "";
+        String gender = "male";
         PersonControl instance = new PersonControl();
-        String expResult = "";
-        String result = instance.gender(gender);
+        String expResult = "male";
+        String result = instance.genderentry(gender);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+        System.out.println("gender");
+        gender = "helicopter";
+        expResult = "Error -1";
+        result = instance.genderentry(gender);
+        assertEquals(expResult, result);
     }
 
     /**
@@ -87,6 +103,21 @@ public class PersonControlTest {
         PersonControl instance = new PersonControl();
         String expResult = "";
         String result = instance.health(health);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of occupation method, of class PersonControl.
+     */
+    @Test
+    public void testOccupation() {
+        System.out.println("occupation");
+        String occupation = "";
+        PersonControl instance = new PersonControl();
+        String expResult = "";
+        String result = instance.occupation(occupation);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");

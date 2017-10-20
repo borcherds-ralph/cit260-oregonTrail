@@ -22,14 +22,20 @@ public class SupplyControlTest {
      */
     @Test
     public void testGetweight() {
+        //working test
         System.out.println("getweight");
-        int weight = 0;
+        int weight = 15;
         SupplyControl instance = new SupplyControl();
-        double expResult = 0.0;
+        double expResult = 15;
         double result = instance.getweight(weight);
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+        //invalid test
+        System.out.println("getweight");
+        weight = -5;
+        expResult = -1;
+        result = instance.getweight(weight);
+        assertEquals(expResult, result, 0.0);
     }
 
     /**
@@ -37,14 +43,21 @@ public class SupplyControlTest {
      */
     @Test
     public void testSupplyControl() {
+        
+        //valid test
         System.out.println("SupplyControl");
-        int cost = 0;
+        int cost = 75;
         SupplyControl instance = new SupplyControl();
-        double expResult = 0.0;
+        double expResult = 75;
         double result = instance.SupplyControl(cost);
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+        //invalid test
+                System.out.println("SupplyControl");
+        cost = -50;
+        expResult = -1;
+        result = instance.SupplyControl(cost);
+        assertEquals(expResult, result, 0.0);
     }
     
 }

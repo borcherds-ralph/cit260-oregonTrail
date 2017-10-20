@@ -22,7 +22,8 @@ public class Player implements Serializable {
     private double money;
     private boolean living;
     private String gender;
-
+gender male = new gender();
+gender female = new gender();
     public Player() {
     }
 

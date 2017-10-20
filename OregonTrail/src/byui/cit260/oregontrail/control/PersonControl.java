@@ -21,6 +21,9 @@ public class PersonControl {
         good, fair, poor, sick
     }
     
+    public enum occupationlist {
+        farmer, carpenter, banker
+    }
     public String name(String name){
         if ( name == null || name.isEmpty()) {
             return "Error -1";
@@ -57,6 +60,11 @@ public class PersonControl {
         }
         return "Error -1";
                 
+    }
+    public String occupation (String occupation){
+        if (occupation.equalsIgnoreCase(occupationlist))
+                return occupation;
+        return "Error -1";
     }
 }
 

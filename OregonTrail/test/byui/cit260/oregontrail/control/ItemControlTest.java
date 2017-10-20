@@ -172,15 +172,29 @@ public class ItemControlTest {
         
     }
     
-}
-    @Test
-    public void testgetItemCost() {
-        System.out.println("getItemCost");
-        int qty = 1;
-        String itemtype = "test";
+@Test
+    public void testItemCost() {
+        System.out.println("ItemCost");
+        double ItemCost = 0.0;
         ItemControl instance = new ItemControl();
         double expResult = 0.0;
-        double result = instance.getItemCost(qty, itemName, itemCost);
-        assertEquals(expResult, result, 0.0);
-        
+        double result = instance.ItemCost(ItemCost);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+    /**
+     * Test of personcount method, of class PersonControl.
+     */
+    @Test
+    public void testPersoncount() {
+        System.out.println("personcount");
+        int personcount = 0;
+        PersonControl instance = new PersonControl();
+        int expResult = 0;
+        int result = instance.personcount(personcount);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
     }

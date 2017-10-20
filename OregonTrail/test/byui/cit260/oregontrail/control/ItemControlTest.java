@@ -188,13 +188,13 @@ public class ItemControlTest {
      * Test of personcount method, of class PersonControl.
      */
     @Test
-    public void testPersoncount() {
-        System.out.println("personcount");
-        int personcount = 0;
-        PersonControl instance = new PersonControl();
-        int expResult = 0;
-        int result = instance.personcount(personcount);
+    public void testgetItemName() {
+        System.out.println("ItemName");
+        String ItemName = "";
+        ItemControl instance = new ItemControl();
+        String expResult = "";
+        String result = instance.ItemName(ItemName);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
-    }
+    }}

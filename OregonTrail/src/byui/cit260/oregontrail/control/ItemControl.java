@@ -103,3 +103,8 @@ public double getItemCost(String itemName, double qty, double itemCost) {
        return 1;
    }
 }
+private enum getItemName.java(itemName1, itemName2, itemName3, itemName4, itemName5){
+
+if (itemName == itemName1){
+return "Rope";
+}

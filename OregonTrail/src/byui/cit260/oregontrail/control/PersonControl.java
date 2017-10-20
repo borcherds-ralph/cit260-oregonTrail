@@ -23,7 +23,6 @@ public class PersonControl {
         good, fair, poor, sick
     }
     
-    public String[] occupationlist={"farmer", "carpenter", "banker"};
     public String name(String name){
         if ( name == null || name.isEmpty()) {
             return "Error -1";
@@ -55,14 +54,14 @@ public class PersonControl {
     
     //this compares the health given to the health defined in this class
     public String health (String health){
-        if (health.equalsIgnoreCase(health)) {
+        if (health.equalsIgnoreCase("good") || (health.equalsIgnoreCase("fair") || (health.equalsIgnoreCase("poor") || (health.equalsIgnoreCase("sick"))))) {
             return health;
         }
         return "Error -1";
                 
     }
     public String occupation (String occupation){
-        if (occupation.equalsIgnoreCase(occupation)) {
+        if (occupation.equalsIgnoreCase("farmer") || (occupation.equalsIgnoreCase("carpenter") || (occupation.equalsIgnoreCase("banker")))) {
             return occupation;
         } else {
         }

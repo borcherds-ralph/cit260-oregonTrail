@@ -178,7 +178,7 @@ public class ItemControlTest {
         double ItemCost = 0.0;
         ItemControl instance = new ItemControl();
         double expResult = 0.0;
-        double result = instance.ItemCost(ItemCost);
+        double result = instance.getItemCost();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -193,8 +193,7 @@ public class ItemControlTest {
         String ItemName = "";
         ItemControl instance = new ItemControl();
         String expResult = "";
-        String result = instance.ItemName(ItemName);
+        String result = instance.getItemName();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }}
+        // TODO review the generated test code ad remove the default call to fail.
+        fail("The test case is a prototype.");    }}

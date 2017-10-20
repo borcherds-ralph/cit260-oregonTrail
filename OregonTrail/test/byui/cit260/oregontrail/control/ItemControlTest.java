@@ -176,10 +176,11 @@ public class ItemControlTest {
     public void testItemCost() {
         System.out.println("ItemCost");
         double ItemCost = 0.0;
+        int qnty = 0;
         ItemControl instance = new ItemControl();
         double expResult = 0.0;
-        double result = instance.getItemCost();
-        assertEquals(expResult, result);
+        double result = instance.ItemCost(ItemCost, qnty);
+        assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

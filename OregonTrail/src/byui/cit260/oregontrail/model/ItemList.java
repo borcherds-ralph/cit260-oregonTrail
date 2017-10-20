@@ -74,8 +74,14 @@ public enum ItemList {
         this.qty = qty;
     }
 
-    public String getItemName() {
-        return itemName;
+    public String getItemName(String tagName) {
+        
+        for (ItemList oprname : ItemList.values()) {
+            if (tagName.equals(oprname.toString())) {
+                return itemName;
+            }
+        }
+        return null;
     }
 
     public void setItemName(String itemName) {

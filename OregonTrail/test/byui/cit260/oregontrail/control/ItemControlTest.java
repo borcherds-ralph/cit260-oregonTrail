@@ -175,14 +175,28 @@ public class ItemControlTest {
 @Test
     public void testItemCost() {
         System.out.println("ItemCost");
-        double ItemCost = 0.0;
-        int qnty = 0;
+        System.out.println("\tTest #1 - Correct Values");
+        double itemCost = 10.0;
+        int qnty = 1;
         ItemControl instance = new ItemControl();
-        double expResult = 0.0;
-        double result = instance.ItemCost(ItemCost, qnty);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double expResult = 10.0;
+        double result = instance.getItemCost(qnty, itemCost);
+        assertEquals(expResult, result, 10.0);
+        
+        System.out.println("\tTest #2 - Cost out of bound - too low");
+        itemCost = -10.0;
+        qnty = 1;
+        expResult = -1.0;
+        result = instance.getItemCost(qnty, itemCost);
+        assertEquals(expResult, result, -1.0);
+        
+        System.out.println("\tTest #3 - qty out of bound - too low");
+        itemCost = 10.0;
+        qnty = -1;
+        expResult = -1.0;
+        result = instance.getItemCost(qnty, itemCost);
+        assertEquals(expResult, result, -1.0);
+        
     }
 
     /**
@@ -191,10 +205,17 @@ public class ItemControlTest {
     @Test
     public void testgetItemName() {
         System.out.println("ItemName");
-        String ItemName = "";
+        System.out.println("\tTest #1 - Correct Value");
+        String itemTag = "Rope";
         ItemControl instance = new ItemControl();
-        String expResult = "";
-        String result = instance.getItemName();
-        assertEquals(expResult, result);
-        // TODO review the generated test code ad remove the default call to fail.
-        fail("The test case is a prototype.");    }}
+        String expResult = "Rope";
+        String result = instance.getItemName(itemTag);
+        assertEquals(expResult, result, "Rope");
+        
+        System.out.println("\tTest #2 - InCorrect Value");
+        itemTag = "Bacon";
+        expResult = "Error";
+        result = instance.getItemName(itemTag);
+        assertEquals(expResult, result, "Error");
+    }
+}

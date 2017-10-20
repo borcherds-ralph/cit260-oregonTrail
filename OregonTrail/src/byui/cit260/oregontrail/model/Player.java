@@ -5,7 +5,6 @@
  */
 package byui.cit260.oregontrail.model;
 
-import byui.cit260.oregontrail.control.PersonControl.gender;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -22,8 +21,6 @@ public class Player implements Serializable {
     private double money;
     private boolean living;
     private String gender;
-gender male = new gender();
-gender female = new gender();
     public Player() {
     }
 

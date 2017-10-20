@@ -13,16 +13,6 @@ package byui.cit260.oregontrail.control;
 
 public class PersonControl {
 
-    public static class gender {
-
-        public gender() {
-        }
-    }
-
-    public enum health {
-        good, fair, poor, sick
-    }
-    
     public String name(String name){
         if ( name == null || name.isEmpty()) {
             return "Error -1";
@@ -68,4 +58,5 @@ public class PersonControl {
         return "Error -1";
     }
 }
+
 

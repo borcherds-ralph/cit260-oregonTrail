@@ -39,14 +39,14 @@ public class PersonControl {
 
     }
     public int age (int age){
-        if(age < 0 || age > 99) {
+        if (age < 0 || age > 99) {
             return -1;}
         else
-            { return age; }
+        { return age; }
     }
     //this compares the gender given to see that if it matches with the enum that is defined in this class
     public String genderentry (String gender) {
-        if (gender.equalsIgnoreCase(gender)) {
+        if (gender.equalsIgnoreCase("male") || (gender.equalsIgnoreCase("female"))) {
                 return gender;
         }
         return "Error -1";

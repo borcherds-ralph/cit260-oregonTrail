@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Br33h3rr3ra
+ * @author Casey
  */
 public class SupplyControlTest {
     
@@ -22,17 +22,17 @@ public class SupplyControlTest {
      */
     @Test
     public void testGetweight() {
-        //working test
+        //vaild input
         System.out.println("getweight");
-        int weight = 15;
+        int weight = 5;
         SupplyControl instance = new SupplyControl();
-        double expResult = 15;
+        double expResult = 5;
         double result = instance.getweight(weight);
         assertEquals(expResult, result, 0.0);
-
-        //invalid test
+        
+        //invaild input 
         System.out.println("getweight");
-        weight = -5;
+        weight = -3;
         expResult = -1;
         result = instance.getweight(weight);
         assertEquals(expResult, result, 0.0);
@@ -43,20 +43,45 @@ public class SupplyControlTest {
      */
     @Test
     public void testSupplyControl() {
-        
-        //valid test
+        //vaild input
         System.out.println("SupplyControl");
-        int cost = 75;
+        int cost = 2;
         SupplyControl instance = new SupplyControl();
-        double expResult = 75;
+        double expResult = 2;
         double result = instance.SupplyControl(cost);
         assertEquals(expResult, result, 0.0);
-
-        //invalid test
-                System.out.println("SupplyControl");
-        cost = -50;
+        
+               //invaild input
+        System.out.println("SupplyControl");
+        cost = -2;
         expResult = -1;
         result = instance.SupplyControl(cost);
+        assertEquals(expResult, result, 0.0);
+
+    }
+
+    /**
+     * Test of DailySupplyConsumption method, of class SupplyControl.
+     */
+    @Test
+    public void testDailySupplyConsumption() {
+        //vaild 
+        System.out.println("DailySupplyConsumption");
+        double suppliessubtracted = 0.0;
+        int teamPace = 1;
+        int sizeofparty = 4;
+        SupplyControl instance = new SupplyControl();
+        double expResult = 12;
+        double result = instance.DailySupplyConsumption(suppliessubtracted, teamPace, sizeofparty);
+        assertEquals(expResult, result, 0.0);
+
+        //invalid input from other methods
+                System.out.println("DailySupplyConsumption");
+        suppliessubtracted = 0.0;
+        teamPace = 8;
+        sizeofparty = 8;
+        expResult = -1;
+        result = instance.DailySupplyConsumption(suppliessubtracted, teamPace, sizeofparty);
         assertEquals(expResult, result, 0.0);
     }
     

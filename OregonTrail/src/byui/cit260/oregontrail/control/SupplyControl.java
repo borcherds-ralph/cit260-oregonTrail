@@ -6,6 +6,7 @@
 package byui.cit260.oregontrail.control;
 import byui.cit260.oregontrail.model.Supplies;
 import byui.cit260.oregontrail.model.Item;
+import byui.cit260.oregontrail.model.Party;
 /**
  *
  * @author Casey
@@ -25,6 +26,19 @@ public class SupplyControl {
            }
                return cost;
        }
+           //Team pace is 1 for slow, 2 for medium and 3 for fast. 
+           //if the party goes faster, it will result in more supplies being consumed
+           public double DailySupplyConsumption (double suppliessubtracted, int teamPace, int sizeofparty) {
+               if (teamPace == 1) { suppliessubtracted = 3 * sizeofparty; 
+                       }
+               if (teamPace == 2) { suppliessubtracted = 3 * 1.25 * sizeofparty; 
+                       }
+               if (teamPace == 3) { suppliessubtracted = 3 * 1.50 * sizeofparty; 
+                       }
+               { 
+               return suppliessubtracted;
+           }
           
                  
+}
 }

@@ -18,7 +18,11 @@ public class Party {
     public int getSizeofparty() {
         return sizeofparty;
     }
-
+    public int teamPace;
+    public int getPace() {
+        return teamPace;
+    }
+    
     public void setSizeofparty(int sizeofparty) {
         this.sizeofparty = sizeofparty;
     }

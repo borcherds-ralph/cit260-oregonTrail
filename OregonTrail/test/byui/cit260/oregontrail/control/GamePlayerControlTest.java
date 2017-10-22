@@ -35,9 +35,7 @@ public class GamePlayerControlTest {
         String expResult = "";
         String result = instance.getDayofWeek(dayNumber);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-        
+                
         System.out.println("/tTest 2 - inValid data");
         dayNumber = -1;
         expResult = null;

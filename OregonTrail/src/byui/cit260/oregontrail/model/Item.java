@@ -8,12 +8,15 @@ package byui.cit260.oregontrail.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
+
 /**
  *
  * @author Casey
  */
 public class Item  extends Supplies implements Serializable{
-    private String itemtype;
+    private String itemName;
+
+    
     private int itemcost;
     private ArrayList<Supplies> supplies;
     private double itemweight;
@@ -21,23 +24,23 @@ public class Item  extends Supplies implements Serializable{
     public Item() {
     }
 
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+    
     public double getItemweight() {
         return itemweight;
     }
+    
     public void setItemweight(double weight) {
         this.itemweight = weight;
     }
     
-    
-
-    public String getItemtype() {
-        return itemtype;
-    }
-
-    public void setItemtype(String itemtype) {
-        this.itemtype = itemtype;
-    }
-
+ 
     public int getItemcost() {
         return itemcost;
     }
@@ -57,13 +60,14 @@ public class Item  extends Supplies implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 89 * hash + Objects.hashCode(this.itemtype);
-        hash = 89 * hash + this.itemcost;
-        hash = 89 * hash + Objects.hashCode(this.supplies);
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.itemweight) ^ (Double.doubleToLongBits(this.itemweight) >>> 32));
+        hash = 37 * hash + Objects.hashCode(this.itemName);
+        hash = 37 * hash + this.itemcost;
+        hash = 37 * hash + Objects.hashCode(this.supplies);
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.itemweight) ^ (Double.doubleToLongBits(this.itemweight) >>> 32));
         return hash;
     }
 
+    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -85,9 +89,7 @@ public class Item  extends Supplies implements Serializable{
         if (Double.doubleToLongBits(this.itemweight) != Double.doubleToLongBits(other.itemweight)) {
             return false;
         }
-        if (!Objects.equals(this.itemtype, other.itemtype)) {
-            return false;
-        }
+        
         if (!Objects.equals(this.supplies, other.supplies)) {
             return false;
         }
@@ -98,7 +100,7 @@ public class Item  extends Supplies implements Serializable{
 
     @Override
     public String toString() {
-        return "Item{" + "itemtype=" + itemtype + ", itemcost=$" + itemcost + "supplies=" + super.toString() + "item weight: " + itemweight + '}';
+        return "Item{" + "item name: " + itemName + "itemcost=$" + itemcost + "supplies=" + super.toString() + "item weight: " + itemweight + '}';
     }
     
 }

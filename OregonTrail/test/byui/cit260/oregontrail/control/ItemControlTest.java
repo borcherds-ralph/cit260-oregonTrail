@@ -103,13 +103,34 @@ public class ItemControlTest {
     @Test
     public void testCalcWeightOfItem() {
         System.out.println("calcWeightOfItem");
-        int qty = 1;
-        String itemtype = "test";
+        System.out.println("\tTest 1 - Valid");
+        int qty = 3;
+        int weight = 4;
         ItemControl instance = new ItemControl();
-        double expResult = 0.0;
-        double result = instance.calcWeightOfItem(qty, itemtype);
-        assertEquals(expResult, result, 0.0);
+        double expResult = 12.0;
+        double result = instance.calcWeightOfItem(qty, weight);
+        assertEquals(expResult, result, 12.0);
         
+        System.out.println("\tTest 2 - inValid qty");
+        qty = -1;
+        weight = 4;
+        expResult = -1.0;
+        result = instance.calcWeightOfItem(qty, weight);
+        assertEquals(expResult, result, -1.0);
+        
+        System.out.println("\tTest 3 - inValid weight");
+        qty = 3;
+        weight = 0;
+        expResult = -1.0;
+        result = instance.calcWeightOfItem(qty, weight);
+        assertEquals(expResult, result, -1.0);
+        
+        System.out.println("\tTest 3 - inValid weight");
+        qty = 3;
+        weight = 300;
+        expResult = -1.0;
+        result = instance.calcWeightOfItem(qty, weight);
+        assertEquals(expResult, result, -1.0);
     }
 
     /**
@@ -123,14 +144,12 @@ public class ItemControlTest {
         ItemControl instance = new ItemControl();
         double expResult = 1.0;
         double result = instance.calcBarrelVolumeToGallons(barrelvolume);
-        System.out.println("\tresult: " + result);
         assertEquals(expResult, result, 1.0);
         
         System.out.println("\tTest 2 - too small Volume");
         barrelvolume = 50.0;
         expResult = -1.0;
         result = instance.calcBarrelVolumeToGallons(barrelvolume);
-        System.out.println("\tresult: " + result);
         assertEquals(expResult, result, -1.0);
         
         
@@ -138,7 +157,6 @@ public class ItemControlTest {
         barrelvolume = 10400.0;
         expResult = -1.0;
         result = instance.calcBarrelVolumeToGallons(barrelvolume);
-        System.out.println("\tresult: " + result);
         assertEquals(expResult, result, -1.0);
     }
 
@@ -157,23 +175,30 @@ public class ItemControlTest {
         double result = instance.calcCylinderVolume(diameter, height);
         assertEquals(expResult, result, 9424.77796076938);
         
-        System.out.println("\tTest 2 - inValid data");
+        System.out.println("\tTest 2 - inValid Diameter too low");
         diameter = 0.0;
         height = 30.0;
         expResult = -1.0;
         result = instance.calcCylinderVolume(diameter, height);
         assertEquals(expResult, result, -1.0);
         
-        System.out.println("\tTest 2 - inValid data");
+        System.out.println("\tTest 3 - inValid Diameter too high");
+        diameter = 30.0;
+        height = 30.0;
+        expResult = -1.0;
+        result = instance.calcCylinderVolume(diameter, height);
+        assertEquals(expResult, result, -1.0);
+        
+        System.out.println("\tTest 4 - inValid Height too high");
         diameter = 10.0;
         height = 60.0;
         expResult = -1.0;
         result = instance.calcCylinderVolume(diameter, height);
         assertEquals(expResult, result, -1.0);
         
-        System.out.println("\tTest 3 - Valid data");
-        diameter = 20.0;
-        height = 35.0;
+        System.out.println("\tTest 5 - inValid Height too low");
+        diameter = 10.0;
+        height = 0.0;
         expResult = -1.0;
         result = instance.calcCylinderVolume(diameter, height);
         assertEquals(expResult, result, -1.0);
@@ -210,6 +235,7 @@ public class ItemControlTest {
     /**
      * Test of ItemCost method, of class ItemControl.
      */
+    /*
     @Test
     public void testgetItemName() {
         System.out.println("ItemName");
@@ -217,13 +243,16 @@ public class ItemControlTest {
         String itemTag = "Rope";
         ItemControl instance = new ItemControl();
         String expResult = "Rope";
-        String result = instance.getItemName(itemTag);
+        String result = instance.getNames(itemTag);
+        System.out.println("\tReturned: " + result);
         assertEquals(expResult, result, "Rope");
         
         System.out.println("\tTest #2 - InCorrect Value");
-        itemTag = "Bacon";
-        expResult = "Error";
-        result = instance.getItemName(itemTag);
-        assertEquals(expResult, result, "Error");
-    }
+        itemTag = "Alum234";
+        expResult = "error";
+        System.out.println("\tRequest Alum");
+        result = instance.getNames(itemTag);
+        System.out.println("\tReturned: " + result);
+        assertEquals(expResult, result, "Alum");
+    } */
 }

@@ -11,6 +11,12 @@ import byui.cit260.oregontrail.model.Party;
  */
 public class GroupControl {
 
+    /*
+    getSize() Method
+    Purpose: Verify that the size of the groups is at lease 1 and not greater than 8
+    Parameters:  Number of people
+    return:  Size of group if within range else an error message
+    */
    public int getSize(int groupSize) {
 
        
@@ -23,7 +29,12 @@ public class GroupControl {
        
    }
 
-
+    /*
+    getPace() Method
+    Purpose: Verify that the pace of the group is not a negaive and not faster than 2 mph
+    Parameters:  pace
+    return:  Size of group if within range else an error message
+    */
    public int getPace(int teamPace) {
 
 

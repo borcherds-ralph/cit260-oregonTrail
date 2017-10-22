@@ -167,12 +167,7 @@ public class OregonTrail {
        
        //Item
        
-       Item rifle = new Item();
        
-       rifle.setItemtype("gun");
-       rifle.setItemcost(50);
-       
-       System.out.println(rifle.toString());
        
        //Party
        

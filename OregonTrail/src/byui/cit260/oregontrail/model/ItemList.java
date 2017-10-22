@@ -5,11 +5,12 @@
  */
 package byui.cit260.oregontrail.model;
 
+import java.io.Serializable;
 /**
  *
  * @author ralphb
  */
-public enum ItemList {
+public enum ItemList implements Serializable {
 
     AloeVera("1", "8-oz jar of aloe vera"),
     Alum("1", "8-oz bottle of alum"),
@@ -70,22 +71,8 @@ public enum ItemList {
         return qty;
     }
 
-    public void setQty(String qty) {
-        this.qty = qty;
-    }
-
-    public String getItemName(String tagName) {
-        
-        for (ItemList oprname : ItemList.values()) {
-            if (tagName.equals(oprname.toString())) {
-                return itemName;
-            }
-        }
-        return null;
-    }
-
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
+    public String getItemName() {
+        return itemName;
     }
 
     @Override
@@ -93,4 +80,4 @@ public enum ItemList {
         return "ItemList{" + "qty=" + qty + ", itemName=" + itemName + '}';
     }
 
-}
+ }

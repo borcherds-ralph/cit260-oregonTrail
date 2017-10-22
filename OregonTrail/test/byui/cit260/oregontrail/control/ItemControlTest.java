@@ -8,7 +8,7 @@ package byui.cit260.oregontrail.control;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
-import byui.cit260.oregontrail.model.ItemList;
+
 
 /**
  *

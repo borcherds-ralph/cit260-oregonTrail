@@ -32,21 +32,21 @@ public class GamePlayerControlTest {
         System.out.println("\tTest 1 - Valid data");
         int dayNumber = 0;
         GamePlayerControl instance = new GamePlayerControl();
-        String expResult = "";
+        String expResult = "Sunday";
         String result = instance.getDayofWeek(dayNumber);
-        assertEquals(expResult, result);
+        assertEquals(expResult, result, "Sunday");
                 
         System.out.println("/tTest 2 - inValid data");
         dayNumber = -1;
-        expResult = null;
+        expResult = "error";
         result = instance.getDayofWeek(dayNumber);
-        assertEquals(expResult, result, null);
+        assertEquals(expResult, result, "error");
         
         System.out.println("/tTest 3 - inValid data");
         dayNumber = 8;
-        expResult = null;
+        expResult = "error";
         result = instance.getDayofWeek(dayNumber);
-        assertEquals(expResult, result, null);
+        assertEquals(expResult, result, "error");
         
     }
     

@@ -5,8 +5,10 @@
  */
 package byui.cit260.oregontrail.control;
 
+
 import org.junit.Test;
 import static org.junit.Assert.*;
+import byui.cit260.oregontrail.model.ItemList;
 
 /**
  *
@@ -235,24 +237,40 @@ public class ItemControlTest {
     /**
      * Test of ItemCost method, of class ItemControl.
      */
-    /*
+    
     @Test
     public void testgetItemName() {
         System.out.println("ItemName");
         System.out.println("\tTest #1 - Correct Value");
         String itemTag = "Rope";
         ItemControl instance = new ItemControl();
-        String expResult = "Rope";
-        String result = instance.getNames(itemTag);
-        System.out.println("\tReturned: " + result);
-        assertEquals(expResult, result, "Rope");
+        String expResult = "30-ft. length of rope";
+        String result = instance.getItemName(itemTag);
+        assertEquals(expResult, result, "30-ft. length of rope");
         
-        System.out.println("\tTest #2 - InCorrect Value");
-        itemTag = "Alum234";
-        expResult = "error";
-        System.out.println("\tRequest Alum");
-        result = instance.getNames(itemTag);
-        System.out.println("\tReturned: " + result);
-        assertEquals(expResult, result, "Alum");
-    } */
+        System.out.println("\tTest #2 - Correct Value");
+        itemTag = "Alum";
+        expResult = "8-oz bottle of alum";
+        result = instance.getItemName(itemTag);
+        assertEquals(expResult, result, "8-oz bottle of alum");
+        
+        System.out.println("\tTest #3 - Correct Value");
+        itemTag = "AloeVera";
+        expResult = "8-oz jar of aloe vera";
+        result = instance.getItemName(itemTag);
+        assertEquals(expResult, result, "8-oz jar of aloe vera");
+  
+        System.out.println("\tTest #4 - Correct Value");
+        itemTag = "Bacon";
+        expResult = "Bacon";
+        result = instance.getItemName(itemTag);
+        assertEquals(expResult, result, "Bacon");
+
+        System.out.println("\tTest #5 - Correct Value");
+        itemTag = "CornMeal";
+        expResult = "10-lb. sacks of cornmeal";
+        result = instance.getItemName(itemTag);
+        assertEquals(expResult, result, "10-lb. sacks of cornmeal");
+   
+    } 
 }

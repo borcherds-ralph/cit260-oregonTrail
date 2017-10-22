@@ -30,4 +30,6 @@ public class GamePlayerControl {
             case 6:
                 return "Saturday"; 
  }  
- }
+        return "error";
+   }
+}

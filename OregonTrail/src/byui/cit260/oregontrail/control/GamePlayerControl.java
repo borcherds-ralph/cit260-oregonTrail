@@ -13,14 +13,7 @@ package byui.cit260.oregontrail.control;
 public class GamePlayerControl {
 
     public String getDayofWeek(int dayNumber) {
-        String day1 = "Sunday";
-        String day2 = "Monday";
-        String day3 = "Tuesday";
-        String day4 = "Wednesday";
-        String day5 = "Thursday";
-        String day6 = "Friday";
-        String day7 = "Saturday";
-           
+          
            switch (dayNumber) {
             case 0:
                return "Sunday";
@@ -36,4 +29,5 @@ public class GamePlayerControl {
                return "Friday";
             case 6:
                 return "Saturday"; 
+ }  
  }

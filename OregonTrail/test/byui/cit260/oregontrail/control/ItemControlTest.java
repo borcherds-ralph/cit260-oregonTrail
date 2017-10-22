@@ -143,6 +143,7 @@ public class ItemControlTest {
     }
 
     /**
+
      * Test of calcCylinderVolume method, of class ItemControl.
      */
     @Test
@@ -159,6 +160,13 @@ public class ItemControlTest {
         System.out.println("\tTest 2 - inValid data");
         diameter = 0.0;
         height = 30.0;
+        expResult = -1.0;
+        result = instance.calcCylinderVolume(diameter, height);
+        assertEquals(expResult, result, -1.0);
+        
+        System.out.println("\tTest 2 - inValid data");
+        diameter = 10.0;
+        height = 60.0;
         expResult = -1.0;
         result = instance.calcCylinderVolume(diameter, height);
         assertEquals(expResult, result, -1.0);

@@ -18,6 +18,8 @@ public class Activities implements Serializable {
     private String effect;
 
     public Activities() {
+       String hunt  = "hunt";
+       String gather = "gather";
     }
 
     public String getType() {

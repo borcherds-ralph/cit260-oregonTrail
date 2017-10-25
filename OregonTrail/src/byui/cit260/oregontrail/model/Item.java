@@ -8,15 +8,13 @@ package byui.cit260.oregontrail.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
-
+import byui.cit260.oregontrail.model.ItemList;
 /**
  *
  * @author Casey
  */
 public class Item  extends Supplies implements Serializable{
     private String itemName;
-
-    
     private int itemcost;
     private ArrayList<Supplies> supplies;
     private double itemweight;
@@ -24,14 +22,19 @@ public class Item  extends Supplies implements Serializable{
     public Item() {
     }
 
-    public String getItemName() {
+    public String getItemName(String tagName) {
+        ItemList name = ItemList.valueOf(tagName);
+        
+        String itemName = name.getItemName();
+               
         return itemName;
-    }
 
+    }
+/*
     public void setItemName(String itemName) {
         this.itemName = itemName;
     }
-    
+*/    
     public double getItemweight() {
         return itemweight;
     }

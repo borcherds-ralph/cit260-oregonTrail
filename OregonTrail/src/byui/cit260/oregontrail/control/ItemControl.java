@@ -5,7 +5,7 @@
  */
 package byui.cit260.oregontrail.control;
 
-import byui.cit260.oregontrail.model.ItemList;
+
 import byui.cit260.oregontrail.model.Item;
 
 /**
@@ -98,14 +98,11 @@ public class ItemControl {
         return totalCost;
     }
     
-    public String getItemName(String tagName) {
-        ItemList name = ItemList.valueOf(tagName);
-        
-        String itemName = name.getItemName();
-               
+    public String getItemDescription(String tagName) {
+        Item item = new Item();
+        String itemName = item.getItemName(tagName);
         return itemName;
-        
-        
+
     }
 
 }

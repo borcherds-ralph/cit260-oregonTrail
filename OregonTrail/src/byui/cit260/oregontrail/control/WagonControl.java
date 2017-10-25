@@ -10,5 +10,14 @@ package byui.cit260.oregontrail.control;
  * @author ralphb
  */
 public class WagonControl {
-    
+
+    private int qty;
+    private int length;
+    private int weight;
+    private String name;
+
+    public int getSize(int length, int weight) {
+        
+        return 1;
+    }
 }

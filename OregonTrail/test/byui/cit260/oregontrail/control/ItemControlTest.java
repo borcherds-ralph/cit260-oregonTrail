@@ -245,31 +245,31 @@ public class ItemControlTest {
         String itemTag = "Rope";
         ItemControl instance = new ItemControl();
         String expResult = "30-ft. length of rope";
-        String result = instance.getItemName(itemTag);
+        String result = instance.getItemDescription(itemTag);
         assertEquals(expResult, result, "30-ft. length of rope");
         
         System.out.println("\tTest #2 - Correct Value");
         itemTag = "Alum";
         expResult = "8-oz bottle of alum";
-        result = instance.getItemName(itemTag);
+        result = instance.getItemDescription(itemTag);
         assertEquals(expResult, result, "8-oz bottle of alum");
         
         System.out.println("\tTest #3 - Correct Value");
         itemTag = "AloeVera";
         expResult = "8-oz jar of aloe vera";
-        result = instance.getItemName(itemTag);
+        result = instance.getItemDescription(itemTag);
         assertEquals(expResult, result, "8-oz jar of aloe vera");
   
         System.out.println("\tTest #4 - Correct Value");
         itemTag = "Bacon";
         expResult = "Bacon";
-        result = instance.getItemName(itemTag);
+        result = instance.getItemDescription(itemTag);
         assertEquals(expResult, result, "Bacon");
 
         System.out.println("\tTest #5 - Correct Value");
         itemTag = "CornMeal";
         expResult = "10-lb. sacks of cornmeal";
-        result = instance.getItemName(itemTag);
+        result = instance.getItemDescription(itemTag);
         assertEquals(expResult, result, "10-lb. sacks of cornmeal");
    
     } 

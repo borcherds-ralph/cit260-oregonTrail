@@ -6,17 +6,38 @@
 package byui.cit260.oregontrail.view;
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.Scanner;
 /**
  *
  * @author Br33h3rr3ra
  */
 public class HelpMenu implements Serializable {
+    private char choice;
     private String tips;
     private String returnPrevious;
 
-    public HelpMenu() {
+    public HelpMenu() {  
+        System.out.println(
+                "\n*******************************************************"
+                + "\n*                                                      *"
+                + "\n***********************HELP MENU************************"
+                + "\n*                      'X' Exit                        *"
+                + "\n*     The goal of the game is to make it to Oregon     *"
+                + "\n*                                                      *"
+                + "\n*                                                      *"
+                + "\n*                                                      *"
+                + "\n*                                                      *"
+                + "\n*                                                      *"
+        );
     }
 
+    public char getChoice() {
+        choice = keyboard.nextLine();
+        while (!valid)
+               Scanner keyboard = new Scanner(System.in); 
+
+        return choice;
+    }
     public String getTips() {
         return tips;
     }

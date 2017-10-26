@@ -6,6 +6,7 @@
 package oregontrail;
 
 import byui.cit260.oregontrail.view.StartProgramView;
+import java.io.IOException;
 
 /**
  *
@@ -16,7 +17,7 @@ public class OregonTrail {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayStartProgramView();

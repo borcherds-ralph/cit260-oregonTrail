@@ -5,14 +5,17 @@
  */
 package byui.cit260.oregontrail.view;
 
+
 import byui.cit260.oregontrail.control.PersonControl;
+import byui.cit260.oregontrail.model.Player;
+import java.util.Scanner;
 /**
  *
  * @author ralphb
  */
 public class StartProgramView {
 
-    private String promptMessage;
+    private final String promptMessage;
 
     public StartProgramView() {
 
@@ -31,8 +34,9 @@ public class StartProgramView {
 
     public void displayStartProgramView() {
         System.out.println("\n*** displayStartProgram() function called ***");
-   
+ 
         boolean done = false;
+        
         do {
             String playersName = this.getPlayersName();
             if (playersName.toUpperCase().equals("Q")) 
@@ -40,20 +44,55 @@ public class StartProgramView {
                 
                 done = this.doAction(playersName);
             
-
         } while (!done);
 
     }
 
     private String getPlayersName() {
-        System.out.println("\n*** getPlayersName() called ****");
-        return "Joe";
+        Scanner keyboard = new Scanner(System.in);
+        String value = "";
+        boolean valid = false;
+        
+        while (!valid) {
+            System.out.println("\n" + this.promptMessage);
+            value = keyboard.nextLine();
+            value = value.trim();
+            
+            if (value.length() < 1) {
+                System.out.println("\nInvalid value: vlaue cannot be blank");
+                continue;
+            }
+            
+            break;
+        }
+        return value;
     }
 
     private boolean doAction(String playersName) {
-        System.out.println("\n*** doAction() called ***");
-        return true;
+
+        if (playersName.length() < 2) {
+           System.out.println("\nInvalid players name: "
+            + "The name must be greater than one character in length");
+           return false;
+       }
+       Player player = PersonControl.createPlayer(playersName);
+       
+       if (player == null) {
+           System.out.println("\nError creating the player.");
+           return false;
+       }
+       
+       this.displaNextView(player);
+       
+       return true;
     }
+
+    private void displaNextView(Player player) {
+        System.out.println("*** displayNextView() called ***");
+        
+    }
+    
+    
 
 }
 

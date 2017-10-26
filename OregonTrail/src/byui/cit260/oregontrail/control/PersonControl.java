@@ -6,6 +6,7 @@
 package byui.cit260.oregontrail.control;
 
 import byui.cit260.oregontrail.model.Player;
+import oregontrail.OregonTrail;
 /**
  *
  * @author ralphb
@@ -59,11 +60,16 @@ public class PersonControl {
         return "Error -1";
     }
     
-    public String setPlayerName(String name) {
-        Player player = new Player();
+    public static Player createPlayer(String name) {
+        System.out.println("\n*** createPlayer() function called ****");
+       if (name == null) {
+            return null;
+        }      
         
+        Player player = new Player();
         player.setName(name);
-        return name;
+        
+        return player;
     }
 }
 

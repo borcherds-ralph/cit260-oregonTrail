@@ -34,7 +34,6 @@ public class HelpMenu implements Serializable {
                 + "\n*                                                      *"
                 + "\n*                                                      *"
                 + "\n*                                                      *";
-
     }
 
     public char getChoice(char choice) {

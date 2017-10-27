@@ -4,41 +4,69 @@
  * and open the template in the editor.
  */
 package byui.cit260.oregontrail.view;
+
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.Scanner;
+
 /**
  *
  * @author Br33h3rr3ra
  */
 public class HelpMenu implements Serializable {
+
     private char choice;
     private String tips;
     private String returnPrevious;
 
-    public HelpMenu() {  
-        System.out.println(
-                "\n*******************************************************"
+    private final String HelpMenu;
+
+    public HelpMenu() {
+        this.HelpMenu
+                = "\n********************************************************"
                 + "\n*                                                      *"
                 + "\n***********************HELP MENU************************"
-                + "\n*                      'X' Exit                        *"
+                + "\n*                      'T' for Tips                    *"
+                + "\n*                      'X' to Exit                     *"
                 + "\n*     The goal of the game is to make it to Oregon     *"
                 + "\n*                                                      *"
                 + "\n*                                                      *"
                 + "\n*                                                      *"
                 + "\n*                                                      *"
-                + "\n*                                                      *"
-        );
+                + "\n*                                                      *";
+
     }
 
-    public char getChoice() {
-        Scanner reader = new Scanner(System.in); 
+    public char getChoice(char choice) {
+        Scanner reader = new Scanner(System.in);
         choice = reader.next().charAt(0);
-        while (!valid)
 
+        boolean valid = false;
+        while (!valid) {
+            System.out.print(this.HelpMenu);
+        
+        choice = reader.next().charAt(0);
 
-        return choice;
+        if (choice != 'x' && choice != 't') {
+            System.out.print("\nInvalid Entry");
+        continue;
+        }
+        if (choice == 'x' || choice == 't') {
+            valid = true;
+        }
+        if (choice == 'x') {
+             getReturnPrevious();
+         }
+        if (choice == 't') {
+            getTips();
+            valid = false;
+        }
     }
+         return choice;
+         
+
+    }
+
     public String getTips() {
         return tips;
     }
@@ -88,6 +116,5 @@ public class HelpMenu implements Serializable {
     public String toString() {
         return "HelpMenu{" + "tips=" + tips + ", returnPrevious=" + returnPrevious + '}';
     }
-    
 
 }

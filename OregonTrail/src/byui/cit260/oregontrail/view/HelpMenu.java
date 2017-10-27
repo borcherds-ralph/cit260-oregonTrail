@@ -32,9 +32,10 @@ public class HelpMenu implements Serializable {
     }
 
     public char getChoice() {
-        choice = keyboard.nextLine();
+        Scanner reader = new Scanner(System.in); 
+        choice = reader.next().charAt(0);
         while (!valid)
-               Scanner keyboard = new Scanner(System.in); 
+
 
         return choice;
     }

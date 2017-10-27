@@ -37,13 +37,10 @@ public class HelpMenu implements Serializable {
     }
 
     public char getChoice(char choice) {
-        Scanner reader = new Scanner(System.in);
-        choice = reader.next().charAt(0);
-
         boolean valid = false;
         while (!valid) {
             System.out.print(this.HelpMenu);
-        
+        Scanner reader = new Scanner(System.in);
         choice = reader.next().charAt(0);
 
         if (choice != 'x' && choice != 't') {

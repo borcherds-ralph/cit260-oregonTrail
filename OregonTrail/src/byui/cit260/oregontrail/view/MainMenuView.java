@@ -18,11 +18,8 @@ public class MainMenuView {
 
     void displayMainMenuView() {
         throw new UnsupportedOperationExcetpion("Not Supported yet.");
-        void displayMainMenuView
+    void displayMainMenuView() {
         
-        
-        
-            () {
 System.out.println("\n*** displayMenu() function called ***");
         }
 
@@ -62,7 +59,7 @@ System.out.println("\n*** displayMenu() function called ***");
                     + "\nH - Get help on how to play the game"
                     + "\nS - Save game"
                     + "\nQ - Quit"
-                    + "\n--------------------------------------------------"
+                    + "\n--------------------------------------------------";
        
 
             public void displayMainMenuView() {
@@ -123,11 +120,11 @@ System.out.println("\n*** displayMenu() function called ***");
         }
 
         private void displayHelpMenu() {
-            System.out.println("*** displayHelpMenu function called ***")
+            System.out.println("*** displayHelpMenu function called ***");
         }
 
         private void startNewGame() {
-            GameControl.createNewGame(CuriousWorkmanship.getPlayer());
+            GameControl.createNewGame(oregontrail.getPlayer());
             GameMenuView gameMenu = new GameMenuView();
             gameMenu.displayMenu();
         }

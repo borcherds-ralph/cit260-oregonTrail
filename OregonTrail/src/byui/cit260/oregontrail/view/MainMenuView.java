@@ -5,19 +5,21 @@
  */
 package byui.cit260.oregontrail.view;
 
-import byui.cit260.oregontrail.control.PersonControl;
-import byui.cit260.oregontrail.model.Player;
+import java.io.Serializable;
+import java.util.Objects;
 import java.util.Scanner;
-/**
- *
- * @author Casey
- */
+import byui.cit260.oregontrail.view.HelpMenu;
+import byui.cit260.oregontrail.view.StartMenu;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class MainMenuView {
 
     void displayMainMenuView() {
         throw new UnsupportedOperationExcetpion("Not Supported yet.");
         void displayMainMenuView
+        
         
         
             () {
@@ -27,13 +29,15 @@ System.out.println("\n*** displayMenu() function called ***");
 
     
 
+    
+
     private void displayNextView(Player player) {
 
 //display a custom welcome message
         System.out.println("\n ==============================================="
                 + "n\ Welcome to Oregon or Bust " + player.getName()
-                + "\n We hope you have a lot of fun!
-				 + "\n================================================"
+                + "\n We hope you have a lot of fun!"
+		+ "\n================================================"
 				 );
 				 
 				 //Create MainMenuView object
@@ -47,7 +51,7 @@ System.out.println("\n*** displayMenu() function called ***");
 
         private String menu;
 
-        Public MainMenuView() {
+        public MainMenuView() {
             this.menu
                     = "\n***"
                     + "\n---------------------------------------------------"
@@ -59,13 +63,13 @@ System.out.println("\n*** displayMenu() function called ***");
                     + "\nS - Save game"
                     + "\nQ - Quit"
                     + "\n--------------------------------------------------"
-
-        public class MainMenuView {
+       
 
             public void displayMainMenuView() {
                 System.out.println("\n*** displayMainMenuView() function called ***");
             }
-            publi
+            public
+
 
             void displayMainMenuView() {
                 boolean done = false;
@@ -87,45 +91,26 @@ System.out.println("\n*** displayMenu() function called ***");
                 System.out.println("\n*** doAction() function called ***)");
                 return true;
             }
-            // getInput(): value
-            // BEGIN
-            // WHILE 
-            // Display
-            // Get
-            // IF
-            // ENDIF
-            // Break
-            // endwhile
-            // return value 
-            // End//
 
-            public boolean doAction  (String choice)
-            [
-					 choice = choice.toUpperCase();
+
+            public boolean doAction(String choice)[]
+	choice = choice.toUpperCase(); 
             switch (choice) {
-					 case "N"
-					 this.startNewGame();
-					 break;
-					 case"G":
-					 this.startExistingGame();
-					 break;
-					 case "H":
-					 this.displayHelpMenu();
-					 break;
-					 case "S":
-					 this.saveGame();
-					 break;
-					 default:
-					 System.out.println("\n*** Invalid selection *** Try again");
-					 break;
+				 case "N": this.startNewGame();
+				 break;
+				 case"G": this.startExistingGame();
+				 break;
+				 case "H": this.displayHelpMenu();
+				 break;
+			         case "S": this.saveGame();
+				 break;
+                                 case "Q": this.quitGame();
+				 default:System.out.println("\n*** Invalid selection *** Try again");
+			         break;
 					 }
-        
-
-        
-
         return false;
-					 }
-					 private void startNewGame() {
+	}
+	 private void startNewGame() {
             System.out.println("*** startNewGame ");
         }
 
@@ -146,12 +131,7 @@ System.out.println("\n*** displayMenu() function called ***");
             GameMenuView gameMenu = new GameMenuView();
             gameMenu.displayMenu();
         }
+        private void quitGame() {
+            System.out.println("***Quit Game ***");
 
-        public class GameMenuView {
-
-            void displayMenu() {
-                System.out.println("\n*** displayMenu sub function called ***");
-            }
-        }
-    }
-}
+}}

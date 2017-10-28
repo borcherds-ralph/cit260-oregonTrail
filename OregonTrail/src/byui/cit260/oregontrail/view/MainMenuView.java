@@ -17,31 +17,25 @@ import java.io.IOException;
 public class MainMenuView {
 
     void displayMainMenuView() {
-        throw new UnsupportedOperationExcetpion("Not Supported yet.");
-    void displayMainMenuView() {
-        
+          
 System.out.println("\n*** displayMenu() function called ***");
         }
 
-
+    private void displayNextView(String player) {
     
-
-    
-
-    private void displayNextView(Player player) {
-
 //display a custom welcome message
         System.out.println("\n ==============================================="
-                + "n\ Welcome to Oregon or Bust " + player.getName()
+                + "n\ Welcome to Oregon or Bust "" + player.getName()"
                 + "\n We hope you have a lot of fun!"
-		+ "\n================================================"
-				 );
+		+ "\n================================================");
 				 
-				 //Create MainMenuView object
-				 MainMenuView mainMenuView = new MainMenuView();
+	 //Create MainMenuView object
+	 MainMenuView mainMenuView = new MainMenuView();{
+    
+    }
 
         //Display the main menu view
-        mainMenuView.displayMainMenuView();
+        mainMenuView.displayMainMenuView();{
     }
 
     public class MainMenuView {
@@ -65,10 +59,7 @@ System.out.println("\n*** displayMenu() function called ***");
             public void displayMainMenuView() {
                 System.out.println("\n*** displayMainMenuView() function called ***");
             }
-            public
-
-
-            void displayMainMenuView() {
+            public void displayMainMenuView() {
                 boolean done = false;
                 do {
                     String menuOption = this.getMenuOption();
@@ -90,20 +81,20 @@ System.out.println("\n*** displayMenu() function called ***");
             }
 
 
-            public boolean doAction(String choice)[]
+       public boolean doAction(String choice)
 	choice = choice.toUpperCase(); 
             switch (choice) {
-				 case "N": this.startNewGame();
-				 break;
-				 case"G": this.startExistingGame();
-				 break;
-				 case "H": this.displayHelpMenu();
-				 break;
-			         case "S": this.saveGame();
-				 break;
-                                 case "Q": this.quitGame();
-				 default:System.out.println("\n*** Invalid selection *** Try again");
-			         break;
+		case "N": this.startNewGame();
+		break;
+	        case"G": this.startExistingGame();
+		break;
+		case "H": this.displayHelpMenu();
+		break;
+	        case "S": this.saveGame();
+		break;
+                case "Q": this.quitGame();
+		default:System.out.println("\n*** Invalid selection *** Try again");
+	        break;
 					 }
         return false;
 	}

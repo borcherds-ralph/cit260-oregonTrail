@@ -5,8 +5,11 @@
  */
 package oregontrail;
 
+import byui.cit260.oregontrail.control.GamePlayerControl;
 import byui.cit260.oregontrail.view.StartProgramView;
 import java.io.IOException;
+import byui.cit260.oregontrail.control.GameControl;
+import byui.cit260.oregontrail.control.PersonControl;
 
 /**
  *
@@ -14,15 +17,30 @@ import java.io.IOException;
  */
 public class OregonTrail {
 
+    private static GameControl currentGame = null;
+    private static PersonControl player = null;
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayStartProgramView();
       
     }
+
+    public static String getPlayer(String name){
+        return name;
+    }
+    public static void setPlayer(PersonControl player) {
+        
+    }
+
+    public static GameControl getCurrentGame() {
+        GameControl currentGame = null;
+        return currentGame;
+    }
+
     
 }
     

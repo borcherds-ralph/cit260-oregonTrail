@@ -13,14 +13,20 @@ import java.util.Objects;
  * @author ralphb
  */
 public class Player implements Serializable {
+
+    public static Player setName(Player player) {
+        return player;
+    }
+
+    
     private String name;
     private int age;
     private int health;
-
     private String occupation;
     private double money;
     private boolean living;
     private String gender;
+
     public Player() {
     }
 
@@ -72,7 +78,7 @@ public class Player implements Serializable {
         this.money = money;
     }
 
-    public boolean isLiving() {
+    public boolean getLiving() {
         return living;
     }
 

@@ -8,13 +8,19 @@ package byui.cit260.oregontrail.view;
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.Scanner;
+import byui.cit260.oregontrail.view.MainMenuView;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
  *
  * @author Br33h3rr3ra
  */
 public class HelpMenu implements Serializable {
-
+    
+    String filename = "tips.txt";
+    String line = null;
     private char choice;
     private String tips;
     private String returnPrevious;
@@ -43,17 +49,17 @@ public class HelpMenu implements Serializable {
         Scanner reader = new Scanner(System.in);
         choice = reader.next().charAt(0);
 
-        if (choice != 'x' && choice != 't') {
+        if (choice != 'X' && choice != 'T') {
             System.out.print("\nInvalid Entry");
         continue;
         }
-        if (choice == 'x' || choice == 't') {
+        if (choice == 'X' || choice == 'T') {
             valid = true;
         }
-        if (choice == 'x') {
+        if (choice == 'X') {
              getReturnPrevious();
          }
-        if (choice == 't') {
+        if (choice == 'T') {
             getTips();
             valid = false;
         }
@@ -63,16 +69,30 @@ public class HelpMenu implements Serializable {
 
     }
 
-    public String getTips() {
-        return tips;
+    public void getTips() {
+        try {
+            FileReader fileReader = new FileReader(filename);
+        }
+        catch(FileNotFoundException ex) {
+            System.out.println(
+                "Unable to open file '" + 
+                filename + "'");                
+        }
+        catch(IOException ex) {
+            System.out.println(
+                "Error reading file '" 
+                + filename + "'");  
     }
-
+    }
+        
     public void setTips(String tips) {
         this.tips = tips;
     }
 
     public String getReturnPrevious() {
+              MainMenuView.displayMainMenuView();
         return returnPrevious;
+
     }
 
     public void setReturnPrevious(String returnPrevious) {

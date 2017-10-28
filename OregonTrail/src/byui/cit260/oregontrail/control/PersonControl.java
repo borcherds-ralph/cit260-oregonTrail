@@ -6,7 +6,6 @@
 package byui.cit260.oregontrail.control;
 
 import byui.cit260.oregontrail.model.Player;
-import oregontrail.OregonTrail;
 /**
  *
  * @author ralphb
@@ -15,11 +14,22 @@ import oregontrail.OregonTrail;
 
 public class PersonControl {
 
-    public String name(String name){
+    public Player PersonControl; 
+    
+    public String setName(String name){
         if ( name == null || name.isEmpty()) {
-            return "Error -1";
+            return "Error: You must enter a name longer than 2 characters.";
         }
-        return name;
+        Player player = new Player();
+        String playerName = player.setName(name);
+        return playerName;
+        
+    } 
+    public String getPlayerName(PersonControl player){
+        
+        Player playertmp = new Player();
+        String playerName = playertmp.getName();
+        return playerName;
         
     } 
     public int personcount(int personcount) {

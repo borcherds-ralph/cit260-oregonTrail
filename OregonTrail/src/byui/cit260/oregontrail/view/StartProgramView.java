@@ -7,7 +7,7 @@ package byui.cit260.oregontrail.view;
 
 import byui.cit260.oregontrail.control.PersonControl;
 import byui.cit260.oregontrail.control.GameControl;
-import byui.cit260.oregontrail.model.Player;
+//import byui.cit260.oregontrail.model.Player;
 import byui.cit260.oregontrail.view.MainMenuView;
 import java.util.Scanner;
 
@@ -101,7 +101,7 @@ public class StartProgramView {
             return false;
         }
 
-        Player player = GameControl.createPlayer(playersName);
+        PersonControl player = GameControl.createPlayer(playersName);
 
         if (player == null) {
             System.out.println("\nError creating the player.");
@@ -113,10 +113,11 @@ public class StartProgramView {
         return true;
     }
 
-    private void displayNextView(Player player) {
-
+    private void displayNextView(PersonControl player) {
+        
+        String userName = player.getPlayerName(player);
         System.out.println("\n======================================="
-                + "\n Welcome to the game " + player.getName()
+                + "\n Welcome to the game " + userName
                 + "\n Enjoy the game! We wish you the best"
                 + "\n"
                 + "\n========================================"
@@ -126,4 +127,5 @@ public class StartProgramView {
 
         mainMenuView.displayMainMenuView();
     }
+
 }

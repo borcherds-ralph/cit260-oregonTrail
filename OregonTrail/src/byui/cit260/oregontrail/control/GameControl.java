@@ -15,20 +15,17 @@ import oregontrail.OregonTrail;
  */
 public class GameControl {
     
-
-
-   public static Player createPlayer(String name) {
+   public static PersonControl createPlayer(String name) {
        
        if (name == null) {
            return null;
        }
        
-       Player player = new Player();
+       PersonControl player = new PersonControl();
        player.setName(name);
        
-       Player.setName(player);
+       player.setName(name);
        
-      
         return player;
     }
 

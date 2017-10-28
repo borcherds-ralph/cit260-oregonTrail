@@ -13,11 +13,6 @@ import java.util.Objects;
  * @author ralphb
  */
 public class Player implements Serializable {
-
-    public static Player setName(Player player) {
-        return player;
-    }
-
     
     private String name;
     private int age;
@@ -29,13 +24,14 @@ public class Player implements Serializable {
 
     public Player() {
     }
-
+    
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public String setName(String name) {
         this.name = name;
+        return name;
     }
 
     public int getAge() {

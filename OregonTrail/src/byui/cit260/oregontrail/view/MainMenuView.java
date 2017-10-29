@@ -90,6 +90,9 @@ public class MainMenuView {
        System.out.println("*** displayHelpMenu function called ***");
    }
 
+   private void quitGame() {
+       System.out.println("\n*** Invalid selection *** Try again");
+   }
    private void startNewGame() {
        GameControl.createNewGame(OregonTrail.getPlayer());
        GamePlayMenu gameMenu = new GamePlayMenu();

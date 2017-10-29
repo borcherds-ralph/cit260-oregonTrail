@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.Objects;
 import java.util.Scanner;
 import byui.cit260.oregontrail.view.MainMenuView;
+import byui.cit260.oregontrail.view.StartProgramView;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -19,6 +20,9 @@ import java.io.IOException;
  */
 public class HelpMenu implements Serializable {
     
+    public void HelpMenu() {
+    
+    }
     String filename = "tips.txt";
     String line = null;
     private char choice;
@@ -40,6 +44,8 @@ public class HelpMenu implements Serializable {
                 + "\n*                                                      *"
                 + "\n*                                                      *"
                 + "\n*                                                      *";
+        
+        
     }
 
     public char getChoice(char choice) {
@@ -90,7 +96,9 @@ public class HelpMenu implements Serializable {
     }
 
     public String getReturnPrevious() {
-              MainMenuView.displayMainMenuView();
+        MainMenuView mainMenuView = new MainMenuView();
+
+        mainMenuView.displayMainMenuView();
         return returnPrevious;
 
     }

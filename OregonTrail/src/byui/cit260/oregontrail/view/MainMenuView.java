@@ -88,6 +88,8 @@ public class MainMenuView {
 
    private void displayHelpMenu() {
        System.out.println("*** displayHelpMenu function called ***");
+       HelpMenu HelpMenu = new HelpMenu();
+       HelpMenu.HelpMenu();
    }
 
    private void quitGame() {

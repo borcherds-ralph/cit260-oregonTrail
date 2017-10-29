@@ -29,7 +29,7 @@ public class MainMenuView {
                + "\n-----------------------------------------"
        );
 
-       inputs[0] = this.getInput("\nEnter a menu item");
+       inputs[0] = this.getInputs("Select an option");
 
        return inputs;
 
@@ -94,7 +94,5 @@ public class MainMenuView {
        System.out.println("\n*** Invalid selection *** Try again");
    }
    private void startNewGame() {
-       GameControl.createNewGame(OregonTrail.getPlayer());
-       GamePlayMenu gameMenu = new GamePlayMenu();
-       gameMenu.displayMenu();
-   }}
+       
+       System.out.println("\n*** Invalid selection *** Try again");   }}

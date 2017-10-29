@@ -7,38 +7,55 @@ package byui.cit260.oregontrail.view;
 
 import oregontrail.OregonTrail;
 import byui.cit260.oregontrail.control.GameControl;
+import java.util.Scanner;
 
 public class MainMenuView {
 
-   public MainMenuView() {
-   }
+       private String displayMessage = "\n"
+            + "\n-----------------------------------------"
+            + "\n| Main Menu                             |"
+            + "\n-----------------------------------------"
+            + "\nN - Start new game"
+            + "\nG - Get and start saved game"
+            + "\nH - Get help on how to play the game"
+            + "\nS - Save game"
+            + "\nQ - Quit"
+            + "\n-----------------------------------------";
 
-   public char getInputs(char menuOption) {
-       
+    public MainMenuView() {
+    }
 
-       System.out.println(
-               "\n"
-               + "\n-----------------------------------------"
-               + "\n| Main Menu                             |"
-               + "\n-----------------------------------------"
-               + "\nN - Start new game"
-               + "\nG - Get and start saved game"
-               + "\nH - Get help on how to play the game"
-               + "\nS - Save game"
-               + "\nQ - Quit"
-               + "\n-----------------------------------------"
-       );
+   public String getInput() {
 
-       inputs = this.getInputs(char);
+        Scanner keyboard = new Scanner(System.in);
+        boolean valid = false;
+        String value = null;
 
-       return menuOption;
+        // while a valid name has not been retrieved
+        while (!valid) {
 
-   }
+            // display the prompt message
+            System.out.println("\n" + this.displayMessage);
+
+            // get the value entered from the keyboard
+            value = keyboard.nextLine();
+            value = value.trim();
+
+            if (value.length() < 1) { // blank value entered
+                System.out.println("\n*** You must enter a value *** ");
+                continue;
+            }
+            
+            break;
+        }
+
+        return value; // return the name        
+    }
 
    public void displayMainMenuView() {
        boolean done = false;
        do {
-           String menuOption = this.getMenuOption();
+           String menuOption = this.getInput();
            if (menuOption.toUpperCase().equals("Q")) {
                return;
            }
@@ -46,10 +63,7 @@ public class MainMenuView {
        } while (!done);
    }
 
-   private String getMenuOption() {
-       System.out.println("n*** getMenuOption() function called ***");
-       return "N";
-   }
+   
 
    private boolean doAction(String menuOption) {
 
@@ -87,7 +101,6 @@ public class MainMenuView {
    }
 
    private void displayHelpMenu() {
-       System.out.println("*** displayHelpMenu function called ***");
        HelpMenu HelpMenu = new HelpMenu();
        HelpMenu.HelpMenu();
    }
@@ -97,4 +110,6 @@ public class MainMenuView {
    }
    private void startNewGame() {
        
-       System.out.println("\n*** Invalid selection *** Try again");   }}
+       System.out.println("\n*** Invalid selection *** Try again");   
+   }
+}

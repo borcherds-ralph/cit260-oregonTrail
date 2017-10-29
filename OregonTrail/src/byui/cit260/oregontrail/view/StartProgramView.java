@@ -5,9 +5,9 @@
  */
 package byui.cit260.oregontrail.view;
 
-import byui.cit260.oregontrail.control.PersonControl;
+//import byui.cit260.oregontrail.control.PersonControl;
 import byui.cit260.oregontrail.control.GameControl;
-//import byui.cit260.oregontrail.model.Player;
+import byui.cit260.oregontrail.model.Player;
 import byui.cit260.oregontrail.view.MainMenuView;
 import java.util.Scanner;
 
@@ -23,33 +23,24 @@ public class StartProgramView {
     public StartProgramView() {
 
         this.promptMessage = "\nPlease enter your name: ";
-        // Console console = System.console();
-        // String playerName = console.readLine();
-        // PlayerControl playControl = new PlayerControl();
-        // playControl.newPlayer(playerName);
-        // display banner
         this.displayBanner();
-
-        // player name - Brandon
-        // control function to create player object - Kyle
-        // welcome message - main menu Darrin
     }
 
     private void displayBanner() {
         System.out.println(
                 "\n******************************************************"
                 + "\n                                                      "
-                + "\n This is a text based game of strategy and chance.    "
-                + "\n In this game you will help the pioneers reach the    "
-                + "\n Squaw valley before the first snowfall.  You and your"
+                + "\n This is a text based game based on Oregon Trail.    "
+                + "\n In this game you will help the pioneers reach     "
+                + "\n Oregon before the first snowfall.  You and your"
                 + "\n family will need to strategize and decide how much   "
                 + "\n food and supplies are needed for the journey at hand."
                 + "\n Hunting supplies would be very helpful in assisting  "
                 + "\n with food needs.  There are many stops and           "
-                + "\n unnexpected events along the way.  Animals and a     "
-                + "\n wagon will be part of your needed supplies.          "
+                + "\n unnexpected events along the way.  You will need to  "
+                + "\n buy animals/oxen and a wagon.          "
                 + "\n                                                      "
-                + "\n Good luck and enjoy the ride.                        "
+                + "\n Good luck.                        "
                 + "\n                                                      "
                 + "\n******************************************************"
         );
@@ -73,7 +64,7 @@ public class StartProgramView {
     private String getPlayersName() {
 
         Scanner keyboard = new Scanner(System.in);
-        String value = "Fred Flintstone";
+        String value = "";
         boolean valid = false;
 
         while (!valid) {
@@ -101,7 +92,7 @@ public class StartProgramView {
             return false;
         }
 
-        PersonControl player = GameControl.createPlayer(playersName);
+        Player player = GameControl.createPlayer(playersName);
 
         if (player == null) {
             System.out.println("\nError creating the player.");
@@ -113,9 +104,9 @@ public class StartProgramView {
         return true;
     }
 
-    private void displayNextView(PersonControl player) {
+    private void displayNextView(Player player) {
         
-        String userName = player.getPlayerName(player);
+        String userName = player.getName();
         System.out.println("\n======================================="
                 + "\n Welcome to the game " + userName
                 + "\n Enjoy the game! We wish you the best"
@@ -126,6 +117,7 @@ public class StartProgramView {
         MainMenuView mainMenuView = new MainMenuView();
 
         mainMenuView.displayMainMenuView();
+
     }
 
 }

@@ -6,6 +6,7 @@
 package byui.cit260.oregontrail.control;
 
 
+import byui.cit260.oregontrail.model.Game;
 import byui.cit260.oregontrail.model.Player;
 import oregontrail.OregonTrail;
 
@@ -15,22 +16,36 @@ import oregontrail.OregonTrail;
  */
 public class GameControl {
     
-   public static PersonControl createPlayer(String name) {
+   public static Player createPlayer(String name) {
        
        if (name == null) {
            return null;
        }
        
-       PersonControl player = new PersonControl();
-       player.setName(name);
-       
+       Player player = new Player();
        player.setName(name);
        
         return player;
     }
+    private static Game game;
 
-    public static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame stub function called ***");
+    public static Game getGame() {
+        return game;
     }
-   
+    
+    public static void setGame(Game game) {
+        GameControl.game = game;
+    }
+    
+    
+    
+    public static void createNewGame(Player player) {
+        
+       // create a new game
+       GameControl.game = new Game();
+       
+       // save as current game
+       OregonTrail.setCurrentGame(game);
+       
+    }
 }

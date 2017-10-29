@@ -5,11 +5,10 @@
  */
 package oregontrail;
 
-import byui.cit260.oregontrail.control.GamePlayerControl;
 import byui.cit260.oregontrail.view.StartProgramView;
-import java.io.IOException;
 import byui.cit260.oregontrail.control.GameControl;
-import byui.cit260.oregontrail.control.PersonControl;
+import byui.cit260.oregontrail.model.Game;
+import byui.cit260.oregontrail.model.Player;
 
 /**
  *
@@ -17,8 +16,9 @@ import byui.cit260.oregontrail.control.PersonControl;
  */
 public class OregonTrail {
 
-    private static GameControl currentGame = null;
-    private static PersonControl player = null;
+    private static Game currentGame = null;
+    private static Player player = null;
+    
     /**
      * @param args the command line arguments
      */
@@ -29,16 +29,20 @@ public class OregonTrail {
       
     }
 
-    public static String getPlayer(String name){
-        return name;
+    public static Player getPlayer(){
+        return player;
     }
-    public static void setPlayer(PersonControl player) {
-        
+    public static void setPlayer(Player player) {
+        OregonTrail.currentGame = currentGame;
     }
 
     public static GameControl getCurrentGame() {
         GameControl currentGame = null;
         return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        OregonTrail.currentGame = currentGame;
     }
 
     

@@ -13,26 +13,23 @@ import byui.cit260.oregontrail.view.StartProgramView;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import static java.lang.Character.toUpperCase;
 
 /**
  *
  * @author Br33h3rr3ra
  */
-public class HelpMenu implements Serializable {
+public class HelpMenu {
     
-    public void HelpMenu() {
-    
-    }
     String filename = "tips.txt";
     String line = null;
     private char choice;
     private String tips;
     private String returnPrevious;
 
-    private final String HelpMenu;
-
-    public HelpMenu() {
-        this.HelpMenu
+    
+ 
+    String displayMenu 
                 = "\n********************************************************"
                 + "\n*                                                      *"
                 + "\n***********************HELP MENU************************"
@@ -43,11 +40,13 @@ public class HelpMenu implements Serializable {
                 + "\n*                                                      *"
                 + "\n*                                                      *"
                 + "\n*                                                      *"
-                + "\n*                                                      *";
-        
-        
-    }
+                + "\n*                                                      *"
+            + "";
 
+    public void HelpMenu() {
+    
+    }
+    
      public void displayHelpMenuView() {
        boolean valid = false;
        do {
@@ -61,9 +60,9 @@ public class HelpMenu implements Serializable {
     public char getChoice() {
         boolean valid = false;
         while (!valid) {
-            System.out.print(this.HelpMenu);
+        System.out.print(displayMenu);
         Scanner reader = new Scanner(System.in);
-        choice = reader.next().charAt(0);
+        choice = toUpperCase(reader.next().charAt(0));
 
         if (choice != 'X' && choice != 'T') {
             System.out.print("\nInvalid Entry");

@@ -101,8 +101,8 @@ public class MainMenuView {
    }
 
    private void displayHelpMenu() {
-       HelpMenu HelpMenu = new HelpMenu();
-       HelpMenu.HelpMenu();
+       HelpMenu helpmenu = new HelpMenu();
+       helpmenu.getChoice();
    }
 
    private void quitGame() {

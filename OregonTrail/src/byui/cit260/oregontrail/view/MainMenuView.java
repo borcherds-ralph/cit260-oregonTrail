@@ -13,8 +13,8 @@ public class MainMenuView {
    public MainMenuView() {
    }
 
-   public String[] getInputs() {
-       String[] inputs = new String[1];
+   public char getInputs(char menuOption) {
+       
 
        System.out.println(
                "\n"
@@ -29,9 +29,9 @@ public class MainMenuView {
                + "\n-----------------------------------------"
        );
 
-       inputs[0] = this.getInputs("Select an option");
+       inputs = this.getInputs(char);
 
-       return inputs;
+       return menuOption;
 
    }
 

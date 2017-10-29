@@ -5,6 +5,7 @@
  */
 package byui.cit260.oregontrail.control;
 
+import byui.cit260.oregontrail.model.Player;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -17,20 +18,7 @@ public class PersonControlTest {
     public PersonControlTest() {
     }
 
-    /**
-     * Test of name method, of class PersonControl.
-     */
-    @Test
-    public void testName() {
-        //invalid entry
-        System.out.println("name");
-        String name = "";
-        PersonControl instance = new PersonControl();
-        String expResult = "Error -1";
-        String result = instance.name(name);
-        assertEquals(expResult, result);
-    }
-
+   
     /**
      * Test of personcount method, of class PersonControl.
      */

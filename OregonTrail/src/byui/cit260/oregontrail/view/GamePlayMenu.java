@@ -7,15 +7,21 @@ package byui.cit260.oregontrail.view;
 import java.io.Serializable;
 import java.util.Objects;
 import byui.cit260.oregontrail.model.Locations;
+import static java.lang.Character.toUpperCase;
+import java.util.Scanner;
+import byui.cit260.oregontrail.view.MainMenuView;
 /**
  *
  * @author Br33h3rr3ra
  * */
 public class GamePlayMenu implements Serializable {
     private String menuList;
-
-public GamePlayMenu() {
+    private char choice;
+    String currentlocation;
     
+public GamePlayMenu() {
+    displayBanner();
+    getChoice();
 }
     public void setMenuList(String menuList) {
         this.menuList = menuList;
@@ -26,13 +32,14 @@ public GamePlayMenu() {
     }
 
         private void displayBanner() {
+
         System.out.println(
                 "\n******************************************************"
                 + "\n                                                      "
-                + "\n You are now in" + this.currentlocation
+                + "\n You are now in" + currentlocation
                 + "\n What do you do next?"
                 + "\n S - Go to store"
-                + "\n H - Go to hotel"
+                + "\n T - Go to hotel"
                 + "\n U - See Supplies"
                 + "\n R - Rest"
                 + "\n H - Help"
@@ -43,5 +50,31 @@ public GamePlayMenu() {
                 + "\n                                                      "
                 + "\n******************************************************"
         );
+        
+    public boolean getChoice() {
+        boolean valid = false;
+        while (!valid) {
+        displayBanner();
+        Scanner reader = new Scanner(System.in);
+        choice = toUpperCase(reader.next().charAt(0));
+
+        if (choice != 'S' && choice != 'T' && choice != 'U' && choice != 'R' && choice != 'H' && choice != 'X') {
+            System.out.print("\nInvalid Entry");
+        continue;
+        }
+        if (choice == 'X' || choice == 'T') {
+            valid = true;
+        }
+        if (choice == 'X') {
+             MainMenuView.quitGame();
+         }
+        if (choice == 'T') {
+            getTips();
+            valid = false;
+        }
+    }
+         return choice;
+
+   }
 }
 }

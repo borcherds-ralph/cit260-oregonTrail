@@ -18,11 +18,9 @@ public class ItemControl {
         //This is for a barrel that had a bulge in the center like a wood wine barrel today.
         if (height <= 0 || height >= 35) { // height is out of range
             return -1;
-        }
-        if (centerDiameter <= 0 || centerDiameter > 36) { // Center diameter is out of range
+        } else if (centerDiameter <= 0 || centerDiameter > 36) { // Center diameter is out of range
             return -1;
-        }
-        if (topDiameter <= 0 || topDiameter > 30) { // Top or Bottom diameter is out of range
+        } else if (topDiameter <= 0 || topDiameter > 30) { // Top or Bottom diameter is out of range
             return -1;
         }
 

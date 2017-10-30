@@ -88,6 +88,7 @@ public class HelpMenu {
         try {
             FileReader fileReader = new FileReader(filename);
         }
+        //For some reason this is not getting the file.
         catch(FileNotFoundException fileReader) {
             System.out.println(
                 "Unable to open file '" + 

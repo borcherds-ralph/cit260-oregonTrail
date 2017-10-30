@@ -47,15 +47,7 @@ public class HelpMenu {
     
     }
     
-     public void displayHelpMenuView() {
-       boolean valid = false;
-       do {
-           char menuOption = getChoice();
-           if (menuOption == 'X' ) {
-               return;
-           }
-       } while (!valid);
-   }
+
      
     public char getChoice() {
         boolean valid = false;

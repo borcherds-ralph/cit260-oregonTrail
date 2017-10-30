@@ -41,7 +41,7 @@ public class HelpMenu {
                 + "\n*                                                      *"
                 + "\n*                                                      *"
                 + "\n*                                                      *"
-            + "";
+            + "\n";
 
     public void HelpMenu() {
     
@@ -88,12 +88,12 @@ public class HelpMenu {
         try {
             FileReader fileReader = new FileReader(filename);
         }
-        catch(FileNotFoundException ex) {
+        catch(FileNotFoundException fileReader) {
             System.out.println(
                 "Unable to open file '" + 
                 filename + "'");                
         }
-        catch(IOException ex) {
+        catch(IOException fileReader) {
             System.out.println(
                 "Error reading file '" 
                 + filename + "'");  

@@ -13,7 +13,7 @@ import java.util.Objects;
  * @author Casey
  */
 public class Locations extends Towns implements Serializable {
-    private String currentlocation;
+    public String currentlocation;
     private ArrayList<Towns> towns;
 
     public Locations() {
@@ -65,7 +65,7 @@ public class Locations extends Towns implements Serializable {
 
     @Override
     public String toString() {
-        return "Location{currentlocation=" + currentlocation + ", " + super.toString()  + '}';
+        return "Locationcurrentlocation=" + currentlocation + ", " + super.toString()  + '}';
     }
     
         

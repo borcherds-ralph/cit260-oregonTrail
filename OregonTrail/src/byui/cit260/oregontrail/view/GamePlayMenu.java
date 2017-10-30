@@ -6,6 +6,7 @@
 package byui.cit260.oregontrail.view;
 import java.io.Serializable;
 import java.util.Objects;
+import byui.cit260.oregontrail.model.Locations;
 /**
  *
  * @author Br33h3rr3ra
@@ -24,34 +25,23 @@ public GamePlayMenu() {
         return menuList;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 53 * hash + Objects.hashCode(this.menuList);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final GamePlayMenu other = (GamePlayMenu) obj;
-        if (!Objects.equals(this.menuList, other.menuList)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "GamePlayMenu{" + "menuList=" + menuList + '}';
-    }
-    
+        private void displayBanner() {
+        System.out.println(
+                "\n******************************************************"
+                + "\n                                                      "
+                + "\n You are now in" + this.currentlocation
+                + "\n What do you do next?"
+                + "\n S - Go to store"
+                + "\n H - Go to hotel"
+                + "\n U - See Supplies"
+                + "\n R - Rest"
+                + "\n H - Help"
+                + "\n X - Exit Game"
+                + "\n "
+                + "\n "
+                + "\n "
+                + "\n                                                      "
+                + "\n******************************************************"
+        );
+}
 }

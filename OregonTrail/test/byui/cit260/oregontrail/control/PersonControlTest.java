@@ -44,13 +44,16 @@ public class PersonControlTest {
         int expResult = 25;
         int result = instance.age(age);
         assertEquals(expResult, result);
+        System.out.println(age);
+        
 
  //bad test
         System.out.println("age");
         age = -25;
-        expResult = -1;
+        expResult = -25;
         result = instance.age(age);
         assertEquals(expResult, result);
+        System.out.println(age);
 
         //valid test
         System.out.println("age");
@@ -58,6 +61,7 @@ public class PersonControlTest {
         expResult = 98;
         result = instance.age(age);
         assertEquals(expResult, result);
+        System.out.println(age);
     }
     /**
      * Test of gender method, of class PersonControl.

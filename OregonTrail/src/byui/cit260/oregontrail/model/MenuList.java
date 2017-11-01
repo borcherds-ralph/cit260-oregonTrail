@@ -14,10 +14,10 @@ import java.io.Serializable;
 public enum MenuList  implements Serializable {
    
     
-    Hamburger("Hamburger", 1.00, 1),
-        Alum("1", "8-oz botle of alum"),
-        Bacon("308", "Bacon"),
-        Bullets("3 boxes", "20 bullets");
+        Steak("Steak", 3.00, 1),
+        Hamburger("Hamburger", 1.00, 1),
+        Chili("Chili",1.00, 1),
+        Pizza("Pizza", 2.00, 1);
         
     private final String mealType;
     private final double mealPrice;
@@ -28,4 +28,18 @@ public enum MenuList  implements Serializable {
             this.mealType = mealType;
             this.mealPrice = mealPrice;
         }
-}
+
+        public String getmealType() {
+            return this.mealType;
+        }
+
+        public double getmealPrice() {
+            return this.mealPrice;
+        }
+
+        public int getmealQty(){
+            return this.mealQty;
+        }
+        
+
+ }

@@ -44,7 +44,7 @@ public class HelpMenu {
             + "\n";
 
     public void HelpMenu() {
-    
+    getChoice();
     }
     
 

@@ -1,65 +1,54 @@
-/*
+/**
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package byui.cit260.oregontrail.model;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Objects;
 /**
  *
- * @author Br33h3rr3ra
- */ 
+ * @author Casey
+ */
 public class Restaurante implements Serializable {
-    private String type;
+    private String town;
     private String location;
-    private ArrayList<meal> meal;
-    private ArrayList<Item> itemlist;
-    
-    public Shops() {
+    private String meals;
 
-    }
+public Restaurante(){
 
-    public String getType() {
-        return type;
-    }
+}
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getLocation() {
-        return location;
+    public void setTown(String town) {
+        this.town = town;
     }
 
     public void setLocation(String location) {
         this.location = location;
     }
 
-    public ArrayList<Supplies> getSupplies() {
-        return supplies;
+    public void setmeals(String meals) {
+        this.meals = meals;
     }
 
-    public void setSupplies(ArrayList<Supplies> supplies) {
-        this.supplies = supplies;
+    public String getTown() {
+        return town;
     }
 
-    public ArrayList<Item> getItemlist() {
-        return itemlist;
+    public String getLocation() {
+        return location;
     }
 
-    public void setItemlist(ArrayList<Item> itemlist) {
-        this.itemlist = itemlist;
+    public String getmeals() {
+        return meals;
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 79 * hash + Objects.hashCode(this.type);
-        hash = 79 * hash + Objects.hashCode(this.location);
-        hash = 79 * hash + Objects.hashCode(this.supplies);
-        hash = 79 * hash + Objects.hashCode(this.itemlist);
+        int hash = 3;
+        hash = 19 * hash + Objects.hashCode(this.town);
+        hash = 19 * hash + Objects.hashCode(this.location);
+        hash = 19 * hash + Objects.hashCode(this.meals);
         return hash;
     }
 
@@ -74,17 +63,14 @@ public class Restaurante implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Shops other = (Shops) obj;
-        if (!Objects.equals(this.type, other.type)) {
+        final Restaurante other = (Restaurante) obj;
+        if (!Objects.equals(this.town, other.town)) {
             return false;
         }
         if (!Objects.equals(this.location, other.location)) {
             return false;
         }
-        if (!Objects.equals(this.supplies, other.supplies)) {
-            return false;
-        }
-        if (!Objects.equals(this.itemlist, other.itemlist)) {
+        if (!Objects.equals(this.meals, other.meals)) {
             return false;
         }
         return true;
@@ -92,9 +78,7 @@ public class Restaurante implements Serializable {
 
     @Override
     public String toString() {
-        return "Shops{" + "type=" + type + ", location=" + location + ", supplies=" + supplies + ", itemlist=" + itemlist + '}';
+        return "Restaurante{" + "town=" + town + ", location=" + location + ", meals=" + meals + '}';
     }
-
-    
     
 }

@@ -105,7 +105,7 @@ public class MainMenuView {
        helpmenu.getChoice();
    }
 
-   private void quitGame() {
+   void quitGame() {
        System.out.println("\n*** Invalid selection *** Try again");
    }
    private void startNewGame() {

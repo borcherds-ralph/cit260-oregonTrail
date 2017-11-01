@@ -8,7 +8,6 @@ package byui.cit260.oregontrail.view;
 //import byui.cit260.oregontrail.control.PersonControl;
 import byui.cit260.oregontrail.control.GameControl;
 import byui.cit260.oregontrail.model.Player;
-import byui.cit260.oregontrail.view.MainMenuView;
 import java.util.Scanner;
 
 /**
@@ -17,7 +16,6 @@ import java.util.Scanner;
  */
 public class StartProgramView {
 
-    // Banner Darrin
     private final String promptMessage;
 
     public StartProgramView() {

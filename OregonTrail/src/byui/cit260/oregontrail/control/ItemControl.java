@@ -37,13 +37,9 @@ public class ItemControl {
         // qty cannot be 0
         if (qty <= 0) {
             return -1;
-        }
-        
-        if (weight <= 0) {
+        } else if (weight <= 0) {
             return -1;
-        }
-        
-        if (weight >= 200) {
+        } else if (weight >= 200) {
             return -1;
         }
 

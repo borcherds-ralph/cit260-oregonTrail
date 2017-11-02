@@ -7,6 +7,8 @@ package byui.cit260.oregontrail.view;
 
 import oregontrail.OregonTrail;
 import byui.cit260.oregontrail.control.RestauranteControl;
+import byui.cit260.oregontrail.control.MenuItems;
+
 import java.util.Scanner;
 
 public class RestauranteView {

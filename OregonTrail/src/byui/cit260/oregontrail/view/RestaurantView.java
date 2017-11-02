@@ -11,7 +11,7 @@ import byui.cit260.oregontrail.control.MenuItems;
 
 import java.util.Scanner;
 
-public class RestauranteView {
+public class RestaurantView {
 
        private String displayMessage = "\n"
             + "\n-----------------------------------------"
@@ -22,7 +22,7 @@ public class RestauranteView {
             + "\nQ - Quit game"
             + "\n-----------------------------------------";
 
-    public RestauranteView() {
+    public RestaurantView() {
     }
 
    public String getInput() {

@@ -15,6 +15,16 @@ public class RestaurantView {
 
     public RestaurantView() {
     }
+       private final String displayMessage = "\n"
+            + "\n-----------------------------------------"
+            + "\n| Food Menu                             |"
+            + "\n-----------------------------------------"
+            + "\nS - Steak and Potatoes"
+            + "\nH - Hamburger and French Fries"
+            + "\nC - Chili and Cornbread"
+            + "\nP - Pizza and Salad"
+            + "\nQ - Return"
+            + "\n-----------------------------------------";
 
    public String getInput() {
 
@@ -44,7 +54,7 @@ public class RestaurantView {
     }
 
    public void displayMainMenuView() {
-       boolean done = false;
+        boolean done = false;
        do {
            String menuOption = this.getInput();
            if (menuOption.toUpperCase().equals("Q")) {
@@ -54,17 +64,6 @@ public class RestaurantView {
        } while (!done);
    }
 
-   
-       private String displayMessage = "\n"
-            + "\n-----------------------------------------"
-            + "\n| Food Menu                             |"
-            + "\n-----------------------------------------"
-            + "\nS - Steak and Potatoes"
-            + "\nH - Hamburger and French Fries"
-            + "\nC - Chili and Cornbread"
-            + "\nP - Pizza and Salad"
-            + "\nQ - Return"
-            + "\n-----------------------------------------";
 
 
    private boolean doAction(String menuOption) {

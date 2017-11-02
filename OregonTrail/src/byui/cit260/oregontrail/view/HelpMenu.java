@@ -97,11 +97,8 @@ public class HelpMenu {
         this.tips = tips;
     }
 
-    public String getReturnPrevious() {
-        MainMenuView mainMenuView = new MainMenuView();
-
-        mainMenuView.displayMainMenuView();
-        return returnPrevious;
+    public boolean getReturnPrevious() {
+        return true;
 
     }
 

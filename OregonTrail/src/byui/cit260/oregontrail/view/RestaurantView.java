@@ -13,17 +13,6 @@ import java.util.Scanner;
 
 public class RestaurantView {
 
-       private String displayMessage = "\n"
-            + "\n-----------------------------------------"
-            + "\n| Food Menu                             |"
-            + "\n-----------------------------------------"
-            + "\nS - Steak and Potatoes"
-            + "\nH - Hamburger and French Fries"
-            + "\nC - Chili and Cornbread"
-            + "\nP - Pizza and Salad"
-            + "\nQ - Leave Menu"
-            + "\n-----------------------------------------";
-
     public RestaurantView() {
     }
 
@@ -66,25 +55,36 @@ public class RestaurantView {
    }
 
    
+       private String displayMessage = "\n"
+            + "\n-----------------------------------------"
+            + "\n| Food Menu                             |"
+            + "\n-----------------------------------------"
+            + "\nS - Steak and Potatoes"
+            + "\nH - Hamburger and French Fries"
+            + "\nC - Chili and Cornbread"
+            + "\nP - Pizza and Salad"
+            + "\nQ - Return"
+            + "\n-----------------------------------------";
+
 
    private boolean doAction(String menuOption) {
 
        String choice = menuOption.toUpperCase();
        switch (choice) {
-           case "Steak":
+           case "STEAK":
                this.getSteak();
                break;
-           case "Hamburger":
+           case "HAMBURGER":
                this.getBurger();
                break;
-           case "Chili":
+           case "CHILI":
                this.getChili();
                break;
-           case "Pizza":
+           case "PIZZA":
                this.getPizza();
                break;
-           case "Quit":
-               this.leaveFoodMenu();
+           case "Q":
+               this.quitMenu();
                break;
            default:
                System.out.println("\n*** Invalid selection *** Try again");
@@ -109,7 +109,7 @@ public class RestaurantView {
    private void getPizza() {
        System.out.println("*** Pizza and Salad ***");
    }
-   private void leaveFoodMenu() {
+   private void quitMenu() {
        System.out.println("*** Return To Previous Scene ***");
    }
  

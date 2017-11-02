@@ -51,7 +51,7 @@ public GamePlayMenu() {
                 + "\n******************************************************"
         );
         
-    public boolean getChoice() {
+    public char getChoice() {
         boolean valid = false;
         while (!valid) {
         displayBanner();
@@ -69,8 +69,9 @@ public GamePlayMenu() {
              MainMenuView.quitGame();
          }
         if (choice == 'T') {
-            getTips();
-            valid = false;
+            HotelView HotelView = new HotelView
+            HotelView.displayMainMenuView();
+            valid = true;
         }
     }
          return choice;

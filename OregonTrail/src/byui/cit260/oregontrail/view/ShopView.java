@@ -21,6 +21,8 @@ public class ShopView {
     private char choice;
     private int quantity;
     private String item;
+    private int totalcost;
+    public int choicecost;
     
     String displayMenu 
                 = "\n********************************************************"
@@ -44,8 +46,29 @@ public class ShopView {
             + "\n";
     
     String purchasedmessage
-                = "/n You purchased" + quantity + item;
+                = "/n You purchased" + quantity + item ;
     
+    //lots of items need added to this portion. Supplies will cost 2 for now. Also need to test so that money on hand is not negative
+    public int costcalc() {
+         boolean valid = false;
+        while (!valid) {
+    System.out.print(quantityMenu);
+     Scanner reader = new Scanner(System.in);
+        choicecost = reader.nextInt();
+        if(100 >= choicecost && 1 <= choicecost); {
+            totalcost = choicecost * 2;
+            valid = true;
+            System.out.print(purchasedmessage);
+        }
+        if(choicecost%1 != 0){
+         System.out.print("\nInvalid Entry");
+        }
+        }
+        return totalcost;
+    }
+
+        
+
 public ShopView() {
     getChoice();
 }
@@ -62,17 +85,17 @@ public void getChoice() {
             System.out.print("\nInvalid Entry");
         continue;
         }
-        if (choice == 'X' || choice == 'F') {
-            valid = true;
+                if (choice == 'F') {
+                    valid = false;
+                    
+                }
+             return;
         }
         if (choice == 'X') {
-             getReturnPrevious();
+            valid = true;
+             return;
          }
-        if (choice == 'F') {
-            getTips();
-            valid = false;
-        }
     }
 }
-}
+
 

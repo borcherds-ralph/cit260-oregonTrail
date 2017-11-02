@@ -50,7 +50,7 @@ public GamePlayMenu() {
                 + "\n                                                      "
                 + "\n******************************************************"
         );
-        
+        }
     public char getChoice() {
         boolean valid = false;
         while (!valid) {
@@ -66,11 +66,12 @@ public GamePlayMenu() {
             valid = true;
         }
         if (choice == 'X') {
-             MainMenuView.quitGame();
+            MainMenuView quitgame = new MainMenuView();
+             quitgame.displayMainMenuView();
          }
         if (choice == 'T') {
-            HotelView HotelView = new HotelView
-            HotelView.displayMainMenuView();
+        HotelView hotel = new HotelView();
+        hotel.displayHotelMenuView();
             valid = true;
         }
     }
@@ -78,4 +79,4 @@ public GamePlayMenu() {
 
    }
 }
-}
+

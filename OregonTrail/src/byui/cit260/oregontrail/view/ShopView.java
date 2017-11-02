@@ -85,6 +85,7 @@ public class ShopView {
                 continue;
             }
             if (choice == 'F') {
+                costcalc();
                 valid = false;
 
             }

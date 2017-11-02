@@ -18,6 +18,7 @@ public class MainMenuView {
             + "\nG - Get and start saved game"
             + "\nH - Get help on how to play the game"
             + "\nR - River Crossing View"
+            + "\nT - Hotel View"
             + "\nS - Save game"
             + "\nQ - Quit"
             + "\n"
@@ -82,6 +83,9 @@ public class MainMenuView {
             case "R":
                 this.displayRiverCrossing();
                 break;
+            case "T":
+                this.displayHotelView();
+                break;
             case "S":
                 this.saveGame();
                 break;
@@ -112,6 +116,11 @@ public class MainMenuView {
     private void displayRiverCrossing() {
         RiverCrossingView rivercrossing = new RiverCrossingView();
         rivercrossing.displayRiverCrossingView();
+    }
+    
+     private void displayHotelView() {
+        HotelView hotel = new HotelView();
+        hotel.displayHotelMenuView();
     }
 
     void quitGame() {

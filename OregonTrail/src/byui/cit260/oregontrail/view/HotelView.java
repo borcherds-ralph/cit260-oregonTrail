@@ -51,7 +51,7 @@ public class HotelView {
         return value; // return the name        
     }
 
-   public void displayMainMenuView() {
+   public void displayHotelMenuView() {
        boolean done = false;
        do {
            String menuOption = this.getInput();

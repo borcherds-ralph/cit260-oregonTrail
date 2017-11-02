@@ -124,11 +124,10 @@ public class MainMenuView {
     }
 
     void quitGame() {
-        System.out.println("\n*** Invalid selection *** Try again");
+        return;
     }
 
     private void startNewGame() {
-
         System.out.println("\n*** Invalid selection *** Try again");
     }
 }

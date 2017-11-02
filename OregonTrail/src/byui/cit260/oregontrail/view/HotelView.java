@@ -102,9 +102,8 @@ public class HotelView {
    private void getARoom() {
        System.out.println("*** Get a hotel room and get some rest ***");
    }
-   private void returnToPrevious() {
-       
-       System.out.println("This is where you were before ***");
+   private void returnToPrevious() {    
+       return;
    }
    private void quitGame() {
        System.out.println("Are you sure you want to quit the game ***");

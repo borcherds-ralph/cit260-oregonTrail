@@ -15,11 +15,13 @@ public class RestaurantView {
 
        private String displayMessage = "\n"
             + "\n-----------------------------------------"
-            + "\n| Main Menu                             |"
+            + "\n| Food Menu                             |"
             + "\n-----------------------------------------"
-            + "\nF - Order Food"
-            + "\nR - Return to previous scene"
-            + "\nQ - Quit game"
+            + "\nS - Steak and Potatoes"
+            + "\nH - Hamburger and French Fries"
+            + "\nC - Chili and Cornbread"
+            + "\nP - Pizza and Salad"
+            + "\nQ - Leave Menu"
             + "\n-----------------------------------------";
 
     public RestaurantView() {
@@ -69,14 +71,20 @@ public class RestaurantView {
 
        String choice = menuOption.toUpperCase();
        switch (choice) {
-           case "F":
-               this.getMeal();
+           case "Steak":
+               this.getSteak();
                break;
-           case "R":
-               this.returnToPrevious();
+           case "Hamburger":
+               this.getBurger();
                break;
-           case "Q":
-               this.quitGame();
+           case "Chili":
+               this.getChili();
+               break;
+           case "Pizza":
+               this.getPizza();
+               break;
+           case "Quit":
+               this.leaveFoodMenu();
                break;
            default:
                System.out.println("\n*** Invalid selection *** Try again");
@@ -86,16 +94,23 @@ public class RestaurantView {
        return false;
    }
 
-   private void getMeal() {
-       System.out.println("*** Order Food Here ***");
+   private void getSteak() {
+       System.out.println("*** Steak and Pototoes ***");
    }
 
-   private void returnToPrevious() {
+   private void getBurger() {
+       System.out.println("*** Hamburger and French Fries ***");
+   }
+   
+   private void getChili() {
+       System.out.println("*** Chili and Cornbread ***");
+   }
+   
+   private void getPizza() {
+       System.out.println("*** Pizza and Salad ***");
+   }
+   private void leaveFoodMenu() {
        System.out.println("*** Return To Previous Scene ***");
    }
-
-   private void quitGame() {
-       System.out.println("Are you sure you want to quit the game ***");
-   }
-  
+ 
    }

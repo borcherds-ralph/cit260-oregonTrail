@@ -60,6 +60,7 @@ public class FerryCrossingView extends View {
         } while (!done);
     }
 
+    @Override
     public boolean doAction(String menuOption) {
 
         String choice = menuOption.toUpperCase();

@@ -27,17 +27,6 @@ public class MainMenuView extends View {
             + "\n-----------------------------------------");
     }
 
-    public void displayMainMenuView() {
-        boolean done = false;
-        do {
-            String menuOption = this.getInput();
-            if (menuOption.toUpperCase().equals("Q")) {
-                return;
-            }
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
-    
     @Override
     public boolean doAction(String choice) {
 
@@ -82,17 +71,17 @@ public class MainMenuView extends View {
 
     private void displayHelpMenu() {
         HelpMenu helpmenu = new HelpMenu();
-        helpmenu.getChoice();
+        helpmenu.display();
     }
 
     private void displayRiverCrossing() {
         RiverCrossingView rivercrossing = new RiverCrossingView();
-        rivercrossing.displayRiverCrossingView();
+        rivercrossing.display();
     }
     
-     private void displayHotelView() {
+    private void displayHotelView() {
         HotelView hotel = new HotelView();
-        hotel.displayHotelMenuView();
+        hotel.display();
     }
 
     void quitGame() {

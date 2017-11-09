@@ -5,40 +5,20 @@
  */
 package byui.cit260.oregontrail.view;
 
-import byui.cit260.oregontrail.model.Supplies;
-import byui.cit260.oregontrail.model.Shops;
-import byui.cit260.oregontrail.model.Item;
-import byui.cit260.oregontrail.model.ItemList;
 import static java.lang.Character.toUpperCase;
 import java.util.Scanner;
-import byui.cit260.oregontrail.view.MainMenuView;
-import byui.cit260.oregontrail.view.StartProgramView;
 
 /**
  *
  * @author Casey
  */
-public class ShopView {
+public class ShopView extends View {
 
     private char choice;
     private int quantity;
     private String item;
     private int totalcost;
     public int choicecost;
-
-    String displayMenu
-            = "\n********************************************************"
-            + "\n*                 Welcome to the Shop!                 *"
-            + "\n***********************SHOP MENU************************"
-            + "\n*                   'F' for Supplies                   *"
-            + "\n*                                                      *"
-            + "\n*                       'X' to Exit                    *"
-            + "\n*                                                      *"
-            + "\n*                                                      *"
-            + "\n*                                                      *"
-            + "\n*                                                      *"
-            + "\n*                                                      *"
-            + "\n";
 
     String quantityMenu
             = "\n********************************************************"
@@ -49,8 +29,44 @@ public class ShopView {
     String purchasedmessage
             = "/n You purchased" + quantity + item;
 
+    
+
+    public ShopView() {
+        super("\n********************************************************"
+            + "\n*                 Welcome to the Shop!                 *"
+            + "\n***********************SHOP MENU************************"
+            + "\n*                   'F' for Supplies                   *"
+            + "\n*                                                      *"
+            + "\n*                       'X' to Exit                    *"
+            + "\n*                                                      *"
+            + "\n*                                                      *"
+            + "\n*                                                      *"
+            + "\n*                                                      *"
+            + "\n*                                                      *"
+            + "\n"
+        );
+    }
+
+    @Override
+    public boolean doAction(String choice) {
+
+        choice = choice.toUpperCase();
+        switch (choice) {
+            case "F":
+                this.costCalc();
+                break;
+            case "X":
+                this.quitGame();
+                break;
+            default:
+                System.out.println("\n*** Invalid selection *** Try again");
+                break;
+        } 
+        return false;
+    }    
+     
     //lots of items need added to this portion. Supplies will cost 2 for now. Also need to test so that money on hand is not negative
-    public int costcalc() {
+    public int costCalc() {
         boolean valid = false;
         while (!valid) {
             System.out.print(quantityMenu);
@@ -68,32 +84,8 @@ public class ShopView {
         }
         return totalcost;
     }
-
-    public ShopView() {
-        getChoice();
-    }
-
-    public void getChoice() {
-        boolean valid = false;
-        while (!valid) {
-            System.out.print(displayMenu);
-            Scanner reader = new Scanner(System.in);
-            choice = toUpperCase(reader.next().charAt(0));
-
-            if (choice != 'F' && choice != 'X') {
-                System.out.print("\nInvalid Entry");
-                continue;
-            }
-            if (choice == 'F') {
-                costcalc();
-                valid = false;
-
-            }
-            return;
-        }
-        if (choice == 'X') {
-            valid = true;
-            return;
-        }
+    
+    void quitGame() {
+        return;
     }
 }

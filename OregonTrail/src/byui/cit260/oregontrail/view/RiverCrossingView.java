@@ -11,38 +11,10 @@ import java.util.Scanner;
  *
  * @author ralphb
  */
-public class RiverCrossingView  {
+public class RiverCrossingView extends View {
     
-    public String getInput(String displayMessage) {
-
-        Scanner keyboard = new Scanner(System.in);
-        boolean valid = false;
-        String value = null;
-
-        // while a valid name has not been retrieved
-        while (!valid) {
-
-            // display the prompt message
-            System.out.println("\n" + displayMessage);
-
-            // get the value entered from the keyboard
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() < 1) { // blank value entered
-                System.out.println("\n*** You must enter a value *** ");
-                continue;
-            }
-            
-            break;
-        }
-
-        return value; // return the name        
-    }
-
-   public void displayRiverCrossingView() {
-       boolean done = false;
-       String displayMessgae = "\n"
+    public RiverCrossingView() {
+        super("\n"
             + "\n-----------------------------------------"
             + "\n| River Crossing                         |"
             + "\n-----------------------------------------"
@@ -52,19 +24,12 @@ public class RiverCrossingView  {
             + "\nH - Display Help Menu"
             + "\nS - Save game"
             + "\nQ - Quit"
-            + "\n-----------------------------------------";
-       do {
-           String menuOption = this.getInput(displayMessgae);
-           if (menuOption.toUpperCase().equals("Q")) {
-               return;
-           }
-           done = this.doAction(menuOption);
-       } while (!done);
-   }
-
+            + "\n-----------------------------------------");
+    }
+    
    
-
-   private boolean doAction(String menuOption) {
+    @Override
+    public boolean doAction(String menuOption) {
 
        String choice = menuOption.toUpperCase();
        switch (choice) {
@@ -92,32 +57,32 @@ public class RiverCrossingView  {
        }
 
        return false;
-   }
+    }
 
-   private void wadeAcrossRiver() {
-       System.out.println("*** startExistingGame function called ***");
-   }
+    private void wadeAcrossRiver() {
+        System.out.println("*** startExistingGame function called ***");
+    }
 
-   private void saveGame() {
-       System.out.println("*** startExistingGame or startSaveGame function called ***");
-   }
-   private void getRiverDetails() {
-       System.out.println("*** Get River Details function called ***");
-   }
-   private void ferryAccrossRiver() {
-       FerryCrossingView ferry = new FerryCrossingView();
-       ferry.displayFerryCrossingView();
-       
-   }
+    private void saveGame() {
+        System.out.println("*** startExistingGame or startSaveGame function called ***");
+    }
+    private void getRiverDetails() {
+        System.out.println("*** Get River Details function called ***");
+    }
+    private void ferryAccrossRiver() {
+        FerryCrossingView ferry = new FerryCrossingView();
+        ferry.displayFerryCrossingView();
 
-   private void displayHelpMenu() {
-       HelpMenu helpmenu = new HelpMenu();
-       helpmenu.getChoice();
-   }
-   
+    }
 
-   void quitGame() {
-       System.out.println("\n*** Invalid selection *** Try again");
-   }
+    private void displayHelpMenu() {
+        HelpMenu helpmenu = new HelpMenu();
+        helpmenu.display();
+    }
+
+
+    void quitGame() {
+        System.out.println("\n*** Invalid selection *** Try again");
+    }
     
 }

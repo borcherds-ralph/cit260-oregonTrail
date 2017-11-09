@@ -11,11 +11,10 @@ import byui.cit260.oregontrail.control.MenuItems;
 
 import java.util.Scanner;
 
-public class RestaurantView {
+public class RestaurantView extends View {
 
     public RestaurantView() {
-    }
-       private final String displayMessage = "\n"
+        super("\n"
             + "\n-----------------------------------------"
             + "\n| Food Menu                             |"
             + "\n-----------------------------------------"
@@ -24,49 +23,13 @@ public class RestaurantView {
             + "\nC - Chili and Cornbread"
             + "\nP - Pizza and Salad"
             + "\nQ - Return"
-            + "\n-----------------------------------------";
-
-   public String getInput() {
-
-        Scanner keyboard = new Scanner(System.in);
-        boolean valid = false;
-        String value = null;
-
-        // while a valid name has not been retrieved
-        while (!valid) {
-
-            // display the prompt message
-            System.out.println("\n" + this.displayMessage);
-
-            // get the value entered from the keyboard
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() < 1) { // blank value entered
-                System.out.println("\n*** You must enter a value *** ");
-                continue;
-            }
-            
-            break;
-        }
-
-        return value; // return the name        
+            + "\n-----------------------------------------"
+            );
     }
+    
 
-   public void displayMainMenuView() {
-        boolean done = false;
-       do {
-           String menuOption = this.getInput();
-           if (menuOption.toUpperCase().equals("Q")) {
-               return;
-           }
-           done = this.doAction(menuOption);
-       } while (!done);
-   }
-
-
-
-   private boolean doAction(String menuOption) {
+    @Override
+    public boolean doAction(String menuOption) {
 
        String choice = menuOption.toUpperCase();
        switch (choice) {

@@ -19,7 +19,7 @@ import static java.lang.Character.toUpperCase;
  *
  * @author Br33h3rr3ra
  */
-public class HelpMenu {
+public class HelpMenu extends View{
     
     String filename = "tips.txt";
     String line = null;
@@ -28,50 +28,39 @@ public class HelpMenu {
     private String returnPrevious;
 
     
- 
-    String displayMenu 
-                = "\n********************************************************"
-                + "\n*                                                      *"
-                + "\n***********************HELP MENU************************"
-                + "\n*                      'T' for Tips                    *"
-                + "\n*                      'X' to Exit                     *"
-                + "\n*     The goal of the game is to make it to Oregon     *"
-                + "\n*                                                      *"
-                + "\n*                                                      *"
-                + "\n*                                                      *"
-                + "\n*                                                      *"
-                + "\n*                                                      *"
-            + "\n";
-
-    public void HelpMenu() {
-    getChoice();
+    public HelpMenu() {
+        super("\n********************************************************"
+            + "\n*                                                      *"
+            + "\n***********************HELP MENU************************"
+            + "\n*                      'T' for Tips                    *"
+            + "\n*                      'X' to Exit                     *"
+            + "\n*     The goal of the game is to make it to Oregon     *"
+            + "\n*                                                      *"
+            + "\n*                                                      *"
+            + "\n*                                                      *"
+            + "\n*                                                      *"
+            + "\n*                                                      *"
+            + "\n"
+        );
     }
     
 
-     
-    public char getChoice() {
-        boolean valid = false;
-        while (!valid) {
-        System.out.print(displayMenu);
-        Scanner reader = new Scanner(System.in);
-        choice = toUpperCase(reader.next().charAt(0));
+    @Override
+    public boolean doAction(String menuOption) {
 
-        if (choice != 'X' && choice != 'T') {
-            System.out.print("\nInvalid Entry");
-        continue;
+        String choice = menuOption.toUpperCase();
+        switch (choice) {
+            case "X":
+                getReturnPrevious();
+                break;                
+            case "T":
+                this.getTips();
+                break;
+            default:
+                System.out.println("\n*** Invalid selection *** Try again");
+                break;
         }
-        if (choice == 'X' || choice == 'T') {
-            valid = true;
-        }
-        if (choice == 'X') {
-             getReturnPrevious();
-         }
-        if (choice == 'T') {
-            getTips();
-            valid = false;
-        }
-    }
-         return choice;
+        return false;
          
 
     }

@@ -9,9 +9,10 @@ import oregontrail.OregonTrail;
 import byui.cit260.oregontrail.control.HotelControl;
 import java.util.Scanner;
 
-public class HotelView {
+public class HotelView extends View {
 
-       private String displayMessage = "\n"
+    public HotelView() {
+        super("\n"
             + "\n-----------------------------------------"
             + "\n| Main Menu                             |"
             + "\n-----------------------------------------"
@@ -19,52 +20,12 @@ public class HotelView {
             + "\nF - Get food to eat at the Restaurante"
             + "\nR - Get a room, Go to bed"
             + "\nB - Return back to last scene"
-            + "\n-----------------------------------------";
-
-    public HotelView() {
+            + "\n-----------------------------------------"
+        );
     }
 
-   public String getInput() {
-
-        Scanner keyboard = new Scanner(System.in);
-        boolean valid = false;
-        String value = null;
-
-        // while a valid name has not been retrieved
-        while (!valid) {
-
-            // display the prompt message
-            System.out.println("\n" + this.displayMessage);
-
-            // get the value entered from the keyboard
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() < 1) { // blank value entered
-                System.out.println("\n*** You must enter a value *** ");
-                continue;
-            }
-            
-            break;
-        }
-
-        return value; // return the name        
-    }
-
-   public void displayHotelMenuView() {
-       boolean done = false;
-       do {
-           String menuOption = this.getInput();
-           if (menuOption.toUpperCase().equals("Q")) {
-               return;
-           }
-           done = this.doAction(menuOption);
-       } while (!done);
-   }
-
-   
-
-   private boolean doAction(String menuOption) {
+    @Override
+    public boolean doAction(String menuOption) {
 
        String choice = menuOption.toUpperCase();
        switch (choice) {
@@ -89,24 +50,24 @@ public class HotelView {
        }
 
        return false;
-   }
+    }
 
-   private void goToBar() {
-       System.out.println("*** Go to Bar for a drink ***");
-   }
+    private void goToBar() {
+        System.out.println("*** Go to Bar for a drink ***");
+    }
 
-   private void goToRestaurante() {
-       System.out.println("*** Get Some Food at the Restaurante ***");
-   }
+    private void goToRestaurante() {
+        System.out.println("*** Get Some Food at the Restaurante ***");
+    }
 
-   private void getARoom() {
-       System.out.println("*** Get a hotel room and get some rest ***");
-   }
-   private void returnToPrevious() {    
-       return;
-   }
-   private void quitGame() {
-       System.out.println("Are you sure you want to quit the game ***");
-   }
-  
-   }
+    private void getARoom() {
+        System.out.println("*** Get a hotel room and get some rest ***");
+    }
+    private void returnToPrevious() {    
+        return;
+    }
+    private void quitGame() {
+        System.out.println("Are you sure you want to quit the game ***");
+    }
+
+    }

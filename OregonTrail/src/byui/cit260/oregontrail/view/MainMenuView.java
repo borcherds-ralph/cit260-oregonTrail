@@ -5,12 +5,14 @@
  */
 package byui.cit260.oregontrail.view;
 
-import byui.cit260.oregontrail.model.Player;
 import java.util.Scanner;
 
-public class MainMenuView {
+public class MainMenuView extends View {
 
-    private String displayMessage = "\n"
+     private String menu;
+
+    public MainMenuView() {
+         super("\n"
             + "\n-----------------------------------------"
             + "\n| Main Menu                             |"
             + "\n-----------------------------------------"
@@ -22,38 +24,7 @@ public class MainMenuView {
             + "\nS - Save game"
             + "\nQ - Quit"
             + "\n"
-            + "\n-----------------------------------------";
-
-    public MainMenuView() {
-        
-    }
-
-    public String getInput() {
-
-        Scanner keyboard = new Scanner(System.in);
-        boolean valid = false;
-        String value = null;
-        Player player = null;
-        
-        // while a valid name has not been retrieved
-        while (!valid) {
-
-            // display the prompt message
-            System.out.println("\n" + this.displayMessage);
-
-            // get the value entered from the keyboard
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() < 1) { // blank value entered
-                System.out.println("\n*** You must enter a value *** ");
-                continue;
-            }
-
-            break;
-        }
-
-        return value; // return the name        
+            + "\n-----------------------------------------");
     }
 
     public void displayMainMenuView() {
@@ -66,10 +37,11 @@ public class MainMenuView {
             done = this.doAction(menuOption);
         } while (!done);
     }
+    
+    @Override
+    public boolean doAction(String choice) {
 
-    private boolean doAction(String menuOption) {
-
-        String choice = menuOption.toUpperCase();
+        choice = choice.toUpperCase();
         switch (choice) {
             case "N":
                 this.startNewGame();
@@ -129,5 +101,10 @@ public class MainMenuView {
 
     private void startNewGame() {
         System.out.println("\n*** Invalid selection *** Try again");
+    }
+
+    @Override
+    public void display() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

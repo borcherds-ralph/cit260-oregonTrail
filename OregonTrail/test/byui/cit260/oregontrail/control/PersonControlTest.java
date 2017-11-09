@@ -50,7 +50,7 @@ public class PersonControlTest {
  //bad test
         System.out.println("age");
         age = -25;
-        expResult = -25;
+        expResult = -1;
         result = instance.age(age);
         assertEquals(expResult, result);
         System.out.println(age);

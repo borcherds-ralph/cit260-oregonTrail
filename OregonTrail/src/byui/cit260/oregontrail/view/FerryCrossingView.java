@@ -11,38 +11,10 @@ import java.util.Scanner;
  *
  * @author ralphb
  */
-public class FerryCrossingView {
+public class FerryCrossingView extends View {
 
-    public String getInput(String displayMessage) {
-
-        Scanner keyboard = new Scanner(System.in);
-        boolean valid = false;
-        String value = null;
-
-        // while a valid name has not been retrieved
-        while (!valid) {
-
-            // display the prompt message
-            System.out.println("\n" + displayMessage);
-
-            // get the value entered from the keyboard
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() < 1) { // blank value entered
-                System.out.println("\n*** You must enter a value *** ");
-                continue;
-            }
-
-            break;
-        }
-
-        return value; // return the name        
-    }
-
-    public void displayFerryCrossingView() {
-        boolean done = false;
-        String displayMessgae = "\n"
+    public FerryCrossingView() {
+        super("\n"
                 + "\n--------------------------------------------------"
                 + "\n| Ferry Crossing                                 |"
                 + "\n--------------------------------------------------"
@@ -50,9 +22,14 @@ public class FerryCrossingView {
                 + "\n"
                 + "\n"
                 + "\n Please type \"continue\" to proceed."
-                + "\n-------------------------------------------------";
+                + "\n-------------------------------------------------");
+    }
+
+    public void displayFerryCrossingView() {
+        boolean done = false;
+        
         do {
-            String menuOption = this.getInput(displayMessgae);
+            String menuOption = this.getInput();
             if (menuOption.toUpperCase().equals("Q")) {
                 return;
             }
@@ -74,7 +51,7 @@ public class FerryCrossingView {
                 + "\n river crossing menu."
                 + "\n-----------------------------------------";
         do {
-            String menuOption = this.getInput(displayMessgae);
+            String menuOption = this.getInput();
             if (menuOption.toUpperCase().equals("Q")) {
                 return;
             }
@@ -83,7 +60,7 @@ public class FerryCrossingView {
         } while (!done);
     }
 
-    private boolean doAction(String menuOption) {
+    public boolean doAction(String menuOption) {
 
         String choice = menuOption.toUpperCase();
         switch (choice) {

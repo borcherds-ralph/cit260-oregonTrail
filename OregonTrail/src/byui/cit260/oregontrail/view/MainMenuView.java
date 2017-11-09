@@ -103,8 +103,4 @@ public class MainMenuView extends View {
         System.out.println("\n*** Invalid selection *** Try again");
     }
 
-    @Override
-    public void display() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

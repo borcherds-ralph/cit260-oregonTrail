@@ -59,6 +59,8 @@ public abstract class TrailView extends View {
                 break;
             case "X":
                 this.quitGame();
+            default:
+                System.out.println("\n*** Invalid selection *** Try again");
                 break;
 
         }

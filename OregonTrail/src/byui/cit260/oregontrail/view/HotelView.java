@@ -38,7 +38,7 @@ public class HotelView extends View {
                this.getARoom();
                break;
            case "A":
-               this.addTeamMember();
+               this.RecruitMemberView();
                break;
            case "B":
                this.returnToPrevious();
@@ -66,8 +66,9 @@ public class HotelView extends View {
         System.out.println("*** Get a hotel room and get some rest ***");
     }
     
-    private void addTeamMember() {
-        System.out.println("***Recruit a new Team member");
+    private void RecruitMemberView() {
+        RecruitMemberView recruit = new RecruitMemberView();
+        recruit.display();
     }
     private void returnToPrevious() {    
         return;

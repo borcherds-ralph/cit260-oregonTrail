@@ -1,12 +1,10 @@
 /*
-* To change this license header, choose License Headers in Project Properties.
-* To change this template file, choose Tools | Templates
-* and open the template in the editor.
-*/
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package byui.cit260.oregontrail.view;
 
-import oregontrail.OregonTrail;
-import byui.cit260.oregontrail.control.HotelControl;
 import java.util.Scanner;
 
 public class HotelView extends View {
@@ -19,6 +17,7 @@ public class HotelView extends View {
             + "\nD - Get a drink at the Bar"
             + "\nF - Get food to eat at the Restaurante"
             + "\nR - Get a room, Go to bed"
+            + "\nA - Add a new team member"    
             + "\nB - Return back to last scene"
             + "\n-----------------------------------------"
         );
@@ -37,6 +36,9 @@ public class HotelView extends View {
                break;
            case "R":
                this.getARoom();
+               break;
+           case "A":
+               this.addTeamMember();
                break;
            case "B":
                this.returnToPrevious();
@@ -62,6 +64,10 @@ public class HotelView extends View {
 
     private void getARoom() {
         System.out.println("*** Get a hotel room and get some rest ***");
+    }
+    
+    private void addTeamMember() {
+        System.out.println("***Recruit a new Team member");
     }
     private void returnToPrevious() {    
         return;

@@ -21,7 +21,6 @@ public abstract class CityView extends View {
 
     private String menu;
     private String menuList;
-    private char choice;
     String currentlocation;
 
     public CityView() {

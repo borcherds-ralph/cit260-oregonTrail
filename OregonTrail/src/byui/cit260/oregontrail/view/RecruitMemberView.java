@@ -15,8 +15,8 @@ public class RecruitMemberView extends View{
   
     public RecruitMemberView() {
         super("\n"
-            + "\n-----------------------------------------"
-            + "\n| Recruit New Team Member                         |"
+            + "\n------------------------------------------------------"
+            + "\n| Recruit New Team Member                            |"
             + "\n-----------------------------------------"
             + "\nArtie - Pick Artie-the heart surgeon- to join the team"
             + "\nSammy - Pick Sammy- the jailor- to join the team"

@@ -25,9 +25,9 @@ public class RestaurantView extends View {
     
 
     @Override
-    public boolean doAction(String menuOption) {
+    public boolean doAction(String choice) {
 
-       String choice = menuOption.toUpperCase();
+      choice = choice.toUpperCase();
        switch (choice) {
            case "STEAK":
                this.getSteak();

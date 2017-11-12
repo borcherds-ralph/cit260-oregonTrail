@@ -76,8 +76,14 @@ public class RecruitMemberView extends View{
     }
    
     private void quitGame() {
-        System.out.println("\n*** Invalid selection *** Try again");
+        System.out.println("\n*** Are you sure you want to quit?***See you next time");
     }
-    
-}
 
+    private static class HotelView {
+        public HotelView(){
+        }
+        private void displayMenu(){
+            System.out.println("\n choose an option ***");
+        }
+    }
+}

@@ -21,6 +21,7 @@ public class MainMenuView extends View {
             + "\nH - Get help on how to play the game"
             + "\nR - River Crossing View"
             + "\nT - Hotel View"
+            + "\nA - Trail View"
             + "\nS - Save game"
             + "\nQ - Quit"
             + "\n"
@@ -47,6 +48,9 @@ public class MainMenuView extends View {
             case "T":
                 this.displayHotelView();
                 break;
+            case "A":
+                this.displayTrailView();
+                break;
             case "S":
                 this.saveGame();
                 break;
@@ -72,6 +76,11 @@ public class MainMenuView extends View {
     private void displayHelpMenu() {
         HelpMenu helpmenu = new HelpMenu();
         helpmenu.display();
+    }
+    
+    private void displayTrailView() {
+        TrailView trailview = new TrailView() {};
+        trailview.display();
     }
 
     private void displayRiverCrossing() {

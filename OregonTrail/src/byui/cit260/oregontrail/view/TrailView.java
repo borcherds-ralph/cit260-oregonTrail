@@ -29,7 +29,7 @@ public abstract class TrailView extends View {
             + "\n the date is" 
             + "\n You have traveled" +  "and you have" +  "to Go" 
             + "\n******************************************************"
-            + "What Do you want to do?"
+            + "\nWhat Do you want to do?"
             + "\n C - Continue on the Trail"
             + "\n U - Go Hunting"
             + "\n G - Go Gather Food"
@@ -40,7 +40,6 @@ public abstract class TrailView extends View {
     }
      @Override
     public boolean doAction(String choice) {
-        choice = choice.toUpperCase();
         switch (choice) {
             case "C":
                 break;

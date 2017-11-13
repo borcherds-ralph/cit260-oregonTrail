@@ -38,13 +38,8 @@ public class SuppliesView extends View {
 
     @Override
     public boolean doAction(String choice) {
-        if (choice.length() < 2) {
-            System.out.println("\nInvalid choice:"
-                    + "You must enter a value or selection");
-            return false;
-        }
-        choice = choice.toUpperCase(); // converts choice to upper case
-
+        
+        choice = choice.toUpperCase();
         switch (choice) {
             case "G":
                 this.displayWeapon();

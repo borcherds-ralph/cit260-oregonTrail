@@ -22,25 +22,20 @@ public class FerryCrossingView extends View {
                 + "\n"
                 + "\n"
                 + "\n Please type \"continue\" to proceed."
+		+ "\n Please type \"Q\" to return to the previous menu"
                 + "\n-------------------------------------------------");
     }
 
-    public void displayFerryCrossingView() {
-        boolean done = false;
-        
-        do {
-            String menuOption = this.getInput();
-            if (menuOption.toUpperCase().equals("Q")) {
-                return;
-            }
 
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
 
-    public void displayCrossMenu() {
-        boolean done = false;
-        String displayMessgae = "\n"
+
+    @Override
+    public boolean doAction(String menuOption) {
+
+        String choice = menuOption.toUpperCase();
+        switch (choice) {
+            case "CONTINUE":
+                System.out.println("\n"
                 + "\n--------------------------------------------------"
                 + "\n| River Crossed by Ferry                         |"
                 + "\n--------------------------------------------------"
@@ -49,28 +44,9 @@ public class FerryCrossingView extends View {
                 + "\n and you are camping next to the river you just"
                 + "\n crossed. Please type \"Q\" to go back to the."
                 + "\n river crossing menu."
-                + "\n-----------------------------------------";
-        do {
-            String menuOption = this.getInput();
-            if (menuOption.toUpperCase().equals("Q")) {
-                return;
-            }
+                + "\n-----------------------------------------");
+		break;
 
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
-
-    @Override
-    public boolean doAction(String menuOption) {
-
-        String choice = menuOption.toUpperCase();
-        switch (choice) {
-            case "CONTINUE":
-                this.displayCrossMenu();
-                break;
-            case "Q":
-                this.returnMenu();
-                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -79,8 +55,6 @@ public class FerryCrossingView extends View {
         return false;
     }
 
-    void returnMenu() {
-        return;
-    }
+
 
 }

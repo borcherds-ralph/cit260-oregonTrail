@@ -32,6 +32,7 @@ public abstract class TrailView extends View {
 
     @Override
     public boolean doAction(String choice) {
+	choice = choice.toUpperCase();
         switch (choice) {
             case "C":
                 //this.TrailView(); + 1 day increment function

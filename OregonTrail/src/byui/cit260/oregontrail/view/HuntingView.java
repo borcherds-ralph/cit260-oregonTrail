@@ -14,23 +14,12 @@ public class HuntingView extends View {
     public HuntingView() {
         super("\n"
         + "\n *************************************************"
-        + "\n *                 Supply Menu                   *"
+        + "\n *                 Hunting Menu                  *"
         + "\n *************************************************"
-        + "\nG - Weapon"
-        + "\nA - Ammunition"
-        + "\nW - Water"
-        + "\nF - Flour"
-        + "\nM - Meat"
-        + "\nL - Lard"
-        + "\nS - Sugar"
-        + "\nN - Salt"
-        + "\nE - Eggs"
-        + "\nC - Clothing"
-        + "\nB - Blankets"
-        + "\nR - Rope"
-        + "\nT - Tools"
-        + "\nD - Shovel"
-        + "\nU - Utensils"
+        + "\nD - Choose Direction"
+        + "\nF - Fire Weapon"
+        + "\nH - Display Help Menu"
+        + "\nG - Display Guided Hunting Menu"
         + "\nQ - Quit"
         + "\n *************************************************"
 );
@@ -39,19 +28,18 @@ public class HuntingView extends View {
     
     @Override
     public boolean doAction(String choice) {
-        choice = choice.toUpperCase(); //convert choice to upper case
-        
+        choice = choice.toUpperCase();
         switch (choice) {
-            case "D": // direction to head toward
+            case "D": 
                 this.direction();
                 break;
-            case "F": // to aim and fire the rifle
+            case "F": 
                 this.fire();
                 break;
-            case "H": // display the help menu
+            case "H": 
                 this.displayHelpMenu();
                 break;  
-            case "G": // display the help menu
+            case "G": 
                 this.displayGuidedMenu();
                 break;
             default:

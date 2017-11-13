@@ -54,9 +54,6 @@ public class MainMenuView extends View {
             case "S":
                 this.saveGame();
                 break;
-            case "Q":
-                this.quitGame();
-                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -91,10 +88,6 @@ public class MainMenuView extends View {
     private void displayHotelView() {
         HotelView hotel = new HotelView();
         hotel.display();
-    }
-
-    void quitGame() {
-        return;
     }
 
     private void startNewGame() {

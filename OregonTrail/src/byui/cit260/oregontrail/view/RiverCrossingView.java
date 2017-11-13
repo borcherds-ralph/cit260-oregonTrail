@@ -71,7 +71,7 @@ public class RiverCrossingView extends View {
     }
     private void ferryAccrossRiver() {
         FerryCrossingView ferry = new FerryCrossingView();
-        ferry.displayFerryCrossingView();
+        ferry.display();
 
     }
 

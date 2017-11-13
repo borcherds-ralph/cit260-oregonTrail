@@ -32,14 +32,17 @@ public class HelpMenu extends View{
         super("\n********************************************************"
             + "\n*                                                      *"
             + "\n***********************HELP MENU************************"
+	    + "\n*                                                      *"
             + "\n*                      'T' for Tips                    *"
-            + "\n*                      'X' to Exit                     *"
+            + "\n*                      'Q' to Exit                     *"
+	    + "\n*                                                      *"
+	    + "\n*                                                      *"
             + "\n*     The goal of the game is to make it to Oregon     *"
             + "\n*                                                      *"
             + "\n*                                                      *"
             + "\n*                                                      *"
             + "\n*                                                      *"
-            + "\n*                                                      *"
+            + "\n********************************************************"
             + "\n"
         );
     }
@@ -50,11 +53,13 @@ public class HelpMenu extends View{
 
         String choice = menuOption.toUpperCase();
         switch (choice) {
-            case "X":
-                getReturnPrevious();
-                break;                
+//           Ra                
             case "T":
-                this.getTips();
+                System.out.println("\n"
+                    + "\nDon't die!"
+		    + "\nMake sure you have enough food!"
+		    + "\nSlow pace speeds recovery time"
+		    + "\nKeep track of the calendar");
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -65,34 +70,34 @@ public class HelpMenu extends View{
 
     }
 
-    public void getTips() {
-        try {
-            FileReader fileReader = new FileReader(filename);
-        }
-        //For some reason this is not getting the file.
-        catch(FileNotFoundException fileReader) {
-            System.out.println(
-                "Unable to open file '" + 
-                filename + "'");                
-        }
-        catch(IOException fileReader) {
-            System.out.println(
-                "Error reading file '" 
-                + filename + "'");  
-    }
-    }
+//    public void getTips() {
+//        try {
+//            FileReader fileReader = new FileReader(filename);
+//        }
+//        //For some reason this is not getting the file.
+//        catch(FileNotFoundException fileReader) {
+//            System.out.println(
+//                "Unable to open file '" + 
+//                filename + "'");                
+//        }
+//        catch(IOException fileReader) {
+//            System.out.println(
+//                "Error reading file '" 
+//                + filename + "'");  
+//    }
+//    }
         
     public void setTips(String tips) {
         this.tips = tips;
     }
-
-    public boolean getReturnPrevious() {
-        return true;
-
-    }
-
-    public void setReturnPrevious(String returnPrevious) {
-        this.returnPrevious = returnPrevious;
-    }
+//
+//    public boolean getReturnPrevious() {
+//        return true;
+//
+//    }
+//
+//    public void setReturnPrevious(String returnPrevious) {
+//        this.returnPrevious = returnPrevious;
+//    }
 }
  

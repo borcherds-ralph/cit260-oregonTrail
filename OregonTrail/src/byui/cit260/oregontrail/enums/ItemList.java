@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.oregontrail.model;
+package byui.cit260.oregontrail.enums;
 
 import java.io.Serializable;
 /**
@@ -59,16 +59,16 @@ public enum ItemList implements Serializable {
         TinPlates("4", "tin plates"),
         YeastCake("1", " 5-lb. box of yeast cake");
 
-        private final String qty;
+        private final String recomQty;
         private final String itemName;
         
         private ItemList(String qty, String itemName) {
-            this.qty = qty;
+            this.recomQty = qty;
             this.itemName = itemName;
         }
         
         public String getQty() {
-            return this.qty;
+            return this.recomQty;
         }
 
         public String getItemName() {

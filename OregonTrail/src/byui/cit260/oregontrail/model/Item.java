@@ -8,7 +8,7 @@ package byui.cit260.oregontrail.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
-import byui.cit260.oregontrail.model.ItemList;
+import byui.cit260.oregontrail.enums.ItemList;
 /**
  *
  * @author Casey
@@ -24,7 +24,7 @@ public class Item  extends Supplies implements Serializable{
 
     public String getItemName(String tagName) {
         ItemList name = ItemList.valueOf(tagName);
-        
+     
         String itemName = name.getItemName();
                
         return itemName;

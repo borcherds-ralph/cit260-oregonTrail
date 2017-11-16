@@ -5,16 +5,6 @@
  */
 package byui.cit260.oregontrail.view;
 
-import java.io.Serializable;
-import java.util.Objects;
-import java.util.Scanner;
-import byui.cit260.oregontrail.view.MainMenuView;
-import byui.cit260.oregontrail.view.StartProgramView;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import static java.lang.Character.toUpperCase;
-
 /**
  *
  * @author Br33h3rr3ra

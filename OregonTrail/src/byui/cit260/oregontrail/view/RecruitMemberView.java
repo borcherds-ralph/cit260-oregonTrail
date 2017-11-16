@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package byui.cit260.oregontrail.view;
-
-import java.util.Scanner;
 /**
  *
  * @author Br33h3rr3ra

@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package byui.cit260.oregontrail.control;
-//import byui.cit260.oregontrail.model.GamePlayer;
 
 /**
  *

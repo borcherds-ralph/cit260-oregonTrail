@@ -5,8 +5,6 @@
  */
 package byui.cit260.oregontrail.view;
 
-import java.util.Scanner;
-
 public class RestaurantView extends View {
 
     public RestaurantView() {

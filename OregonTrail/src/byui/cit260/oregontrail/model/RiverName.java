@@ -13,6 +13,7 @@ package byui.cit260.oregontrail.model;
 public enum RiverName {
     Missisppi("Mississippi River", 300),
     Colorado("Colorado River", 150);
+    
     private String name;
     private int width;
 

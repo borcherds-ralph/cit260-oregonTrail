@@ -5,7 +5,6 @@
  */
 package byui.cit260.oregontrail.view;
 
-import static java.lang.Character.toUpperCase;
 import java.util.Scanner;
 
 /**

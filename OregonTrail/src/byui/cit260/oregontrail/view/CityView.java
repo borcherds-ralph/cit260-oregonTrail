@@ -5,13 +5,6 @@
  */
 package byui.cit260.oregontrail.view;
 
-import java.io.Serializable;
-import java.util.Objects;
-import byui.cit260.oregontrail.model.Locations;
-import static java.lang.Character.toUpperCase;
-import java.util.Scanner;
-import byui.cit260.oregontrail.view.MainMenuView;
-
 /**
  *
  * @author Br33h3rr3ra

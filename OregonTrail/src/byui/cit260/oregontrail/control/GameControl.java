@@ -60,97 +60,97 @@ public class GameControl {
         // created array(list) of inventory items    
         InventoryItem[] inventory = new InventoryItem[Constants.NUMBER_OF_INVENTORY_ITEMS];
         
-        InventoryItem lumber = new InventoryItem();
-        lumber.setDescription("Lumber");
-        lumber.setQuantityInStock(0);
-        lumber.setRequiredAmount(0);
-        inventory[ItemList.lumber.ordinal()] = lumber;
+        InventoryItem wagontonge = new InventoryItem();
+        wagontonge.setDescription("Wagon Tonge");
+        wagontonge.setQuantityInStock(0);
+        wagontonge.setRequiredAmount(0);
+        inventory[ItemList.WagonTonge.ordinal()] = wagontonge;
         
-        InventoryItem ore = new InventoryItem();
-        ore.setDescription("Ore");
-        ore.setQuantityInStock(0);
-        ore.setRequiredAmount(0);
-        inventory[Item.ore.ordinal()] = ore;
+        InventoryItem wagonaxel = new InventoryItem();
+        wagonaxel.setDescription("Wagon Axel");
+        wagonaxel.setQuantityInStock(0);
+        wagonaxel.setRequiredAmount(0);
+        inventory[ItemList.WagonAxel.ordinal()] = wagonaxel;
         
-        InventoryItem grain = new InventoryItem();
-        grain.setDescription("Grain");
-        grain.setQuantityInStock(0);
-        grain.setRequiredAmount(0);
-        inventory[Item.grain.ordinal()] = grain;
+        InventoryItem wagonwheel = new InventoryItem();
+        wagonwheel.setDescription("Wagon Wheel");
+        wagonwheel.setQuantityInStock(0);
+        wagonwheel.setRequiredAmount(0);
+        inventory[ItemList.WagonWheel.ordinal()] = wagonwheel;
         
-        InventoryItem legumes = new InventoryItem();
-        legumes.setDescription("Legumes");
-        legumes.setQuantityInStock(0);
-        legumes.setRequiredAmount(0);
-        inventory[Item.legume.ordinal()] = legumes;
+        InventoryItem bacon = new InventoryItem();
+        bacon.setDescription("Bacon");
+        bacon.setQuantityInStock(0);
+        bacon.setRequiredAmount(0);
+        inventory[ItemList.Bacon.ordinal()] = bacon;
         
-        InventoryItem oil = new InventoryItem();
-        oil.setDescription("Olive Oil");
-        oil.setQuantityInStock(0);
-        oil.setRequiredAmount(0);
-        inventory[Item.oil.ordinal()] = oil;
+        InventoryItem bullets = new InventoryItem();
+        bullets.setDescription("Bullets");
+        bullets.setQuantityInStock(0);
+        bullets.setRequiredAmount(0);
+        inventory[ItemList.Bullets.ordinal()] = bullets;
         
-        InventoryItem water = new InventoryItem();
-        water.setDescription("Water");
-        water.setQuantityInStock(0);
-        water.setRequiredAmount(0);
-        inventory[Item.water.ordinal()] = water;
+        InventoryItem cornmeal = new InventoryItem();
+        cornmeal.setDescription("Cornmeal");
+        cornmeal.setQuantityInStock(0);
+        cornmeal.setRequiredAmount(0);
+        inventory[ItemList.CornMeal.ordinal()] = cornmeal;
         
-        InventoryItem honey = new InventoryItem();
-        honey.setDescription("Honey");
-        honey.setQuantityInStock(0);
-        honey.setRequiredAmount(0);
-        inventory[Item.honey.ordinal()] = honey;
+        InventoryItem flour = new InventoryItem();
+        flour.setDescription("Honey");
+        flour.setQuantityInStock(0);
+        flour.setRequiredAmount(0);
+        inventory[ItemList.Flour.ordinal()] = flour;
         
-        InventoryItem salt = new InventoryItem();
-        salt.setDescription("Salt");
-        salt.setQuantityInStock(0);
-        salt.setRequiredAmount(0);
-        inventory[Item.salt.ordinal()] = salt;
+        InventoryItem gunpowder = new InventoryItem();
+        gunpowder.setDescription("Gunpowder");
+        gunpowder.setQuantityInStock(0);
+        gunpowder.setRequiredAmount(0);
+        inventory[ItemList.Gunpowder.ordinal()] = gunpowder;
         
-        InventoryItem axe = new InventoryItem();
-        axe.setDescription("Axe");
-        axe.setQuantityInStock(0);
-        axe.setRequiredAmount(2);
-        inventory[Item.axe.ordinal()] = axe;
+        InventoryItem matches = new InventoryItem();
+        matches.setDescription("Axe");
+        matches.setQuantityInStock(0);
+        matches.setRequiredAmount(2);
+        inventory[ItemList.Matches.ordinal()] = matches;
 
         InventoryItem hammer = new InventoryItem();
         hammer.setDescription("Hammer");
         hammer.setQuantityInStock(0);
         hammer.setRequiredAmount(3);
-        inventory[Item.hammer.ordinal()] = hammer;
+        inventory[ItemList.Hammer.ordinal()] = hammer;
         
-        InventoryItem drill = new InventoryItem();
-        drill.setDescription("Drill");
-        drill.setQuantityInStock(0);
-        drill.setRequiredAmount(1);
-        inventory[Item.drill.ordinal()] = drill;
+        InventoryItem rope = new InventoryItem();
+        rope.setDescription("Rope");
+        rope.setQuantityInStock(0);
+        rope.setRequiredAmount(1);
+        inventory[ItemList.Rope.ordinal()] = rope;
         
         InventoryItem shovel = new InventoryItem();
         shovel.setDescription("Shovel");
         shovel.setQuantityInStock(0);
         shovel.setRequiredAmount(1);
-        inventory[Item.shovel.ordinal()] = shovel;
+        inventory[ItemList.Shovel.ordinal()] = shovel;
         
-        InventoryItem sickle = new InventoryItem();
-        sickle.setDescription("Sickle");
-        sickle.setQuantityInStock(0);
-        sickle.setRequiredAmount(2);
-        inventory[Item.sickle.ordinal()] = sickle;
+        InventoryItem soap = new InventoryItem();
+        soap.setDescription("Soap");
+        soap.setQuantityInStock(0);
+        soap.setRequiredAmount(2);
+        inventory[ItemList.Soap.ordinal()] = soap;
         
         
         InventoryItem saw = new InventoryItem();
         saw.setDescription("Saw");
         saw.setQuantityInStock(0);
         saw.setRequiredAmount(2);
-        inventory[Item.saw.ordinal()] = saw;
+        inventory[ItemList.Saw.ordinal()] = saw;
         
         
         InventoryItem nails = new InventoryItem();
         nails.setDescription("Sickle");
         nails.setQuantityInStock(0);
         nails.setRequiredAmount(50);
-        inventory[Item.nails.ordinal()] = nails;
+        inventory[ItemList.Nails.ordinal()] = nails;
    
         return inventory;
     }

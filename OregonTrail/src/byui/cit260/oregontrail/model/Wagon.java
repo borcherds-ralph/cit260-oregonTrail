@@ -13,62 +13,56 @@ import java.io.Serializable;
  */
 public class Wagon implements Serializable {
     
-    // Class instance variables
-    private int qty;
-    private int length;
-    private int weight;
-    private String name;
+    private long numberBarrelsLoaded;
+    private double maxWeight;
+    private double loadedWeight;
 
-     public Wagon() {
-    }
-     
-    public int getQty() {
-        return qty;
+    public Wagon() {
+        this.numberBarrelsLoaded = 0;
+        this.maxWeight = 1000;
+        this.loadedWeight = 0;
     }
 
-    public void setQty(int qty) {
-        this.qty = qty;
+    public long getNumberBarrelsLoaded() {
+        return numberBarrelsLoaded;
     }
 
-    public int getLength() {
-        return length;
+    public void setNumberBarrelsLoaded(long numberBarrelsLoaded) {
+        this.numberBarrelsLoaded = numberBarrelsLoaded;
     }
 
-    public void setLength(int length) {
-        this.length = length;
+    public double getMaxWeight() {
+        return maxWeight;
     }
 
-    public int getWeight() {
-        return weight;
+    public void setMaxWeight(double maxWeight) {
+        this.maxWeight = maxWeight;
     }
 
-    public void setWeight(int weight) {
-        this.weight = weight;
+    public double getLoadedWeight() {
+        return loadedWeight;
     }
 
-    public String getName() {
-        return name;
+    public void setLoadedWeight(double loadedWeight) {
+        this.loadedWeight = loadedWeight;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    @Override
+    public String toString() {
+        return "Wagon{" + "numberLoaded=" + numberBarrelsLoaded + ", maxWeight=" + maxWeight + ", loadedWeight=" + loadedWeight + '}';
     }
-    
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 31 * hash + this.qty;
-        hash = 31 * hash + this.length;
-        hash = 31 * hash + this.weight;
+        int hash = 7;
+        hash = 13 * hash + (int) (this.numberBarrelsLoaded ^ (this.numberBarrelsLoaded >>> 32));
+        hash = 13 * hash + (int) (Double.doubleToLongBits(this.maxWeight) ^ (Double.doubleToLongBits(this.maxWeight) >>> 32));
+        hash = 13 * hash + (int) (Double.doubleToLongBits(this.loadedWeight) ^ (Double.doubleToLongBits(this.loadedWeight) >>> 32));
         return hash;
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
         if (obj == null) {
             return false;
         }
@@ -76,25 +70,18 @@ public class Wagon implements Serializable {
             return false;
         }
         final Wagon other = (Wagon) obj;
-        if (this.qty != other.qty) {
+        if (this.numberBarrelsLoaded != other.numberBarrelsLoaded) {
             return false;
         }
-        if (this.length != other.length) {
+        if (Double.doubleToLongBits(this.maxWeight) != Double.doubleToLongBits(other.maxWeight)) {
             return false;
         }
-        if (this.weight != other.weight) {
+        if (Double.doubleToLongBits(this.loadedWeight) != Double.doubleToLongBits(other.loadedWeight)) {
             return false;
-        } else {}
-        
+        }
         return true;
     }
-
-    @Override
-    public String toString() {
-        return "Wagon{ name=" + name + ", qty=" + qty + ", length=" + length + " feet, weight=" + weight + "lbs}";
-    }
-
-   
+    
     
     
 }

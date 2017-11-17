@@ -13,7 +13,9 @@ import java.util.Objects;
  * @author Casey
  */
 public class Locations extends Towns implements Serializable {
-    public String currentlocation;
+
+    public static int milestraveled;
+    public static String currentlocation;
     private ArrayList<Towns> towns;
 
     public Locations() {

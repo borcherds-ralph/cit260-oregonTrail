@@ -20,7 +20,6 @@ public class MapControl implements Serializable {
     }
     
     public void createMap() {
-        
     }
             
 }

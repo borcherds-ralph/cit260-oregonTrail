@@ -12,31 +12,31 @@ package byui.cit260.oregontrail.enums;
 public enum Locationsenum {
     
 //the milage here is the miles it takes to arrive at these locations
-    Independence("Independence", "Missouri", 0),
-    FortLaramie("Laramie", "Wyoming", 700),
-    OregonCity("Oregon City", "Oregon", 2500),
-    FortWallaWalla("Fort Walla Walla", "Washington", 2250);
+    Independence("Independence", "Town", 0),
+    FortLaramie("Laramie", "Fort", 700),
+    OregonCity("Oregon City", "Town", 2500),
+    FortWallaWalla("Fort Walla Walla", "Fort", 2250);
     
      public final String LocationName;
-     private final String LocationState;
-     private final int Locationmilage;
+     private final String LocationType;
+     public final int LocationMilage;
     
-     Locationsenum(String Name, String State, int milage) {
+     Locationsenum(String Name, String Type, int milage) {
             LocationName = Name;
-            LocationState = State;
-            Locationmilage = milage;
+            LocationType = Type;
+            LocationMilage = milage;
         }
 
         public String getLocationName() {
             return LocationName;
         }
 
-        public String getItemName() {
-            return LocationState;
+        public String getLocationTypeName() {
+            return LocationType;
         }
 
         public int getLocationMilage(){
-            return Locationmilage;
+            return LocationMilage;
         }
 
 }

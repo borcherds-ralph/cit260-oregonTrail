@@ -6,8 +6,8 @@
 package byui.cit260.oregontrail.view;
 
 //import byui.cit260.oregontrail.control.PersonControl;
-import byui.cit260.oregontrail.control.GameControl;
 import byui.cit260.oregontrail.model.Player;
+import byui.cit260.oregontrail.control.PersonControl;
 
 /**
  *
@@ -47,7 +47,7 @@ public class StartProgramView extends View {
             return false;
         }
 
-        Player player = GameControl.createPlayer(playersName);
+        Player player = PersonControl.createPlayer(playersName);
 
         if (player == null) {
             System.out.println("\nError creating the player.");

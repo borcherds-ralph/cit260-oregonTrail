@@ -12,62 +12,64 @@ import java.io.Serializable;
  */
 public enum ItemList implements Serializable {
 
-        AloeVera("1", "8-oz jar of aloe vera"),
-        Alum("1", "8-oz bottle of alum"),
-        Bacon("308", "Bacon"),
-        Bullets("3 boxes", "20 bullets"),
-        Cheese("16 lbs", "cheese"),
-        CoffeeBeans("20 lbs", "coffee beans"),
-        CoffeeMill("1", "coffee mill"),
-        CoffeePot("1", "coffee pot"),
-        CornMeal("8", "10-lb. sacks of cornmeal"),
-        Crackers("8", "5-lb. tin of crackers"),
-        DriedBeans("16", "10-lb. sacks of dried beans"),
-        DriedBread("8", "5-lb. tins of dried bread"),
-        DriedFruit("24", "5-lb. sacks of dried fruit"),
-        DriedVegtables("20", "5-lb. sacks of dried vegetables"),
-        Flour("16", "10-lb. sacks of flour"),
-        Gunpowder("2", "25-lb kegs of gunpowder"),
-        Hammer("1", "6-oz. hammer"),
-        Kettle("1", "kettle"),
-        Lard("3", "5-lb. slabs of lard"),
-        Laudanum("1", "4-oz. bottle of laudanum"),
-        Matches("5", "boxes matches"),
-	Nails("1", "Box of Nails"),
-        Pemmican("152 lbs", "pemmican"),
-        Pepper("2", "8-oz. bottles of pepper"),
-        Peppermint("1", "4-oz. bottle of peppermint"),
-        Pickles("1", "25-lb. keg of pickles"),
-        Potatoes("16", "5-lb. tins of preserved potatoes"),
-        Rice("8", "20-lb. sacks of rice"),
-        Rifle("1", "rifle"),
-        Rope("1", "30-ft. length of rope"),
-        Saleratus("2", "3-lb. boxes of saleratus"),
-	Shovel("1", "Long handled shovel"),
-        Clothing("12 sets", "clothing"),
-        CookingUtensils("1 set", "cooking utensils"),
-        EatingUtensils("1 set", "eating utensils"),
-	Saw("1", "Large toothed hand saw"),
-        Shoes("4 pairs", "shoes"),
-        Soap("1", "10-lb. boxes of soap"),
-        Socks("12 pairs", "socks"),
-        Yoke("1", "spare ox yoke"),
-        WagonTonge("1", "spare wagon tongue"),
-        WagonAxel("1", "spare wagon axle"),
-        WagonWheel("1", "spare wagon wheel"),
-        Sugar("12", "10-lb. sacks of sugar"),
-        Sulfur("1", "6-oz. bottle of sulfur"),
-        Tea("12 lbs", "tea"),
-        TinCups("4", "tin cups"),
-        TinPlates("4", "tin plates"),
-        YeastCake("1", " 5-lb. box of yeast cake");
+        AloeVera("1", "8-oz jar of aloe vera", .2),
+        Alum("1", "8-oz bottle of alum", .2),
+        Bacon("308", "Bacon", 1),
+        Bullets("3 boxes", "20 bullets", 2),
+        Cheese("16 lbs", "cheese", 1),
+        CoffeeBeans("20 lbs", "coffee beans", 20),
+        CoffeeMill("1", "coffee mill",1 ),
+        CoffeePot("1", "coffee pot", 1),
+        CornMeal("8", "10-lb. sacks of cornmeal", 10),
+        Crackers("8", "5-lb. tin of crackers", 5),
+        DriedBeans("16", "10-lb. sacks of dried beans", 10),
+        DriedBread("8", "5-lb. tins of dried bread", 5),
+        DriedFruit("24", "5-lb. sacks of dried fruit", 5),
+        DriedVegtables("20", "5-lb. sacks of dried vegetables", 5),
+        Flour("16", "10-lb. sacks of flour", 10),
+        Gunpowder("2", "25-lb kegs of gunpowder", 25),
+        Hammer("1", "6-oz. hammer", .375),
+        Kettle("1", "kettle", 1),
+        Lard("3", "5-lb. slabs of lard", 5),
+        Laudanum("1", "4-oz. bottle of laudanum", .25),
+        Matches("5", "boxes matches", .25),
+	Nails("1", "Box of Nails", 1),
+        Pemmican("152 lbs", "pemmican", 1),
+        Pepper("2", "8-oz. bottles of pepper", .2),
+        Peppermint("1", "4-oz. bottle of peppermint", .25),
+        Pickles("1", "25-lb. keg of pickles", 25),
+        Potatoes("16", "5-lb. tins of preserved potatoes", 5),
+        Rice("8", "20-lb. sacks of rice", 20),
+        Rifle("1", "rifle", 3),
+        Rope("1", "30-ft. length of rope", 3),
+        Saleratus("2", "3-lb. boxes of saleratus", 3),
+	Shovel("1", "Long handled shovel", 3),
+        Clothing("12 sets", "clothing", 5),
+        CookingUtensils("1 set", "cooking utensils", 1),
+        EatingUtensils("1 set", "eating utensils", 1),
+	Saw("1", "Large toothed hand saw", 2),
+        Shoes("4 pairs", "shoes", 2),
+        Soap("1", "10-lb. boxes of soap", 10),
+        Socks("12 pairs", "socks", 1),
+        Yoke("1", "spare ox yoke", 50),
+        WagonTongue("1", "Wagon tongue", 30),
+        WagonAxel("1", "spare wagon axle", 20),
+        WagonWheel("1", "spare wagon wheel", 15),
+        Sugar("12", "10-lb. sacks of sugar", 10),
+        Sulfur("1", "6-oz. bottle of sulfur", .375),
+        Tea("12 lbs", "tea", 12),
+        TinCups("4", "tin cups", 1),
+        TinPlates("4", "tin plates", 1),
+        YeastCake("1", " 5-lb. box of yeast cake", 1);
 
         private final String recomQty;
         private final String itemName;
+	private final double itemWeight;
         
-        private ItemList(String qty, String itemName) {
+        private ItemList(String qty, String itemName, double itemWeight) {
             this.recomQty = qty;
             this.itemName = itemName;
+	    this.itemWeight = itemWeight;
         }
         
         public String getQty() {
@@ -78,8 +80,8 @@ public enum ItemList implements Serializable {
             return this.itemName;
         }
 
-        public String getValue(){
-            return this.itemName;
+        public double getWeight(){
+            return this.itemWeight;
         }
         
 

@@ -59,13 +59,13 @@ public class GameControl {
   
     public static InventoryItem[] createInventoryList() {
         // created array(list) of inventory items    
-        InventoryItem[] inventory = new InventoryItem[Constants.NUMBER_OF_INVENTORY_ITEMS];
+        InventoryItem[] inventory = new InventoryItem[15];
         
         InventoryItem wagontonge = new InventoryItem();
-        wagontonge.setDescription("Wagon Tonge");
+        wagontonge.setDescription("Wagon Tongue");
         wagontonge.setQuantityInStock(0);
         wagontonge.setRequiredAmount(0);
-        inventory[ItemList.WagonTonge.ordinal()] = wagontonge;
+        inventory[ItemList.WagonTongue.ordinal()] = wagontonge;
         
         InventoryItem wagonaxel = new InventoryItem();
         wagonaxel.setDescription("Wagon Axel");

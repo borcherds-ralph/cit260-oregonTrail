@@ -12,16 +12,22 @@ import java.io.Serializable;
  */
 public enum Actorsenum implements Serializable {
 
-        Banker("500", "2"),
-        Farmer("300", "5"),
-        Carpenter("200", "3"),;
+        Banker("The banker has  the most money and only a spouse", "1,000", "2"),
+        Farmer("The farmer has some money but a spouse and 3 children", "500", "5"),
+        Carpenter("The carpenter has a little money, 1 spouse and 1 child", "300", "3"),;
         
+        private final String description;
         private final String cash;
         private final String familyMembers;
         
-        private Actorsenum(String cash, String familyMembers) {
+        private Actorsenum(String description, String cash, String familyMembers) {
+            this.description = description;
             this.cash = cash;
             this.familyMembers = familyMembers;
+        }
+
+        public String getdescription() {
+        return this.description;
         }
         
         public String getcash() {

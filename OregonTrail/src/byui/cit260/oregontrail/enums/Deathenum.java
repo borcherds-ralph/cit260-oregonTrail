@@ -17,7 +17,7 @@ public enum Deathenum implements Serializable {
      snakebite("River"),
      exhaustion("Supply"), 
      typhoid("River"), 
-     cholera("Restaurante"), 
+     cholera("River"), 
      dysentery("River"),
      drowning("River"),
      gunshot("Town"),; 

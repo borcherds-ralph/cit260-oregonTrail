@@ -17,7 +17,7 @@ public enum ItemList implements Serializable {
         Bacon("308", "Bacon"),
         Bullets("3 boxes", "20 bullets"),
         Cheese("16 lbs", "cheese"),
-        CofeeBeans("20 lbs", "coffee beans"),
+        CoffeeBeans("20 lbs", "coffee beans"),
         CoffeeMill("1", "coffee mill"),
         CoffeePot("1", "coffee pot"),
         CornMeal("8", "10-lb. sacks of cornmeal"),

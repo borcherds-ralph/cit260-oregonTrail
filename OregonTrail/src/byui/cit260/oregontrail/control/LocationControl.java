@@ -8,7 +8,6 @@ package byui.cit260.oregontrail.control;
 import byui.cit260.oregontrail.model.Forts;
 import byui.cit260.oregontrail.model.Locations;
 import byui.cit260.oregontrail.model.Towns;
-import byui.cit260.oregontrail.enums.Locationsenum;
 import java.util.ArrayList;
 /**
  *
@@ -32,10 +31,15 @@ public class LocationControl {
     }
 
     //This checks to see if the player has traveled enough miles to be at a location
-    public String milageCheck() {
-        if (Locations.milestraveled.equals(Locationsenum.valueOf(LocationMilage)))
-            currentlocation.equals(Locationsenum.valueOf(currentlocation));
-    else
+    public String milageCheck(Locations location) {
+	String cityName = "FortWallaWalla";
+	int milesTraveled = 1000;
+	int cityMilage = location.getLocationMilage(cityName);
+	
+        if (milesTraveled == cityMilage) {
+            currentlocation = location.getLocationType(cityName);
+	}
+	else {
             currentlocation = "trail";
     return currentlocation;
     }

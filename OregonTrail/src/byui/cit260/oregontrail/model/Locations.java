@@ -5,6 +5,9 @@
  */
 package byui.cit260.oregontrail.model;
 
+import byui.cit260.oregontrail.enums.Locationsenum;
+import byui.cit260.oregontrail.model.Locations;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -28,7 +31,34 @@ public class Locations extends Towns implements Serializable {
     public void setCurrentlocation(String currentlocation) {
         this.currentlocation = currentlocation;
     }
+    
+    
+    public String getLocationName(String tagName) {
+        Locationsenum name =  Locationsenum.valueOf(tagName);
+     
+        String itemName = name.getLocationName();
+               
+	return itemName;
 
+    }
+    
+       public String getLocationType(String tagName) {
+        Locationsenum type =  Locationsenum.valueOf(tagName);
+     
+        String itemName = type.getLocationTypeName();
+               
+	return itemName;
+
+    }
+    public int getLocationMilage(String tagName) {
+        Locationsenum name =  Locationsenum.valueOf(tagName);
+     
+        int itemName = name.getLocationMilage();
+               
+	return itemName;
+
+    }
+    
     public ArrayList<Towns> getTowns() {
         return towns;
     }

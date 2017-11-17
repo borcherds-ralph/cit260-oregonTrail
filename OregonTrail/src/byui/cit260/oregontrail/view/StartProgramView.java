@@ -18,21 +18,21 @@ public class StartProgramView extends View {
     public StartProgramView() {
 
         super("\n******************************************************"
-            + "\n                                                      "
-            + "\n This is a text based game based on Oregon Trail.    "
-            + "\n In this game you will help the pioneers reach     "
+            + "\n"
+            + "\n This is a text based game based on Oregon Trail."
+            + "\n In this game you will help the pioneers reach"
             + "\n Oregon before the first snowfall.  You and your"
-            + "\n family will need to strategize and decide how much   "
+            + "\n family will need to strategize and decide how much"
             + "\n food and supplies are needed for the journey at hand."
-            + "\n Hunting supplies would be very helpful in assisting  "
-            + "\n with food needs.  There are many stops and           "
-            + "\n unnexpected events along the way.  You will need to  "
-            + "\n buy animals/oxen and a wagon.          "
-            + "\n                                                      "
-            + "\n Good luck.                        "
-            + "\n                                                      "
+            + "\n Hunting supplies would be very helpful in assisting"
+            + "\n with food needs.  There are many stops and"
+            + "\n unnexpected events along the way.  You will need to"
+            + "\n buy animals/oxen and a wagon."
+            + "\n "
+            + "\n Good luck."
+            + "\n"
             + "\n******************************************************"
-            + "\n Please enter your name:                              "
+            + "\n Please enter your name: "
         );
     }
 

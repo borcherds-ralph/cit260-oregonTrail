@@ -33,6 +33,5 @@ public enum Scene {
     FerryCrossing,
     City,
     Mountains,
-    
         
 }

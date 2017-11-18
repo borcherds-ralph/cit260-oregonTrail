@@ -50,6 +50,7 @@ public class GameControl {
        return 0;
     }
  
+   
     private static Wagon createWagon() {
         Wagon wagon = new Wagon();
         wagon.setMaxWeight(1000);
@@ -62,7 +63,7 @@ public class GameControl {
   
     public static InventoryItem[] createInventoryList() {
         // created array(list) of inventory items    
-        InventoryItem[] inventory = new InventoryItem[15];
+        InventoryItem[] inventory = new InventoryItem[50];
         
         InventoryItem wagontonge = new InventoryItem();
         wagontonge.setDescription("Wagon Tongue");

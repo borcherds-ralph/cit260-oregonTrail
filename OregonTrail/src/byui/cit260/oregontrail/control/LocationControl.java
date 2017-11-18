@@ -47,11 +47,11 @@ public class LocationControl {
     
     //this checks to see if the current location is in the list of locations, 
     //and if not assign the location as trail
-    public String locationCheck() {
-        if (Locations.currentlocation.equals(Locationsenum.valueOf(LocationName)) && (Locations.currentlocation.equals("trail"))) 
-            return currentlocation;
-        else
-            return "Location Not Found";
-
-    }
+//    public String locationCheck() {
+//        if (Locations.currentlocation.equals(Locationsenum.valueOf(LocationName)) && (Locations.currentlocation.equals("trail"))) 
+//            return currentlocation;
+//        else
+//            return "Location Not Found";
+//
+//    }
 }

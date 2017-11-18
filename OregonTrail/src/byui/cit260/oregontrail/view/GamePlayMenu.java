@@ -5,6 +5,8 @@
  */
 package byui.cit260.oregontrail.view;
 
+import byui.cit260.oregontrail.control.MapControl;
+
 /**
  *
  * @author Br33h3rr3ra
@@ -82,7 +84,8 @@ public class GamePlayMenu extends View {
     }
     
     public void displayMap() {
-        Map
+        MapView map = new MapView();
+	map.display();
         
     }  
 

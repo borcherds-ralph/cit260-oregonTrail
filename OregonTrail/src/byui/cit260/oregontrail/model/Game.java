@@ -67,16 +67,17 @@ public class Game implements Serializable {
     public void setMap(Map map) {
         this.map = map;
     }
-    
+     public void createMap(MapControl map) {
+	System.out.println("Map has been created");
+	
+    }
     
     @Override
     public String toString() {
         return "Game{" + "totalTime=" + totalTime + ", player=" + player.toString() + '}';
     }
 
-    public void createMap(MapControl map) {
-	throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
    
     
 }

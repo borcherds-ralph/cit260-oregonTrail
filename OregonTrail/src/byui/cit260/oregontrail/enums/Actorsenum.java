@@ -12,9 +12,9 @@ import java.io.Serializable;
  */
 public enum Actorsenum implements Serializable {
 
-        Banker("The banker has  the most money and only a spouse", "1,000", "2"),
-        Farmer("The farmer has some money but a spouse and 3 children", "500", "5"),
-        Carpenter("The carpenter has a little money, 1 spouse and 1 child", "300", "3"),;
+        Bob_Banker("The banker has  the most money and only a spouse", "1,000", "2"),
+        Fred_Farmer("The farmer has some money but a spouse and 3 children", "500", "5"),
+        Chris_Carpenter("The carpenter has a little money, 1 spouse and 1 child", "300", "3"),;
         
         private final String description;
         private final String cash;

@@ -5,6 +5,7 @@
  */
 package byui.cit260.oregontrail.model;
 
+import byui.cit260.oregontrail.control.MapControl;
 import java.io.Serializable;
 
 /**
@@ -71,6 +72,10 @@ public class Game implements Serializable {
     @Override
     public String toString() {
         return "Game{" + "totalTime=" + totalTime + ", player=" + player.toString() + '}';
+    }
+
+    public void createMap(MapControl map) {
+	throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
    
     

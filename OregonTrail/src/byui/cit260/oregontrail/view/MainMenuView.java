@@ -5,6 +5,9 @@
  */
 package byui.cit260.oregontrail.view;
 
+import byui.cit260.oregontrail.control.GameControl;
+import oregontrail.OregonTrail;
+
 public class MainMenuView extends View {
 
      private String menu;
@@ -89,7 +92,16 @@ public class MainMenuView extends View {
     }
 
     private void startNewGame() {
-        System.out.println("\n*** Invalid selection *** Try again");
+        // create a new game
+        int returnValue = GameControl.createNewGame(OregonTrail.getPlayer());
+        if (returnValue < 0) {
+            System.out.println("ERROR - Failed to create new game");
+        }
+
+        // display the game menu
+        GamePlayMenu gameMenu = new GamePlayMenu();
+        gameMenu.display();
+    
     }
 
 }

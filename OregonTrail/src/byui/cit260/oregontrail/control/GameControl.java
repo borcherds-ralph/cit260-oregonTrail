@@ -13,6 +13,7 @@ import byui.cit260.oregontrail.model.InventoryItem;
 import byui.cit260.oregontrail.enums.ItemList;
 import byui.cit260.oregontrail.model.Wagon;
 import byui.cit260.oregontrail.enums.Actorsenum;
+
 import oregontrail.OregonTrail;
 
 /**
@@ -36,8 +37,8 @@ public class GameControl {
        game.setWagon(wagon); // save wagon in game
         
       
-//       Map map = MapControl.createMap(); // create and initialize new map
-//       game.setMap(map); // save map in game
+       MapControl map = new MapControl(); // create and initialize new map
+       game.createMap(map); // save map in game
 
        // move actors to starting position in the map
        
@@ -49,7 +50,7 @@ public class GameControl {
        return 0;
     }
  
-        private static Wagon createWagon() {
+    private static Wagon createWagon() {
         Wagon wagon = new Wagon();
         wagon.setMaxWeight(1000);
         wagon.setLoadedWeight(0);
@@ -157,7 +158,8 @@ public class GameControl {
    
         return inventory;
     }
-public Actorsenum[]  getSortActorList(Actorsenum[] actors) {
+    
+    public Actorsenum[]  getSortActorList(Actorsenum[] actors) {
         
         // sort the list of actors by name and profession
         Actorsenum tempActor;

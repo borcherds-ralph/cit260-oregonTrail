@@ -24,6 +24,7 @@ public class GamePlayMenu extends View {
                 + "\n S - Go to store"
                 + "\n T - Go to hotel"
                 + "\n U - See Supplies"
+		+ "\n V - View Map"
                 + "\n R - Rest"
                 + "\n H - Help"
                 + "\n X - Exit Game"
@@ -54,11 +55,17 @@ public class GamePlayMenu extends View {
                 this.displayHotelView();
                 break;
             case "U":
+		System.out.println("\n*** This has not been implemented yet *** Try again");
                 break;
             case "R":
+		System.out.println("\n*** This has not been implemented yet *** Try again");
                 break;
             case "H":
+		System.out.println("\n*** This has not been implemented yet *** Try again");
                 break;
+	    case "V":
+		this.displayMap();
+		break;
             case "X":
                 this.quitGame();
                 break;
@@ -68,10 +75,16 @@ public class GamePlayMenu extends View {
         } 
         return false;
     }
-     private void displayHotelView() {
+    
+    private void displayHotelView() {
         HotelView hotel = new HotelView();
         hotel.display();
     }
+    
+    public void displayMap() {
+        Map
+        
+    }  
 
     void quitGame() {
         return;

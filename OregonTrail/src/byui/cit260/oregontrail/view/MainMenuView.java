@@ -41,9 +41,6 @@ public class MainMenuView extends View {
             case "H":
                 this.displayHelpMenu();
                 break;
-	    case "V":
-		this.displayMap();
-		break;
             case "S":
                 this.saveGame();
                 break;
@@ -83,10 +80,5 @@ public class MainMenuView extends View {
 	
     }
     
-    public void displayMap() {
-        MapView map = new MapView();
-	map.display();
-        
-    } 
 
 }

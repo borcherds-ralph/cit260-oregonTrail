@@ -159,7 +159,7 @@ public class GameControl {
     }
 public Actorsenum[]  getSortActorList(Actorsenum[] actors) {
         
-        // using a BubbleSort to sort the list of actors by name
+        // sort the list of actors by name and profession
         Actorsenum tempActor;
         for (int i = 0; i < actors.length-1; i++) {
             for (int j = 0; j < actors.length-1-i; j++) {

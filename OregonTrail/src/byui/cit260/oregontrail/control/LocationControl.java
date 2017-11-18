@@ -24,9 +24,9 @@ public class LocationControl {
     
     //this sets the starting location of the game
     public String startGameLocation() {
-        Locations.milestraveled = 0;
-        Locations.currentlocation = "Independence";
-        currentlocation = Locations.currentlocation;
+        Locations.milesTraveled = 0;
+        Locations.currentLocation = "Independence";
+        currentlocation = Locations.currentLocation;
         return currentlocation ;
     }
 

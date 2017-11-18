@@ -6,6 +6,8 @@
 package byui.cit260.oregontrail.control;
 
 import byui.cit260.oregontrail.model.Map;
+import byui.cit260.oregontrail.model.Locations;
+import byui.cit260.oregontrail.control.LocationControl;
 import java.io.Serializable;
 
 /**

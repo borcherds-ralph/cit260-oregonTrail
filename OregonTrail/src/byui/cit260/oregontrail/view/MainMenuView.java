@@ -20,9 +20,6 @@ public class MainMenuView extends View {
             + "\nN - Start new game"
             + "\nG - Get and start saved game"
             + "\nH - Get help on how to play the game"
-            + "\nR - River Crossing View"
-            + "\nT - Hotel View"
-            + "\nA - Trail View"
 	    + "\nV - View Map"
             + "\nS - Save game"
             + "\nQ - Quit"
@@ -43,15 +40,6 @@ public class MainMenuView extends View {
                 break;
             case "H":
                 this.displayHelpMenu();
-                break;
-            case "R":
-                this.displayRiverCrossing();
-                break;
-            case "T":
-                this.displayHotelView();
-                break;
-            case "A":
-                this.displayTrailView();
                 break;
 	    case "V":
 		this.displayMap();
@@ -80,20 +68,6 @@ public class MainMenuView extends View {
         helpmenu.display();
     }
     
-    private void displayTrailView() {
-        TrailView trailview = new TrailView() {};
-        trailview.display();
-    }
-
-    private void displayRiverCrossing() {
-        RiverCrossingView rivercrossing = new RiverCrossingView();
-        rivercrossing.display();
-    }
-    
-    private void displayHotelView() {
-        HotelView hotel = new HotelView();
-        hotel.display();
-    }
 
     private void startNewGame() {
         // create a new game
@@ -103,8 +77,8 @@ public class MainMenuView extends View {
         }
 
         // display the game menu
-//        GamePlayMenu gameMenu = new GamePlayMenu();
-//        gameMenu.display();
+        GamePlayMenu gameMenu = new GamePlayMenu();
+        gameMenu.display();
 	System.out.println("New Game has been created");
 	
     }

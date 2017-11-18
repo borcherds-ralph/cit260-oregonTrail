@@ -18,15 +18,24 @@ public enum Locationsenum {
     FortWallaWalla("Fort Walla Walla", "Fort", 2250);
     
      public final String LocationName;
-     private final String LocationType;
+     public final String LocationType;
      public final int LocationMilage;
+     
+     private int milageMatch;
     
      Locationsenum(String Name, String Type, int milage) {
+         this.milageMatch = milageMatch;
             LocationName = Name;
             LocationType = Type;
             LocationMilage = milage;
         }
 
+   //  public static Locationsenum getLocationMatch(int milageMatch) {
+     //    for (Locationsenum 0 : Locationsenum.values()) {
+     //       if (0.Locationsenum == milageMatch) return Independence;
+   //  }
+    //     throw new IllegalArgumentException("trail");
+   //  }
         public String getLocationName() {
             return LocationName;
         }

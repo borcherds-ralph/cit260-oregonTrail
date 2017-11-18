@@ -17,19 +17,19 @@ import java.util.Objects;
  */
 public class Locations extends Towns implements Serializable {
 
-    public static int milestraveled;
-    public static String currentlocation;
+    public static int milesTraveled;
+    public static String currentLocation;
     private ArrayList<Towns> towns;
 
     public Locations() {
     }
 
     public String getCurrentlocation() {
-        return currentlocation;
+        return currentLocation;
     }
 
     public void setCurrentlocation(String currentlocation) {
-        this.currentlocation = currentlocation;
+        this.currentLocation = currentlocation;
     }
     
     
@@ -70,7 +70,7 @@ public class Locations extends Towns implements Serializable {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 47 * hash + Objects.hashCode(this.currentlocation);
+        hash = 47 * hash + Objects.hashCode(this.currentLocation);
         return hash;
     }
 
@@ -89,7 +89,7 @@ public class Locations extends Towns implements Serializable {
             return false;
         }
         final Locations other = (Locations) obj;
-        if (!Objects.equals(this.currentlocation, other.currentlocation)) {
+        if (!Objects.equals(this.currentLocation, other.currentLocation)) {
             return false;
         }
         return true;
@@ -97,7 +97,7 @@ public class Locations extends Towns implements Serializable {
 
     @Override
     public String toString() {
-        return "Locationcurrentlocation=" + currentlocation + ", " + super.toString()  + '}';
+        return "Locationcurrentlocation=" + currentLocation + ", " + super.toString()  + '}';
     }
     
         

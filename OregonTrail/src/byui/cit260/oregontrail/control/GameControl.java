@@ -12,6 +12,7 @@ import byui.cit260.oregontrail.model.Player;
 import byui.cit260.oregontrail.model.InventoryItem;
 import byui.cit260.oregontrail.enums.ItemList;
 import byui.cit260.oregontrail.model.Wagon;
+import byui.cit260.oregontrail.enums.Actorsenum;
 import oregontrail.OregonTrail;
 
 /**
@@ -34,6 +35,7 @@ public class GameControl {
        Wagon wagon = new Wagon(); // create new wagon
        game.setWagon(wagon); // save wagon in game
         
+      
 //       Map map = MapControl.createMap(); // create and initialize new map
 //       game.setMap(map); // save map in game
 
@@ -155,6 +157,25 @@ public class GameControl {
    
         return inventory;
     }
+public Actorsenum[]  getSortActorList(Actorsenum[] actors) {
+        
+        // using a BubbleSort to sort the list of actors by name
+        Actorsenum tempActor;
+        for (int i = 0; i < actors.length-1; i++) {
+            for (int j = 0; j < actors.length-1-i; j++) {
+                String currentActorsName = actors[j].toString();
+                String nextActorsNames = actors[j + 1].toString();
+                if ( currentActorsName.compareToIgnoreCase(nextActorsNames) > 0) {
+                    tempActor = actors[j];
+                    actors[j] = actors[j+1];
+                    actors[j+1] = tempActor;
+                }
+            }
+        }
+        
+        return actors;
+    }
+
 
     public static void startSavedGame() {
         System.out.println("*** startSavedGame() called ***");

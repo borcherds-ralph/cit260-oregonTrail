@@ -5,6 +5,9 @@
  */
 package byui.cit260.oregontrail.view;
 
+import byui.cit260.oregontrail.control.RestaurantControl;
+import java.util.Random;
+
 public class RestaurantView extends View {
 
     public RestaurantView() {
@@ -16,6 +19,7 @@ public class RestaurantView extends View {
             + "\nH - Hamburger and French Fries"
             + "\nC - Chili and Cornbread"
             + "\nP - Pizza and Salad"
+            + "\nB - Get Bill"
             + "\nQ - Return"
             + "\n-----------------------------------------"
             );
@@ -38,6 +42,9 @@ public class RestaurantView extends View {
                break;
            case "PIZZA":
                this.getPizza();
+               break;
+           case "B":
+               this.getBill();
                break;
            case "Q":
                this.quitMenu();
@@ -68,5 +75,24 @@ public class RestaurantView extends View {
    private void quitMenu() {
        System.out.println("*** Return To Previous Scene ***");
    }
- 
+   
+   private void getBill() {
+        double[] costs = new double[10];
+         
+       RestaurantControl menucost = new RestaurantControl();
+	int i;
+	Random rand = new Random();
+	double[] lists = new double[10];
+	int n;
+	for(i=0; i < 10; i++){
+	    n = rand.nextInt(50) + 1;
+	    lists[i] = n;
+	}
+	double total;
+	total = menucost.calcMealCosts(lists);
+                       
+       
+        System.out.println("The total bill is" + total);
    }
+ 
+}

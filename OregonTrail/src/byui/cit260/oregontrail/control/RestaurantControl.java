@@ -5,10 +5,23 @@
  */
 package byui.cit260.oregontrail.control;
 
+
+
 /**
  *
  * @author Br33h3rr3ra
  */
-public class RestauranteControl {
+public class RestaurantControl {
+    private String Meals[];
+    private String MealType[];
+    private double MealPrice[];
     
+    public double calcMealCosts(double[] list) {
+	
+	double total = 0;
+	for(double x : list) {
+	    total += x;
+	}
+	return total;
+    } 
 }

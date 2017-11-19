@@ -27,7 +27,8 @@ public class MenuItems {
    // public double getItemCost(double qty, double itemCost); 
    
         Meals chili = new Meals();
-       chili.setMealType("Chili");//     Chili.setMealPrice(1.00);
+       chili.setMealType("Chili");
+       chili.setMealPrice(1.00);
     //    public double getItemCost(String MealType, double mealPrice, int mealQty) 
         
         

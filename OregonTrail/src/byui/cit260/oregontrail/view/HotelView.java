@@ -16,7 +16,8 @@ public class HotelView extends View {
             + "\nF - Get food to eat at the Restaurante"
             + "\nR - Get a room, Go to bed"
             + "\nA - Add a new team member"    
-            + "\nB - Return back to last scene"
+            + "\nC - See Cost of Bill"
+            + "\nB - Return back to last scene"   
             + "\n-----------------------------------------"
         );
     }
@@ -37,6 +38,9 @@ public class HotelView extends View {
                break;
            case "A":
                this.RecruitMemberView();
+               break;
+           case "C":
+               this.Bill();
                break;
            case "B":
                this.returnToPrevious();
@@ -69,7 +73,10 @@ public class HotelView extends View {
         recruit.display();
     }
     private void returnToPrevious() {    
-        return;
+        System.out.println("*** return to previous page ***");
+    }
+    private void bill() {
+        System.out.println("*** See the bill for the meal ***");
     }
     private void quitGame() {
         System.out.println("Are you sure you want to quit the game ***");

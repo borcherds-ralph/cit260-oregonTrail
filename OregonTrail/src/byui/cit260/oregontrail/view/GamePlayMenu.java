@@ -7,6 +7,7 @@ package byui.cit260.oregontrail.view;
 
 import byui.cit260.oregontrail.control.ItemControl;
 import byui.cit260.oregontrail.control.MapControl;
+import java.util.Arrays;
 import java.util.Random;
 
 /**
@@ -108,6 +109,7 @@ public class GamePlayMenu extends View {
 	for(i=0; i < 10; i++){
 	    n = rand.nextInt(50) + 1;
 	    lists[i] = n;
+	    System.out.println(n);
 	}
 	int total;
 	total = weights.calcTotalSuppliesWeight(lists);

@@ -75,7 +75,7 @@ public class HotelView extends View {
     private void returnToPrevious() {    
         System.out.println("*** return to previous page ***");
     }
-    private void bill() {
+    private void Bill() {
         System.out.println("*** See the bill for the meal ***");
     }
     private void quitGame() {

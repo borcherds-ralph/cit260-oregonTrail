@@ -7,6 +7,10 @@ package byui.cit260.oregontrail.control;
 
 
 import byui.cit260.oregontrail.model.Item;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  *
@@ -98,5 +102,16 @@ public class ItemControl {
         return itemName;
 
     }
+    
+    public int calcTotalSuppliesWeight(int[] list) {
+	
+	int total = 0;
+	for(int x : list) {
+	    total += x;
+	}
+	return total;
+    } 
+    
+    
 
 }

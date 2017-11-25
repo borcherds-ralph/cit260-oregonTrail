@@ -30,6 +30,7 @@ public class GamePlayMenu extends View {
                 + "\n T - Go to hotel"
                 + "\n U - See Supplies"
 		+ "\n W - Get Total Weight of Supplies"
+		+ "\n I - Calculate item dimensions"
 		+ "\n V - View Map"
                 + "\n R - Rest"
                 + "\n H - Help"
@@ -75,6 +76,8 @@ public class GamePlayMenu extends View {
 	    case "W":
 		this.calcSupplyWeight();
 		break;
+	    case "I":
+		this.calcItemDimensions();
             case "X":
                 this.quitGame();
                 break;
@@ -116,6 +119,12 @@ public class GamePlayMenu extends View {
 	
 	System.out.println("The total weight for the 50 items is: " + total + " lbs" );
     }
+    
+    public void calcItemDimensions() {
+        ItemView item = new ItemView();
+	item.display();
+        
+    } 
 
     void quitGame() {
         return;

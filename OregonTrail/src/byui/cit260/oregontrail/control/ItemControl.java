@@ -34,7 +34,7 @@ public class ItemControl {
         return volume;
     }
 
-    public double calcWeightOfItem(int qty, int weight) throws ItemControlException {
+    public double calcWeightOfItem(double qty, double weight) throws ItemControlException {
         Item item = new Item();
 
         // qty cannot be 0

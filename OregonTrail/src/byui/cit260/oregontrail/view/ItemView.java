@@ -37,17 +37,12 @@ public class ItemView extends View {
      public boolean doAction(String choice) {
           try {
                int numChoice = 0;
-               
-               //choice = choice.toUpperCase();
-               try {
-                    
+
+               try {   
                     numChoice = Integer.parseInt(choice);
-                    
-               } catch (NumberFormatException nf) {
-                    
+               } catch (NumberFormatException nf) {  
                     System.out.println("\n You must enter a valid number choice."
-                            + "\n Try again or enter Q to quit.");
-                    
+                            + "\n Try again or enter Q to quit.");  
                }
                switch (numChoice) {
                     
@@ -73,7 +68,9 @@ public class ItemView extends View {
                
           } catch (ItemControlException ex) {
 
-               Logger.getLogger(ItemView.class.getName()).log(Level.SEVERE, null, ex);
+               System.out.println("\n\t***************************************");
+               System.out.println("\n\t" + ex);
+               System.out.println("\n\t***************************************");
 
           }
           return false;

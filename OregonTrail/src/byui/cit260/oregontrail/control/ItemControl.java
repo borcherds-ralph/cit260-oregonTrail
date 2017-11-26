@@ -17,14 +17,13 @@ public class ItemControl {
 
     public double calcVolumeOfBarrel(double height, double centerDiameter, double topDiameter) throws ItemControlException {
         //This is for a barrel that had a bulge in the center like a wood wine barrel today.
-        if (height <= 0 || height >= 35) { // height is out of range
+        if (height < 1 || height >= 35) { // height is out of range
            throw new ItemControlException("\nYou cannot have a height less than 1 or higher than 35 inches");
         } else if (centerDiameter <= 0 || centerDiameter > 36) { // Center diameter is out of range
              throw new ItemControlException("\nYou cannot have a center diameter less than"
 		     + "\n the top diameter or greater than 36 inches");
         } else if (topDiameter <= 0 || topDiameter > 30) { // Top or Bottom diameter is out of range
-             throw new ItemControlException("\nYou cannot have a top diameter less than 1 or"
-		     + "\n greater than the center diameter or greater than 30 inches");
+             throw new ItemControlException("\nYou cannot have a top diameter less than 1 or greater than 30 inches");
         }
 
         double radius = centerDiameter / 2;

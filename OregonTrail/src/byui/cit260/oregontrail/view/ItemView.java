@@ -68,9 +68,9 @@ public class ItemView extends View {
                
           } catch (ItemControlException ex) {
 
-               System.out.println("\n\t***************************************");
-               System.out.println("\n\t" + ex);
-               System.out.println("\n\t***************************************");
+               System.out.println("\n ******************************************************");
+               System.out.println("\n " + ex);
+               System.out.println("\n ******************************************************");
 
           }
           return false;
@@ -96,9 +96,11 @@ public class ItemView extends View {
              System.out.println("The total volume of the barrel is: " + result + " cubic inches."
                   + "\n Please run #3 - Gallons from Barrel Volume to get the number of gallons. ");
           } catch (ItemControlException ex) {
-               System.out.println("\n\t***************************************");
-               System.out.println("\n\t" + ex);
-               System.out.println("\n\t***************************************");
+
+               System.out.println("\n ******************************************************");
+               System.out.println("\n " + ex);
+               System.out.println("\n ******************************************************");
+
           }
           
 
@@ -123,9 +125,11 @@ public class ItemView extends View {
                System.out.println("The total weight is: " + result + " for."
                   + "\n" + qty + " Items, each weighing: " + weight);
           } catch (ItemControlException ex) {
-               System.out.println("\n\t***************************************");
-               System.out.println("\n\t" + ex);
-               System.out.println("\n\t***************************************");
+
+               System.out.println("\n ******************************************************");
+               System.out.println("\n " + ex);
+               System.out.println("\n ******************************************************");
+
           }
           
 
@@ -144,9 +148,11 @@ public class ItemView extends View {
                System.out.println("The total number of gallons for your barrel is: " + result);
           }
           catch (ItemControlException ex) {
-               System.out.println("\n\t***************************************");
-               System.out.println("\n\t" + ex);
-               System.out.println("\n\t***************************************");
+
+               System.out.println("\n ******************************************************");
+               System.out.println("\n " + ex);
+               System.out.println("\n ******************************************************");
+
           }
      }
 
@@ -166,9 +172,11 @@ public class ItemView extends View {
                double result = instance.calcCylinderVolume(cylDiameter, cylHeight);
                System.out.println("\n The volume of the cylendar is: " + result );
           } catch (ItemControlException ex) {
-               System.out.println("\n\t***************************************");
-               System.out.println("\n\t" + ex);
-               System.out.println("\n\t***************************************");
+ 
+               System.out.println("\n ******************************************************");
+               System.out.println("\n " + ex);
+               System.out.println("\n ******************************************************");
+
           }
      }
 
@@ -186,9 +194,11 @@ public class ItemView extends View {
                double result = instance.getItemCost(itemQty, itemCost);
                System.out.println("\n The cost for these itesms is: " + result );
           } catch (ItemControlException ex) {
-               System.out.println("\n\t***************************************");
-               System.out.println("\n\t" + ex);
-               System.out.println("\n\t***************************************");
+
+               System.out.println("\n ******************************************************");
+               System.out.println("\n " + ex);
+               System.out.println("\n ******************************************************");
+
           }
      }
 }

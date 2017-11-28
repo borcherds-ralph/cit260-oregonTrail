@@ -6,7 +6,7 @@
 package byui.cit260.oregontrail.control;
 
 import byui.cit260.oregontrail.model.Meals;
-
+;
 /**
  *
  * @author Br33h3rr3ra

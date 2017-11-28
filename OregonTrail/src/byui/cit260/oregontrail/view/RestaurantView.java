@@ -6,6 +6,9 @@
 package byui.cit260.oregontrail.view;
 
 import byui.cit260.oregontrail.control.RestaurantControl;
+import byui.cit260.oregontrail.exceptions.ItemControlException;
+import byui.cit260.oregontrail.exceptions.RestaurantControlException;
+
 import java.util.Random;
 
 public class RestaurantView extends View {
@@ -27,10 +30,22 @@ public class RestaurantView extends View {
     
 
     @Override
-    public boolean doAction(String choice) {
-
-      choice = choice.toUpperCase();
-       switch (choice) {
+    public boolean doAction(String Choice) {
+          try {
+               Choice = "";}
+          catch (int){
+              System.out.println("\n Do not enter a number, enter a word");
+          }
+    
+               try {   
+                    Choice = String.Choice(Choice);
+               } catch (Number format nf) {  
+                    System.out.println("\n Enter a valid String choice."
+                            + "\n Try again.");  
+               }
+               switch (Choice) {
+      choice = choice.toUpperCase();{
+       switch (Choice) {
            case "STEAK":
                this.getSteak();
                break;
@@ -53,25 +68,48 @@ public class RestaurantView extends View {
                System.out.println("\n*** Invalid selection *** Try again");
                break;
        }
-
-       return false;
+             }
+          return false;
+     }
    }
 
-   private void getSteak() {
+   private void getSteak() Throws RestaurantExceptionControl {
        System.out.println("*** Steak and Pototoes ***");
+       try {
+             String result = "Steak"; 
+             System.out.println("Do you want yours cooked well down, medium rare or rare?");
+          } catch (RestauranteControlException) {
+               System.out.println("\n\t***************************************");
+          
    }
 
-   private void getBurger() {
-       System.out.println("*** Hamburger and French Fries ***");
+   private void getBurger() Throws RestaurantExceptionControl{
+       Throws RestaurantExceptionControl {
+       System.out.println("*** Hamburger and Fries ***");
+       try {
+             String result = "Burger"; 
+             System.out.println("Do you want yours cooked well down, medium rare or rare?");
+          } catch (RestauranteControlException) {
+               System.out.println("\n\t***************************************");
+          
    }
    
-   private void getChili() {
+   private void getChili() Throws RestaurantExceptionControl{
        System.out.println("*** Chili and Cornbread ***");
-   }
+       try {
+             String result = "Chili"; 
+             System.out.println("Do you want yours Hot, Medium or Mild?");
+          } catch (RestauranteControlException) {
+               System.out.println("\n\t***************************************");
    
-   private void getPizza() {
+   private void getPizza() {Throws RestaurantExceptionControl{
        System.out.println("*** Pizza and Salad ***");
-   }
+       try {
+             String result = "Pizza"; 
+             System.out.println("Do you want Cheese, Pepperoni or Sausage?");
+          } catch (RestauranteControlException) {
+               System.out.println("\n\t***************************************");
+
    private void quitMenu() {
        System.out.println("*** Return To Previous Scene ***");
    }
@@ -89,7 +127,7 @@ public class RestaurantView extends View {
 	    lists[i] = n;
 	}
 	double total;
-	total = menucost.calcMealCosts(lists);
+	total = menucost.getMealPrice(lists);
                        
        
         System.out.println("The total bill is" + total);

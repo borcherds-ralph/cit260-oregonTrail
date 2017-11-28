@@ -8,8 +8,6 @@ package byui.cit260.oregontrail.view;
 import byui.cit260.oregontrail.control.ItemControl;
 import byui.cit260.oregontrail.exceptions.ItemControlException;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -80,16 +78,17 @@ public class ItemView extends View {
 
           ItemControl instance = new ItemControl();
 
-          Scanner dimensions = new Scanner(System.in);
+          Scanner keyInput = new Scanner(System.in);
 
           System.out.println("Please enter the top diameter of the barrel:");
-          double topDiameter = dimensions.nextInt();
+          double topDiameter = keyInput.nextDouble();
+        
 
           System.out.println("Please enter the center diameter of the barrel:");
-          double centerDiameter = dimensions.nextInt();
+          double centerDiameter = keyInput.nextInt();
 
           System.out.println("Please enter the height of the barrel:");
-          double barrelHeight = dimensions.nextInt();
+          double barrelHeight = keyInput.nextInt();
           
           try {
              double result = instance.calcVolumeOfBarrel(barrelHeight, centerDiameter, topDiameter); 

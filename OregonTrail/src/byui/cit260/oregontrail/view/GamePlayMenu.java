@@ -6,9 +6,11 @@
 package byui.cit260.oregontrail.view;
 
 import byui.cit260.oregontrail.control.ItemControl;
-import byui.cit260.oregontrail.control.MapControl;
-import java.util.Arrays;
 import java.util.Random;
+
+import byui.cit260.oregontrail.exceptions.GamePlayMenuException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -21,7 +23,7 @@ public class GamePlayMenu extends View {
     private char choice;
     String currentlocation;
 
-    public GamePlayMenu() {
+    public GamePlayMenu() throws GamePlayMenuException {
         super("\n******************************************************"
                 + "\n                                                      "
                 + "\n You are now in"
@@ -42,68 +44,75 @@ public class GamePlayMenu extends View {
                 + "\n******************************************************"
         );
     }
+    
+     @Override
+    public boolean doAction(String choice) {
 
-    public void setMenuList(String menuList) {
-        this.menuList = menuList;
+         try {
+              choice = choice.toUpperCase();
+              switch (choice) {
+                   case "S":
+                        break;
+                   case "T":
+                        this.displayHotelView();
+                        break;
+                   case "U":
+                        this.displaySupplies();
+                        break;
+                   case "R":
+                        System.out.println("\n*** This has not been implemented yet *** Try again");
+                        break;
+                   case "H":
+                        System.out.println("\n*** This has not been implemented yet *** Try again");
+                        break;
+                   case "V":
+                        this.displayMap();
+                        break;
+                   case "W":
+                        this.calcSupplyWeight();
+                        break;
+                   case "I":
+                        this.calcItemDimensions();
+                   case "X":
+                        this.quitGame();
+                        break;
+                   default:
+                        System.out.println("\n*** Invalid selection *** Try again");
+                        break;
+              }
+              return false;
+         } catch (GamePlayMenuException ex) {
+              System.out.println("\n Please make a valid selection");
+         }
+         return false;
     }
 
-    public String getMenuList() {
+    public void setMenuList(String menuList) throws GamePlayMenuException {
+         this.menuList = menuList;
+    }
+
+    public String getMenuList() throws GamePlayMenuException {
         return menuList;
     }
 
-    @Override
-    public boolean doAction(String choice) {
-
-        choice = choice.toUpperCase();
-        switch (choice) {
-            case "S":
-                break;
-            case "T":
-                this.displayHotelView();
-                break;
-            case "U":
-		this.displaySupplies();
-                break;
-            case "R":
-		System.out.println("\n*** This has not been implemented yet *** Try again");
-                break;
-            case "H":
-		System.out.println("\n*** This has not been implemented yet *** Try again");
-                break;
-	    case "V":
-		this.displayMap();
-		break;
-	    case "W":
-		this.calcSupplyWeight();
-		break;
-	    case "I":
-		this.calcItemDimensions();
-            case "X":
-                this.quitGame();
-                break;
-            default:
-                System.out.println("\n*** Invalid selection *** Try again");
-                break;
-        } 
-        return false;
-    }
+   
     
-    private void displayHotelView() {
+    private void displayHotelView() throws GamePlayMenuException {
         HotelView hotel = new HotelView();
         hotel.display();
     }
     
-    public void displayMap() {
+    public void displayMap() throws GamePlayMenuException {
         MapView map = new MapView();
 	map.display();
         
     }  
     
-    private void displaySupplies() {
+    private void displaySupplies() throws GamePlayMenuException {
         
     }
     
-    private void calcSupplyWeight() {
+    private void calcSupplyWeight() throws GamePlayMenuException {
 	ItemControl weights = new ItemControl();
 	int i;
 	Random rand = new Random();
@@ -120,13 +129,13 @@ public class GamePlayMenu extends View {
 	System.out.println("The total weight for the 50 items is: " + total + " lbs" );
     }
     
-    public void calcItemDimensions() {
+    public void calcItemDimensions() throws GamePlayMenuException{
         ItemView item = new ItemView();
 	item.display();
         
     } 
 
-    void quitGame() {
+    void quitGame() throws GamePlayMenuException {
         return;
     }
     

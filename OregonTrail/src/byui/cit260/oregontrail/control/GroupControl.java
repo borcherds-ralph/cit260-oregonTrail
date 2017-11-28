@@ -5,13 +5,13 @@
  */
 package byui.cit260.oregontrail.control;
 
-import byui.cit260.oregontrail.model.Player;
 import byui.cit260.oregontrail.model.InventoryItem;
 import byui.cit260.oregontrail.model.Player;
 import byui.cit260.oregontrail.model.Game;
 import byui.cit260.oregontrail.model.Wagon;
-import byui.cit260.oregontrail.model.Map;
 import oregontrail.OregonTrail;
+
+import byui.cit260.oregontrail.exceptions.GroupControlException;
 /**
  *
  * @author ralphb
@@ -24,12 +24,12 @@ public class GroupControl {
     Parameters:  Number of people
     return:  Size of group if within range else an error message
     */
-   public int getSize(int groupSize) {
+   public int getSize(int groupSize) throws GroupControlException {
 
        
 
-       if (groupSize < 0 || groupSize > 8) {
-           return -1;
+       if (groupSize < 1 || groupSize > 8) {
+           throw new GroupControlException("\nYou cannot have a group less than 1 or greater than 8");
        }
 
        return groupSize;
@@ -42,22 +42,22 @@ public class GroupControl {
     Parameters:  pace
     return:  Size of group if within range else an error message
     */
-   public int getPace(int teamPace) {
+   public int getPace(int teamPace) throws GroupControlException {
 
 
        if (teamPace < 1 || teamPace > 3) {
-           return -1;
+           throw new GroupControlException("\nYou cannot have a pace less than 1 or higher than 3");
        }
 
        return teamPace;
    }
 
-   public String getName(String name) {
+   public String getName(String name) throws GroupControlException {
 
        return name;
 
    }
-   public static int createNewGame(Player player) {
+   public static int createNewGame(Player player) throws GroupControlException {
         
        Game game = new Game(); // create new game
        OregonTrail.setCurrentGame(game); // save in CuriousWorkmanship
@@ -71,19 +71,8 @@ public class GroupControl {
        Wagon wagon = new Wagon(); // create new wagon
        game.setWagon(wagon); // save wagon in game
         
-       //Map map = MapControl.createMap(); // create and initialize new map
-       //game.setMap(map); // save map in game
-
-       // move actors to starting position in the map
-       
-       // ...
-       
-       //int returnValue = MapControl.moveActorsToStartingLocation(map);
-//       if (returnValue < 0) {
-//           return -1;
-//       }
-       
        return 0;
+       
     }
    
 }

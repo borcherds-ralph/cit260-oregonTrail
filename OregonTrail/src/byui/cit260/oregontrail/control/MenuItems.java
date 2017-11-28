@@ -36,22 +36,7 @@ public class MenuItems {
         pizza.setMealType("Pizza");
         pizza.setMealPrice(2.00);
     //    public double getItemCost(String MealType, double mealPrice, int mealQty){
-            
-   //     if (itemCost <= 0 || qty <= 0) {
-    //        return -1;
-    //   }
-    //    double totalCost = mealPrice * mealQty;
-   //   return totalCost;
-    //}
-    
-   // public String getItemDescription(String tagName) {
-    //    Item item = new Item();
-    //    String itemName = item.getItemName(tagName);
-    //    return itemName;
-
-    //}
-
-//}
+  
         return null;
     }
 }

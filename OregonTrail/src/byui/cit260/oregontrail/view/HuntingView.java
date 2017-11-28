@@ -5,6 +5,7 @@
  */
 package byui.cit260.oregontrail.view;
 
+
 /**
  *
  * @author ralphb
@@ -66,11 +67,4 @@ public class HuntingView extends View {
         helpmenu.display();
     }
     
-    private static class GameMenuView {
-        public GameMenuView(){
-        }
-        private void displayMenu(){
-            System.out.println("\n test() function called ***");
-        }
-    }
 }

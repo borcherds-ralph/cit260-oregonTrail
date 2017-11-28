@@ -5,26 +5,30 @@
  */
 package byui.cit260.oregontrail.control;
 
+import byui.cit260.oregontrail.exceptions.HuntControlException;
+
 /**
  *
  * @author ralphb
  */
 public class HuntControl {
-    public double calcFoodWeight(long baseWeight1, long baseWeight2, int guide) {
+    public double calcFoodWeight(long baseWeight1, long baseWeight2, int guide) throws HuntControlException  {
         // validate inputs
-        if (baseWeight1 < 0) {
-            return -1;
+        if (baseWeight1 <= 0) {
+            throw new HuntControlException("\n You cannot have a weight less than or equal to  0");
         }
         if (baseWeight2 < 0) {
-            return -1;
+           throw new HuntControlException("\n You cannot have a weight less than or equal to  0");
         }
         if (guide != 0 && guide != 1) {
-            return -1;
+           throw new HuntControlException("\n You must have either a guided or unguided hunt.");
         }
         
-        // calculations
+
+     // calculations
         long yield = baseWeight1 + baseWeight2;
         long weight;
+ 
         if (guide == 0) {
             weight = yield - 100;
             if (weight > 0) {
@@ -37,6 +41,7 @@ public class HuntControl {
                 yield = 200;
             }
         }
-        return yield;
+        
+return yield;
     }
 }

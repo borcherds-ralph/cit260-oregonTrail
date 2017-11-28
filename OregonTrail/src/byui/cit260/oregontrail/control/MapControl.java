@@ -14,7 +14,7 @@ import java.io.Serializable;
  *
  * @author ralphb
  */
-public class MapControl implements Serializable {
+public class MapControl {
     
     public MapControl() {
     }
@@ -26,9 +26,5 @@ public class MapControl implements Serializable {
     public void showMap() {
 	
     }
-
-    public void display() {
-	throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-            
+  
 }

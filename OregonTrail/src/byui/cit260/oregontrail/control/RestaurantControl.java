@@ -5,6 +5,9 @@
  */
 package byui.cit260.oregontrail.control;
 
+import byui.cit260.oregontrail.exceptions.ItemControlException;
+import byui.cit260.oregontrail.model.Item;
+
 
 
 /**
@@ -13,15 +16,18 @@ package byui.cit260.oregontrail.control;
  */
 public class RestaurantControl {
     private String Meals[];
-    private String MealType[];
-    private double MealPrice[];
+    private String MealType;
+    private int qty;
+    private double MealPrice;
+    private double PlayerMoney;
+    private double total;
+             
     
-    public double calcMealCosts(double[] list) {
-	
-	double total = 0;
-	for(double x : list) {
-	    total += x;
-	}
-	return total;
-    } 
-}
+    public double getMealCost(String Meals, String MealType, int qty, double MealPrice, int total) throws ItemControlException {
+        total = 0;
+                
+        if (MealPrice >  PlayerMoney) {
+            throw new ItemControlException("\nYou need more money");
+        }
+        else {
+        return total;}}}

@@ -8,6 +8,9 @@ package byui.cit260.oregontrail.view;
 //import byui.cit260.oregontrail.control.PersonControl;
 import byui.cit260.oregontrail.model.Player;
 import byui.cit260.oregontrail.control.PersonControl;
+import byui.cit260.oregontrail.exceptions.PersonControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -41,22 +44,27 @@ public class StartProgramView extends View {
     @Override
     public boolean doAction(String playersName) {
 
-        if (playersName.length() < 2) {
-            System.out.println("\nInvalid players name: "
-                    + "The name must be greater than one character in length");
-            return false;
-        }
-
-        Player player = PersonControl.createPlayer(playersName);
-
-        if (player == null) {
-            System.out.println("\nError creating the player.");
-            return false;
-        }
-
-        this.displayNextView(player);
-
-        return true;
+         try {
+              if (playersName.length() < 2) {
+                   System.out.println("\nInvalid players name: "
+                           + "The name must be greater than one character in length");
+                   return false;
+              }
+              
+              Player player = PersonControl.createPlayer(playersName);
+              
+              if (player == null) {
+                   System.out.println("\nError creating the player.");
+                   return false;
+              }
+              
+              this.displayNextView(player);
+              
+             
+         } catch (PersonControlException ex) {
+              Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
+         }
+         return true;
     }
 
     private void displayNextView(Player player) {

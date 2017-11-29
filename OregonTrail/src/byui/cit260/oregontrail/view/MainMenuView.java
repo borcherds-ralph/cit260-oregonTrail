@@ -6,6 +6,10 @@
 package byui.cit260.oregontrail.view;
 
 import byui.cit260.oregontrail.control.GameControl;
+import byui.cit260.oregontrail.exceptions.GamePlayMenuException;
+import byui.cit260.oregontrail.exceptions.MainMenuException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import oregontrail.OregonTrail;
 
 public class MainMenuView extends View {
@@ -30,26 +34,33 @@ public class MainMenuView extends View {
     @Override
     public boolean doAction(String choice) {
 
-        choice = choice.toUpperCase();
-        switch (choice) {
-            case "N":
-                this.startNewGame();
-                break;
-            case "G":
-                this.startExistingGame();
-                break;
-            case "H":
-                this.displayHelpMenu();
-                break;
-            case "S":
-                this.saveGame();
-                break;
-            default:
-                System.out.println("\n*** Invalid selection *** Try again");
-                break;
-        }
-
-        return false;
+          try {
+               choice = choice.toUpperCase();
+               switch (choice) {
+                    case "N":
+                         this.startNewGame();
+                         break;
+                    case "G":
+                         this.startExistingGame();
+                         break;
+                    case "H":
+                         this.displayHelpMenu();
+                         break;
+                    case "S":
+                         this.saveGame();
+                         break;
+                    default:
+                         System.out.println("\n*** Invalid selection *** Try again");
+                         break;
+               }
+               
+               
+          } catch (MainMenuException ex) {
+               Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+          } catch (GamePlayMenuException ex) {
+               Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+          }
+          return false;
     }
 
     private void startExistingGame() {
@@ -66,19 +77,24 @@ public class MainMenuView extends View {
     }
     
 
-    private void startNewGame() {
+    private void startNewGame() throws MainMenuException, GamePlayMenuException {
         // create a new game
         int returnValue = GameControl.createNewGame(OregonTrail.getPlayer());
         if (returnValue < 0) {
             System.out.println("ERROR - Failed to create new game");
         }
 
+        try{ 
         // display the game menu
-        GamePlayMenu gameMenu = new GamePlayMenu();
-        gameMenu.display();
-	System.out.println("New Game has been created");
+          GamePlayMenu gameMenu = new GamePlayMenu();
+          gameMenu.display();
+          System.out.println("New Game has been created");
+        } catch (GamePlayMenuException ex) {
+                  Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+             }
+        }
+       
 	
-    }
-    
+    }    
 
-}
+

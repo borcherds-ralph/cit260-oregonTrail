@@ -1,26 +1,22 @@
-///*
-// * To change this license header, choose License Headers in Project Properties.
-// * To change this template file, choose Tools | Templates
-// * and open the template in the editor.
-// */
 package byui.cit260.oregontrail.view;
 
 import byui.cit260.oregontrail.control.RestaurantControl;
 import byui.cit260.oregontrail.exceptions.ItemControlException;
 import byui.cit260.oregontrail.exceptions.RestaurantControlException;
-
-import java.util.Random;
 import java.util.Scanner;
-import java.lang.String;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+
+
 
 public class RestaurantView extends View {
 
      public RestaurantView() {
           super("\n"
                   + "\n-----------------------------------------"
-                  + "\n| Food Menu                             |"
+                  + "\n| Food Menu |"
                   + "\n-----------------------------------------"
                   + "\nS - Steak and Potatoes"
                   + "\nH - Hamburger and French Fries"
@@ -35,99 +31,113 @@ public class RestaurantView extends View {
      @Override
      public boolean doAction(String choice) {
 
-          
-
-          System.out.println("\n Do not enter a number, enter a word");
-
-          choice = choice.toUpperCase();
-          switch (choice) {
-
-              
-               case "STEAK":
-                    this.getSteak();
-                    break;
-               case "HAMBURGER":
-                    this.getBurger();
-                    break;
-               case "CHILI":
-                    this.getChili();
-                    break;
-               case "PIZZA":
-                    this.getPizza();
-                    break;
-               case "B":
-          {
-               try {
-                    this.getBill();
-               } catch (RestaurantControlException ex) {
-                    Logger.getLogger(RestaurantView.class.getName()).log(Level.SEVERE, null, ex);
-               } catch (ItemControlException ex) {
-                    Logger.getLogger(RestaurantView.class.getName()).log(Level.SEVERE, null, ex);
+          try {
+               choice = choice.toUpperCase();
+               switch (choice) {
+                    case "STEAK":
+                         this.getSteak();
+                         break;
+                    case "HAMBURGER":
+                         this.getBurger();
+                         break;
+                    case "CHILI":
+                         this.getChili();
+                         break;
+                    case "PIZZA":
+                         this.getPizza();
+                         break;
+                    case "B":
+                         this.getBill();
+                         break;
+                    case "Q":
+                         this.quitMenu();
+                         break;
+                    default:
+                         System.out.println("\n*** Invalid selection *** Try again");
+                         break;
                }
+               
+               
+          } catch (RestaurantControlException | ItemControlException ex) {
+               Logger.getLogger(RestaurantView.class.getName()).log(Level.SEVERE, null, ex);
           }
-                    break;
-               case "Q":
-                    this.quitMenu();
-                    break;
-               default:
-                    System.out.println("\n*** Invalid selection *** Try again");
-                    break;
-          }
-
           return false;
-
      }
 
-     private void getSteak() {
+     private void getSteak() throws RestaurantControlException {
           System.out.println("*** Steak and Pototoes ***");
-          Scanner keyInput = new Scanner(System.in);
-          String result = "Steak";
-          System.out.println("Do you want yours cooked well down, medium rare or rare?");
-          String steak = this.getInput();
+          try {
+               String result = "Steak";
+               System.out.println("Do you want yours cooked well down, medium rare or rare?");
+          } catch (RestaurantControlException w) {
+               System.out.println("\n ******************************************************");
+               System.out.println("\n " + w);
+          }
+
      }
 
-     private void getBurger() {
+     private void getBurger() throws RestaurantControlException {
 
-          String result = "Burger";
-          System.out.println("Do you want yours cooked well down, medium rare or rare?");
+          System.out.println("*** Hamburger and Fries ***");
+          try {
+               String result = "Burger";
+               System.out.println("Do you want yours cooked well down, medium rare or rare?");
+          } catch (RestaurantControlException w) {
+               System.out.println("\n ******************************************************");
+               System.out.println("\n " + w);
+          }
      }
 
-     private void getChili() {
+     private void getChili() throws RestaurantControlException {
           System.out.println("*** Chili and Cornbread ***");
-         
+          try {
                String result = "Chili";
                System.out.println("Do you want yours Hot, Medium or Mild?");
+          } catch (RestaurantControlException w) {
+               System.out.println("\n ******************************************************");
+               System.out.println("\n " + w);
+          }
      }
 
-     private void getPizza() {
+     private void getPizza() throws RestaurantControlException {
           System.out.println("*** Pizza and Salad ***");
-         
+          try {
                String result = "Pizza";
                System.out.println("Do you want Cheese, Pepperoni or Sausage?");
-     }       
+          } catch (RestaurantControlException w) {
+               System.out.println("\n ******************************************************");
+               System.out.println("\n " + w);
+          }
+     }
 
-     private void quitMenu() {
+     private void quitMenu() throws RestaurantControlException {
           System.out.println("*** Return To Previous Scene ***");
      }
 
      private void getBill() throws RestaurantControlException, ItemControlException {
           double[] costs = new double[10];
 
-          RestaurantControl menucost = new RestaurantControl();
-          int i;
+          RestaurantControl mealprice = new RestaurantControl();
+          Scanner keyInput = new Scanner(System.in);
           Random rand = new Random();
-          double[] lists = new double[10];
-          int n;
-          for (i = 0; i < 10; i++) {
-               n = rand.nextInt(50) + 1;
-               lists[i] = n;
-          }
-          double total;
-          total = menucost.getMealPrice(lists);
-          
-         
 
-          System.out.println("The total bill is" + total);
+          System.out.println("Please enter your meal");
+          String Meal = keyInput.toString();
+          System.out.println("Enter the qty");
+          int qty = keyInput.nextInt();
+
+               Double[] lists;
+               lists = new Double[10];
+               double n;
+               for(int i=0; i < qty; i++){
+                    n = rand.nextInt(50) + 1;
+                    lists[i] = n;
+                }
+
+               double total;
+               total = mealprice.getMealPrice(lists);
+               System.out.println("The total bill is" + total);
+
      }
 
 }

@@ -18,7 +18,8 @@ import java.util.logging.Logger;
 public abstract class View implements ViewInterface {
 
      protected String displayMessage;
-     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+     BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
+    
      public View() {
      }
 
@@ -59,7 +60,7 @@ public abstract class View implements ViewInterface {
                     System.out.println("\n" + this.displayMessage);
 
                     // get the value entered from the keyboard
-                    value = this.br.readLine();
+                    value = this.keyboard.readLine();
                     value = value.trim();
 
                     if (value.length() < 1) { // blank value entered

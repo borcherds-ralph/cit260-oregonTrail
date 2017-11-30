@@ -23,7 +23,7 @@ public class RestaurantControl {
     private double total;
              
     
-    public double getMealPrice(double[] lists) throws ItemControlException {
+    public double getMealPrice(Double[] lists) throws ItemControlException {
         total = 0;
                 
         if (MealPrice >  PlayerMoney) {

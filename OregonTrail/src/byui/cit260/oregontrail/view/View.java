@@ -41,7 +41,6 @@ public abstract class View implements ViewInterface {
     @Override
     public String getInput() {
 
-        Scanner keyboard = new Scanner(System.in);
         boolean valid = false;
         String value = null;
 
@@ -52,7 +51,7 @@ public abstract class View implements ViewInterface {
             System.out.println("\n" + this.displayMessage);
 
             // get the value entered from the keyboard
-            value = keyboard.nextLine();
+            value = this.keyboard.readLine();
             value = value.trim();
 
             if (value.length() < 1) { // blank value entered

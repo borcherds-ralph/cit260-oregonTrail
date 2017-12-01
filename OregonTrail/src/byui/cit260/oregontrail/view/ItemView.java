@@ -111,13 +111,13 @@ public class ItemView extends View {
 
           ItemControl instance = new ItemControl();
          
-          Scanner dimensions = new Scanner(System.in);
+          
           
           System.out.println("Please enter the qty: ");
-          double qty = dimensions.nextDouble();
+          double qty = this.dimensions.readLine();
           
           System.out.println("\nPlease enter the weight of 1 item");
-          double weight = dimensions.nextDouble();
+          double weight = this.dimensions.readLine();
           
           try {
                double result = instance.calcWeightOfItem(qty, weight);
@@ -138,9 +138,9 @@ public class ItemView extends View {
 
           ItemControl instance = new ItemControl();
           
-           Scanner quantity = new Scanner(System.in);
+           
            System.out.println("Please enter the Cubic inces volume: ");
-          double volume = quantity.nextDouble();
+          double volume = this.quantity.readLine();
           
           try {
                double result = instance.calcBarrelVolumeToGallons(volume);

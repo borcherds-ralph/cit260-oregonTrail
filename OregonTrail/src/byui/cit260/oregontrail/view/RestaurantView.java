@@ -118,13 +118,13 @@ public class RestaurantView extends View {
           double[] costs = new double[10];
 
           RestaurantControl mealprice = new RestaurantControl();
-          Scanner keyInput = new Scanner(System.in);
+          
           Random rand = new Random();
 
           System.out.println("Please enter your meal");
-          String Meal = keyInput.toString();
+          String Meal = this.keyInput.readLine();
           System.out.println("Enter the qty");
-          int qty = keyInput.nextInt();
+          int qty = this.keyInput.readLine();
 
                Double[] lists;
                lists = new Double[10];

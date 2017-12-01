@@ -76,16 +76,16 @@ public class ItemView extends View {
           return false;
      }
 
-     private void calcVolumeBarrel() throws ItemControlException {
+     private void calcVolumeBarrel(PrintWriter out) throws ItemControlException {
 
           ItemControl instance = new ItemControl();
 
           System.out.println("Please enter the top diameter of the barrel:");
-          double topDiameter = this.keyInput.readLine();
+          double topDiameter = this.keyInput.readDouble();
         
 
           System.out.println("Please enter the center diameter of the barrel:");
-          double centerDiameter = keyInput.nextInt();
+          double centerDiameter = this.keyInput.readInt();
 
           System.out.println("Please enter the height of the barrel:");
           double barrelHeight = keyInput.nextInt();
@@ -107,17 +107,17 @@ public class ItemView extends View {
 
      }
 
-     private void calcWeight() throws ItemControlException {
+     private void calcWeight(PrintWriter out) throws ItemControlException {
 
           ItemControl instance = new ItemControl();
          
           
           
           System.out.println("Please enter the qty: ");
-          double qty = this.dimensions.readLine();
+          double qty = this.dimensions.readDouble();
           
           System.out.println("\nPlease enter the weight of 1 item");
-          double weight = this.dimensions.readLine();
+          double weight = this.dimensions.readDouble();
           
           try {
                double result = instance.calcWeightOfItem(qty, weight);
@@ -134,13 +134,13 @@ public class ItemView extends View {
 
      }
 
-     private void calcGallons() throws ItemControlException {
+     private void calcGallons(PrintWriter out) throws ItemControlException {
 
           ItemControl instance = new ItemControl();
           
            
            System.out.println("Please enter the Cubic inces volume: ");
-          double volume = this.quantity.readLine();
+          double volume = this.quantity.readDouble();
           
           try {
                double result = instance.calcBarrelVolumeToGallons(volume);
@@ -155,17 +155,16 @@ public class ItemView extends View {
           }
      }
 
-     private void calcCylinder() throws ItemControlException {
+     private void calcCylinder(PrintWriter out) throws ItemControlException {
 
           ItemControl instance = new ItemControl();
           
-           Scanner diameter = new Scanner(System.in);
-           
+                    
            System.out.println("Please enter the diameter of the cylendar: ");
-          double cylDiameter = diameter.nextDouble();
+          double cylDiameter = this.diameter.readDouble();
           
            System.out.println("Please enter the height of the cylendar: ");
-          double cylHeight = diameter.nextDouble();
+          double cylHeight = this.diameter.readDouble();
           
           try {
                double result = instance.calcCylinderVolume(cylDiameter, cylHeight);
@@ -179,16 +178,15 @@ public class ItemView extends View {
           }
      }
 
-     private void calcCost() throws ItemControlException {
+     private void calcCost(PrintWriter out) throws ItemControlException {
 
           ItemControl instance = new ItemControl();
-          Scanner diameter = new Scanner(System.in);
-           
+                     
            System.out.println("Please enter the number of items: ");
-          double itemQty = diameter.nextDouble();
+          double itemQty = this.diameter.readDouble();
           
            System.out.println("Please enter the cost for one item: ");
-          double itemCost = diameter.nextDouble();
+          double itemCost = this.diameter.readDouble();
           try {
                double result = instance.getItemCost(itemQty, itemCost);
                System.out.println("\n The cost for these itesms is: " + result );

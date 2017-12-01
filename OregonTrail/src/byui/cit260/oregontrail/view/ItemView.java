@@ -7,7 +7,9 @@ package byui.cit260.oregontrail.view;
 
 import byui.cit260.oregontrail.control.ItemControl;
 import byui.cit260.oregontrail.exceptions.ItemControlException;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+
 
 /**
  *

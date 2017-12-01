@@ -5,7 +5,9 @@
  */
 package byui.cit260.oregontrail.view;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+
 
 /**
  *

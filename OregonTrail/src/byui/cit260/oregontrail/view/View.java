@@ -5,9 +5,11 @@
  */
 package byui.cit260.oregontrail.view;
 
+import oregontrail.OregonTrail;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,12 +18,14 @@ import java.util.logging.Logger;
  * @author ralphb
  */
 public abstract class View implements ViewInterface {
-
-     protected String displayMessage;
-     BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
-    
-     public View() {
-     }
+    protected String displayMessage;
+    private boolean input = true;
+    protected final BufferedReader keyboard = OregonTrail.getInFile();
+    protected final PrintWriter console = OregonTrail.getOutFile();
+        
+    public View() {
+        this.input = true;
+    }
 
      public View(String message) {
           this.displayMessage = message;

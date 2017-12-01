@@ -106,10 +106,10 @@ public class RestaurantView extends View {
 
           System.out.println("Please enter your meal");
          
-  //       double mealprice = this.mealprice.readLine();
+      //  double mealprice = this.mealprice.readLine();
           System.out.println(//"Enter the qty");
          
- //        int qty = this.qty.readLine();
+         int qty = this.qty.readLine();
 
                Double[] lists;
                lists = new Double[10];

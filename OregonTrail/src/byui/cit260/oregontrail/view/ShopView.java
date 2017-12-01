@@ -72,7 +72,7 @@ public class ShopView extends View {
         while (!valid) {
             System.out.print(quantityMenu);
             
- //           choicecost = this.reader.readLine();
+            // choicecost = this.choicecost.readLine();
             if (100 >= choicecost && 1 <= choicecost);
             {
                 totalcost = choicecost * 2;

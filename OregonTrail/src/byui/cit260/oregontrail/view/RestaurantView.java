@@ -14,6 +14,8 @@ import java.util.logging.Logger;
 
 public class RestaurantView extends View {
 
+    private int Meal;
+
      public RestaurantView() {
           super("\n"
                   + "\n-----------------------------------------"
@@ -59,7 +61,7 @@ public class RestaurantView extends View {
                }
                
                
-          } catch (RestaurantControlException | ItemControlException ex) {
+          } catch (RestaurantControlException ex) {
                Logger.getLogger(RestaurantView.class.getName()).log(Level.SEVERE, null, ex);
           }
           return false;
@@ -67,55 +69,35 @@ public class RestaurantView extends View {
 
      private void getSteak() throws RestaurantControlException {
           System.out.println("*** Steak and Pototoes ***");
-          try {
-               String result = "Steak";
-               System.out.println("Do you want yours cooked well down, medium rare or rare?");
-          } catch (RestaurantControlException w) {
-               System.out.println("\n ******************************************************");
-               System.out.println("\n " + w);
-          }
+          String result = "Steak";
+          System.out.println("Do you want yours cooked well down, medium rare or rare?");
 
      }
 
      private void getBurger() throws RestaurantControlException {
 
           System.out.println("*** Hamburger and Fries ***");
-          try {
-               String result = "Burger";
-               System.out.println("Do you want yours cooked well down, medium rare or rare?");
-          } catch (RestaurantControlException w) {
-               System.out.println("\n ******************************************************");
-               System.out.println("\n " + w);
-          }
+          String result = "Burger";
+          System.out.println("Do you want yours cooked well down, medium rare or rare?");
      }
 
      private void getChili() throws RestaurantControlException {
           System.out.println("*** Chili and Cornbread ***");
-          try {
-               String result = "Chili";
-               System.out.println("Do you want yours Hot, Medium or Mild?");
-          } catch (RestaurantControlException w) {
-               System.out.println("\n ******************************************************");
-               System.out.println("\n " + w);
-          }
+          String result = "Chili";
+          System.out.println("Do you want yours Hot, Medium or Mild?");
      }
 
      private void getPizza() throws RestaurantControlException {
           System.out.println("*** Pizza and Salad ***");
-          try {
-               String result = "Pizza";
-               System.out.println("Do you want Cheese, Pepperoni or Sausage?");
-          } catch (RestaurantControlException w) {
-               System.out.println("\n ******************************************************");
-               System.out.println("\n " + w);
-          }
+          String result = "Pizza";
+          System.out.println("Do you want Cheese, Pepperoni or Sausage?");
      }
 
      private void quitMenu() throws RestaurantControlException {
           System.out.println("*** Return To Previous Scene ***");
      }
 
-     private void getBill() throws RestaurantControlException, ItemControlException {
+     private void getBill(int qty) throws RestaurantControlException, ItemControlException {
           double[] costs = new double[10];
 
           RestaurantControl mealprice = new RestaurantControl();
@@ -123,9 +105,11 @@ public class RestaurantView extends View {
           Random rand = new Random();
 
           System.out.println("Please enter your meal");
-          String Meal = this.keyInput.readLine();
-          System.out.println("Enter the qty");
-          int qty = this.keyInput.readLine();
+         
+  //       double mealprice = this.mealprice.readLine();
+          System.out.println(//"Enter the qty");
+         
+ //        int qty = this.qty.readLine();
 
                Double[] lists;
                lists = new Double[10];
@@ -140,5 +124,49 @@ public class RestaurantView extends View {
                System.out.println("The total bill is" + total);
 
      }
+
+    private void getBill() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private class keyInput {
+
+        public int readLine() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public keyInput() {
+        }
+    }
+
+    private class MealType {
+
+        private String readLine() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public MealType() {
+        }
+    }
+
+    private class qty {
+
+        private int readLine() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public qty() {
+        }
+    }
+
+    private class mealprice {
+
+        private double readLine() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public mealprice() {
+        }
+    }
 
 }

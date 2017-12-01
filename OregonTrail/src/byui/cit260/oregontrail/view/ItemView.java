@@ -80,10 +80,8 @@ public class ItemView extends View {
 
           ItemControl instance = new ItemControl();
 
-          Scanner keyInput = new Scanner(System.in);
-
           System.out.println("Please enter the top diameter of the barrel:");
-          double topDiameter = keyInput.nextDouble();
+          double topDiameter = this.keyInput.readLine();
         
 
           System.out.println("Please enter the center diameter of the barrel:");

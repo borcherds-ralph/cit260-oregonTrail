@@ -36,6 +36,10 @@ public class OregonTrail {
                OregonTrail.inFile = new BufferedReader(new InputStreamReader(System.in));
                OregonTrail.outFile = new PrintWriter(System.out, true);
 
+               //log file
+               String filePath = "log.txt";
+               OregonTrail.logFile = new PrintWriter(filePath);
+               
                StartProgramView startProgramView = new StartProgramView();
                startProgramView.display();
           } catch (Throwable te) {
@@ -54,7 +58,10 @@ public class OregonTrail {
 
                    if (OregonTrail.outFile != null)
                         OregonTrail.outFile.close();
-
+                   
+                   if (OregonTrail.logFile != null)
+                        OregonTrail.logFile.close();
+                   
               } catch (IOException ex) {
               System.out.println("Error closing files");
               return;
@@ -62,6 +69,16 @@ public class OregonTrail {
           }
      }
 
+        private static PrintWriter logFile = null;
+        
+        public static PrintWriter getLogFile() {
+            return logFile;
+        }
+        
+        public static void setLogFile(PrintWriter logFile) {
+            OregonTrail.logFile = logFile;
+        }
+        
      public static Player getPlayer() {
           return player;
      }

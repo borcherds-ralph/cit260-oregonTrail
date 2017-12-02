@@ -139,12 +139,12 @@ public class ItemView extends View {
           ItemControl instance = new ItemControl();
           
            
-           System.out.println("Please enter the Cubic inces volume: ");
+           this.console.println("Please enter the Cubic inces volume: ");
           double volume = this.quantity.readDouble();
           
           try {
                double result = instance.calcBarrelVolumeToGallons(volume);
-               System.out.println("The total number of gallons for your barrel is: " + result);
+               this.console.println("The total number of gallons for your barrel is: " + result);
           }
           catch (ItemControlException ex) {
 
@@ -160,15 +160,15 @@ public class ItemView extends View {
           ItemControl instance = new ItemControl();
           
                     
-           System.out.println("Please enter the diameter of the cylendar: ");
+           this.console.println("Please enter the diameter of the cylendar: ");
           double cylDiameter = this.diameter.readDouble();
           
-           System.out.println("Please enter the height of the cylendar: ");
+           this.console.println("Please enter the height of the cylendar: ");
           double cylHeight = this.diameter.readDouble();
           
           try {
                double result = instance.calcCylinderVolume(cylDiameter, cylHeight);
-               System.out.println("\n The volume of the cylendar is: " + result );
+               this.console.println("\n The volume of the cylendar is: " + result );
           } catch (ItemControlException ex) {
  
                System.out.println("\n ******************************************************");
@@ -182,14 +182,14 @@ public class ItemView extends View {
 
           ItemControl instance = new ItemControl();
                      
-           System.out.println("Please enter the number of items: ");
+           this.console.println("Please enter the number of items: ");
           double itemQty = this.diameter.readDouble();
           
-           System.out.println("Please enter the cost for one item: ");
+           this.console.println("Please enter the cost for one item: ");
           double itemCost = this.diameter.readDouble();
           try {
                double result = instance.getItemCost(itemQty, itemCost);
-               System.out.println("\n The cost for these itesms is: " + result );
+               this.console.println("\n The cost for these itesms is: " + result );
           } catch (ItemControlException ex) {
 
                System.out.println("\n ******************************************************");

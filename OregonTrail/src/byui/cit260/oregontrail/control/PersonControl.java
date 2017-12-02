@@ -78,7 +78,7 @@ public class PersonControl {
     }
 
     public static Player createPlayer(String name) throws  PersonControlException {
-        this.console.println("\n*** createPlayer() function called ****");
+        System.out.println("\n*** createPlayer() function called ****");
        if (name == null) {
             throw new PersonControlException("Error: You must enter a valid player name.");
         }

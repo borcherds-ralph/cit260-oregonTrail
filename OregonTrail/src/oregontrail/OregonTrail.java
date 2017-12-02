@@ -26,6 +26,8 @@ public class OregonTrail {
 
      private static PrintWriter outFile = null;
      private static BufferedReader inFile = null;
+     
+     private static PrintWriter logFile = null;
 
      /**
       * @param args the command line arguments
@@ -69,8 +71,7 @@ public class OregonTrail {
           }
      }
 
-        private static PrintWriter logFile = null;
-        
+     
         public static PrintWriter getLogFile() {
             return logFile;
         }

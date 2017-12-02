@@ -185,6 +185,6 @@ public class GameControl {
 
 
     public static void startSavedGame() {
-        this.console.println("*** startSavedGame() called ***");
+        System.out.println("*** startSavedGame() called ***");
     }
 }

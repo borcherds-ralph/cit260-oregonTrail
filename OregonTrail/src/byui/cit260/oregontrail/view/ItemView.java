@@ -80,19 +80,19 @@ public class ItemView extends View {
 
           ItemControl instance = new ItemControl();
 
-          System.out.println("Please enter the top diameter of the barrel:");
+          this.console.println("Please enter the top diameter of the barrel:");
           double topDiameter = this.keyInput.readDouble();
         
 
-          System.out.println("Please enter the center diameter of the barrel:");
+          this.console.println("Please enter the center diameter of the barrel:");
           double centerDiameter = this.keyInput.readInt();
 
-          System.out.println("Please enter the height of the barrel:");
+          this.console.println("Please enter the height of the barrel:");
           double barrelHeight = keyInput.nextInt();
           
           try {
              double result = instance.calcVolumeOfBarrel(barrelHeight, centerDiameter, topDiameter); 
-             System.out.println("The total volume of the barrel is: " + result + " cubic inches."
+             this.console.println("The total volume of the barrel is: " + result + " cubic inches."
                   + "\n Please run #3 - Gallons from Barrel Volume to get the number of gallons. ");
           } catch (ItemControlException ex) {
 

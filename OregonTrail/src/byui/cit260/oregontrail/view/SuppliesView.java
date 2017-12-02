@@ -90,7 +90,7 @@ public class SuppliesView extends View {
                 this.quitSupplies();
                 break;
             default:
-                System.out.println("Invalid Entry -- Please try again... Ox");
+                this.console.println("Invalid Entry -- Please try again... Ox");
                 break;
         }
 
@@ -98,67 +98,67 @@ public class SuppliesView extends View {
     }
 
     private void displayWeapon() {
-        System.out.println("***DisplayWeapon Function called ***");
+        this.console.println("***DisplayWeapon Function called ***");
     }
 
     private void displayAmmo() {
-        System.out.println("How much ammo do you need? I know... A lot");
+        this.console.println("How much ammo do you need? I know... A lot");
     }
 
     private void displayWater() {
-        System.out.println("How many gallons of water do you need?");
+        this.console.println("How many gallons of water do you need?");
     }
 
     private void displayFlour() {
-        System.out.println("How many lbs of Flour do you need to make cookies?");
+        this.console.println("How many lbs of Flour do you need to make cookies?");
     }
 
     private void displayMeat() {
-        System.out.println("How many lbs of Meat do you need?");
+        this.console.println("How many lbs of Meat do you need?");
     }
 
     private void displayLard() {
-        System.out.println("How much discusting Lard do you need?");
+        this.console.println("How much discusting Lard do you need?");
     }
 
     private void displaySugar() {
-        System.out.println("How many lbs of sweetness do you need?");
+        this.console.println("How many lbs of sweetness do you need?");
     }
 
     private void displaySalt() {
-        System.out.println("How many lbs does it take to make a pillar?");
+        this.console.println("How many lbs does it take to make a pillar?");
     }
 
     private void displayEggs() {
-        System.out.println("How many eggs do you need to scramble?");
+        this.console.println("How many eggs do you need to scramble?");
     }
 
     private void displayClothing() {
-        System.out.println("How many layers of clothing do you need?");
+        this.console.println("How many layers of clothing do you need?");
     }
 
     private void displayBlankets() {
-        System.out.println("One can never be too warm... How many blankets?");
+        this.console.println("One can never be too warm... How many blankets?");
     }
 
     private void displayRope() {
-        System.out.println("How many Ropes do you have to throw me?");
+        this.console.println("How many Ropes do you have to throw me?");
     }
 
     private void displayTools() {
-        System.out.println("Please tell me you need lots of tools!");
+        this.console.println("Please tell me you need lots of tools!");
     }
 
     private void displayShovel() {
-        System.out.println("If you are good at diggin holes... You need a shovel!");
+        this.console.println("If you are good at diggin holes... You need a shovel!");
     }
 
     private void displayUtensils() {
-        System.out.println("How many forks for the road?");
+        this.console.println("How many forks for the road?");
     }
 
     private void quitSupplies() {
-        System.out.println("quit Supplies function called... Later Gator!");
+        this.console.println("quit Supplies function called... Later Gator!");
     }
 
 }

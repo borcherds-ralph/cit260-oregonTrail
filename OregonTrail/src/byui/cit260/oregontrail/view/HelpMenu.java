@@ -66,12 +66,12 @@ public class HelpMenu extends View{
 //        }
 //        //For some reason this is not getting the file.
 //        catch(FileNotFoundException fileReader) {
-//            System.out.println(
+//            this.console.println(
 //                "Unable to open file '" + 
 //                filename + "'");                
 //        }
 //        catch(IOException fileReader) {
-//            System.out.println(
+//            this.console.println(
 //                "Error reading file '" 
 //                + filename + "'");  
 //    }

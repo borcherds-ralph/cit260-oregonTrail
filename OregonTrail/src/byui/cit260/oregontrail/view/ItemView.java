@@ -113,15 +113,15 @@ public class ItemView extends View {
          
           
           
-          System.out.println("Please enter the qty: ");
+          this.console.println("Please enter the qty: ");
           double qty = this.dimensions.readDouble();
           
-          System.out.println("\nPlease enter the weight of 1 item");
+          this.console.println("\nPlease enter the weight of 1 item");
           double weight = this.dimensions.readDouble();
           
           try {
                double result = instance.calcWeightOfItem(qty, weight);
-               System.out.println("The total weight is: " + result + " for."
+               this.console.println("The total weight is: " + result + " for."
                   + "\n" + qty + " Items, each weighing: " + weight);
           } catch (ItemControlException ex) {
 

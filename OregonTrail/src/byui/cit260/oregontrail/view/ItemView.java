@@ -40,7 +40,7 @@ public class ItemView extends View {
                try {   
                     numChoice = Integer.parseInt(choice);
                } catch (NumberFormatException nf) {  
-                    System.out.println("\n You must enter a valid number choice."
+                    this.console.println("\n You must enter a valid number choice."
                             + "\n Try again or enter Q to quit.");  
                }
                switch (numChoice) {

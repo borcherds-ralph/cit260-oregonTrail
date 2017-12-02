@@ -13,8 +13,11 @@ import byui.cit260.oregontrail.model.InventoryItem;
 import byui.cit260.oregontrail.enums.ItemList;
 import byui.cit260.oregontrail.model.Wagon;
 import byui.cit260.oregontrail.enums.Actorsenum;
+import byui.cit260.oregontrail.exceptions.GamePlayMenuException;
 
 import java.io.BufferedReader;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 
 
@@ -187,4 +190,17 @@ public class GameControl {
     public static void startSavedGame() {
         System.out.println("*** startSavedGame() called ***");
     }
-}
+    public static void saveGame(Game game, String filepath) 
+        throws Exception {
+        try(FileOutputStream fops = new FileOutputStream(filepath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game);
+            
+        }
+        catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+    }
+

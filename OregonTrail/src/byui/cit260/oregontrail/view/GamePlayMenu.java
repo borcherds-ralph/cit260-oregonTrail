@@ -77,12 +77,12 @@ public class GamePlayMenu extends View {
                         this.quitGame();
                         break;
                    default:
-                        System.out.println("\n*** Invalid selection *** Try again");
+                        this.console.println("\n*** Invalid selection *** Try again");
                         break;
               }
               return false;
          } catch (GamePlayMenuException ex) {
-              System.out.println("\n Please make a valid selection");
+              this.console.println("\n Please make a valid selection");
          }
          return false;
     }

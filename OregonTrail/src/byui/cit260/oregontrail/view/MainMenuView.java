@@ -50,7 +50,7 @@ public class MainMenuView extends View {
                          this.saveGame();
                          break;
                     default:
-                         System.out.println("\n*** Invalid selection *** Try again");
+                         this.console.println("\n*** Invalid selection *** Try again");
                          break;
                }
                
@@ -64,11 +64,11 @@ public class MainMenuView extends View {
     }
 
     private void startExistingGame() {
-        System.out.println("*** startExistingGame function called ***");
+        this.console.println("*** startExistingGame function called ***");
     }
 
     private void saveGame() {
-        System.out.println("*** startExistingGame or startSaveGame function called ***");
+        this.console.println("*** startExistingGame or startSaveGame function called ***");
     }
 
     private void displayHelpMenu() {
@@ -81,7 +81,7 @@ public class MainMenuView extends View {
         // create a new game
         int returnValue = GameControl.createNewGame(OregonTrail.getPlayer());
         if (returnValue < 0) {
-            System.out.println("ERROR - Failed to create new game");
+            this.console.println("ERROR - Failed to create new game");
         }
 
         try{ 
@@ -91,7 +91,8 @@ public class MainMenuView extends View {
           System.out.println("New Game has been created");
         } catch (GamePlayMenuException ex) {
                   Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
-             }
+        ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());     
+        }
         }
        
 	

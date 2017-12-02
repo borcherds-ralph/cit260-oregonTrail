@@ -88,7 +88,7 @@ public class MainMenuView extends View {
         // display the game menu
           GamePlayMenu gameMenu = new GamePlayMenu();
           gameMenu.display();
-          System.out.println("New Game has been created");
+          this.console.println("New Game has been created");
         } catch (GamePlayMenuException ex) {
                   Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
         ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());     

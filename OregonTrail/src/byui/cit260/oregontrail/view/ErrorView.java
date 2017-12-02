@@ -21,7 +21,7 @@ public class ErrorView {
         
         errorFile.println(
         "*********************************************************"
-       +"\n There was an error" + errorMessage
+       +"\n There was an error" + className + errorMessage
        +"***********************************************************");
         
         //Log the Error

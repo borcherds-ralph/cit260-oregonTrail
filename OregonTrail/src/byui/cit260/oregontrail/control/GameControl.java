@@ -14,6 +14,10 @@ import byui.cit260.oregontrail.enums.ItemList;
 import byui.cit260.oregontrail.model.Wagon;
 import byui.cit260.oregontrail.enums.Actorsenum;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+
+
 import oregontrail.OregonTrail;
 
 /**
@@ -181,6 +185,6 @@ public class GameControl {
 
 
     public static void startSavedGame() {
-        System.out.println("*** startSavedGame() called ***");
+        this.console.println("*** startSavedGame() called ***");
     }
 }

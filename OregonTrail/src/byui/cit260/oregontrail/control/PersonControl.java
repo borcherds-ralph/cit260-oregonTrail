@@ -7,6 +7,11 @@ package byui.cit260.oregontrail.control;
 
 import byui.cit260.oregontrail.exceptions.PersonControlException;
 import byui.cit260.oregontrail.model.Player;
+
+
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+
 /**
  *
  * @author ralphb
@@ -73,7 +78,7 @@ public class PersonControl {
     }
 
     public static Player createPlayer(String name) throws  PersonControlException {
-        System.out.println("\n*** createPlayer() function called ****");
+        this.console.println("\n*** createPlayer() function called ****");
        if (name == null) {
             throw new PersonControlException("Error: You must enter a valid player name.");
         }

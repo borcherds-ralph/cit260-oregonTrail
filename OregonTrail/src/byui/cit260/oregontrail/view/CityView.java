@@ -44,7 +44,7 @@ public abstract class CityView extends View {
 
     private void displayBanner() {
 
-        System.out.println();
+        this.console.println();
     }
 
     @Override

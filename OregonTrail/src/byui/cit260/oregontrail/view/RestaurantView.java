@@ -3,11 +3,11 @@ package byui.cit260.oregontrail.view;
 import byui.cit260.oregontrail.control.RestaurantControl;
 import byui.cit260.oregontrail.exceptions.ItemControlException;
 import byui.cit260.oregontrail.exceptions.RestaurantControlException;
-import java.io.BufferedReader;
-import java.io.PrintWriter;
+import java.io.IOException;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.lang.String;
 
 
 
@@ -63,7 +63,11 @@ public class RestaurantView extends View {
                
           } catch (RestaurantControlException ex) {
                Logger.getLogger(RestaurantView.class.getName()).log(Level.SEVERE, null, ex);
-          }
+          } catch (ItemControlException ex) {
+              Logger.getLogger(RestaurantView.class.getName()).log(Level.SEVERE, null, ex);
+         } catch (IOException ex) {
+              Logger.getLogger(RestaurantView.class.getName()).log(Level.SEVERE, null, ex);
+         }
           return false;
      }
 
@@ -97,7 +101,7 @@ public class RestaurantView extends View {
           System.out.println("*** Return To Previous Scene ***");
      }
 
-     private void getBill(int qty) throws RestaurantControlException, ItemControlException {
+     private void getBill() throws RestaurantControlException, ItemControlException, IOException {
           double[] costs = new double[10];
 
           RestaurantControl mealprice = new RestaurantControl();
@@ -107,9 +111,10 @@ public class RestaurantView extends View {
           System.out.println("Please enter your meal");
          
       //  double mealprice = this.mealprice.readLine();
-          System.out.println(//"Enter the qty");
+          System.out.println("Enter the qty");
          
-         int qty = this.qty.readLine();
+          String qtyString = this.keyboard.readLine();
+          Integer qty = Integer.parseInt(qtyString);
 
                Double[] lists;
                lists = new Double[10];
@@ -124,10 +129,6 @@ public class RestaurantView extends View {
                System.out.println("The total bill is" + total);
 
      }
-
-    private void getBill() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     private class keyInput {
 

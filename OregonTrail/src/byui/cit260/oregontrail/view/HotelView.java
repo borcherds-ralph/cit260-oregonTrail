@@ -57,15 +57,15 @@ public class HotelView extends View {
     }
 
     private void goToBar() {
-        System.out.println("*** Go to Bar for a drink ***");
+        this.console.println("*** Go to Bar for a drink ***");
     }
 
     private void goToRestaurante() {
-        System.out.println("*** Get Some Food at the Restaurante ***");
+        this.console.println("*** Get Some Food at the Restaurante ***");
     }
 
     private void getARoom() {
-        System.out.println("*** Get a hotel room and get some rest ***");
+        this.console.println("*** Get a hotel room and get some rest ***");
     }
     
     private void RecruitMemberView() {
@@ -73,13 +73,13 @@ public class HotelView extends View {
         recruit.display();
     }
     private void returnToPrevious() {    
-        System.out.println("*** return to previous page ***");
+        this.console.println("*** return to previous page ***");
     }
     private void Bill() {
-        System.out.println("*** See the bill for the meal ***");
+        this.console.println("*** See the bill for the meal ***");
     }
     private void quitGame() {
-        System.out.println("Are you sure you want to quit the game ***");
+        this.console.println("Are you sure you want to quit the game ***");
     }
 
     }

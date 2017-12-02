@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package byui.cit260.oregontrail.view;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 /**
  *
  * @author Br33h3rr3ra
@@ -50,7 +52,7 @@ public class RecruitMemberView extends View{
                this.quitGame();
                break;
            default:
-               System.out.println("\n*** Invalid selection *** Try again");
+               this.console.println("\n*** Invalid selection *** Try again");
                break;
        }
 
@@ -58,30 +60,24 @@ public class RecruitMemberView extends View{
     }
 
   private void pickArtie() {
-        System.out.println("*** Pick Artie to join the team ***");
+        this.console.println("*** Pick Artie to join the team ***");
     }
  private void pickSammy() {
-        System.out.println("*** Pick Sammy to join the team ***");
+        this.console.println("*** Pick Sammy to join the team ***");
     }
   private void pickSue() {
-        System.out.println("*** Pick Sue to join the team ***");
+        this.console.println("*** Pick Sue to join the team ***");
     }
    private void pickCarol() {
-        System.out.println("*** Pick Carol to join the team ***");
+        this.console.println("*** Pick Carol to join the team ***");
     }
     private void saveGame() {
-        System.out.println("*** startExistingGame or startSaveGame function called ***");
+        this.console.println("*** startExistingGame or startSaveGame function called ***");
     }
    
     private void quitGame() {
-        System.out.println("\n*** Are you sure you want to quit?***See you next time");
+        this.console.println("\n*** Are you sure you want to quit?***See you next time");
     }
 
-    private static class HotelView {
-        public HotelView(){
-        }
-        private void displayMenu(){
-            System.out.println("\n choose an option ***");
-        }
+    
     }
-}

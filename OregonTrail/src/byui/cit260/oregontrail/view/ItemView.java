@@ -7,8 +7,10 @@ package byui.cit260.oregontrail.view;
 
 import byui.cit260.oregontrail.control.ItemControl;
 import byui.cit260.oregontrail.exceptions.ItemControlException;
-import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -66,29 +68,35 @@ public class ItemView extends View {
                          break;
                }
                
-          } catch (ItemControlException ex) {
+          } catch (ItemControlException ex ) {
 
                System.out.println("\n ******************************************************");
                System.out.println("\n " + ex);
                System.out.println("\n ******************************************************");
 
+          } catch (IOException ex) {
+               System.out.println("\n ******************************************************");
+               System.out.println("\n " + ex);
+               System.out.println("\n ******************************************************");
           }
           return false;
      }
 
-     private void calcVolumeBarrel(PrintWriter out) throws ItemControlException {
+     private void calcVolumeBarrel() throws ItemControlException, IOException {
 
           ItemControl instance = new ItemControl();
 
           this.console.println("Please enter the top diameter of the barrel:");
-          double topDiameter = this.keyInput.readDouble();
-        
+          String topDiameterString = this.keyboard.readLine();
+          double topDiameter = Double.parseDouble(topDiameterString);
 
           this.console.println("Please enter the center diameter of the barrel:");
-          double centerDiameter = this.keyInput.readInt();
+          String centerDiameterString = this.keyboard.readLine();
+          double centerDiameter = Double.parseDouble(centerDiameterString);
 
           this.console.println("Please enter the height of the barrel:");
-          double barrelHeight = keyInput.nextInt();
+          String barrelHeightString = this.keyboard.readLine();
+          double barrelHeight = Double.parseDouble(barrelHeightString);
           
           try {
              double result = instance.calcVolumeOfBarrel(barrelHeight, centerDiameter, topDiameter); 
@@ -107,17 +115,20 @@ public class ItemView extends View {
 
      }
 
-     private void calcWeight(PrintWriter out) throws ItemControlException {
+     private void calcWeight() throws ItemControlException, IOException {
 
           ItemControl instance = new ItemControl();
          
           
           
           this.console.println("Please enter the qty: ");
-          double qty = this.dimensions.readDouble();
+          String qtyString = this.keyboard.readLine();
+          double qty = Double.parseDouble(qtyString);
           
           this.console.println("\nPlease enter the weight of 1 item");
-          double weight = this.dimensions.readDouble();
+          String weightString = this.keyboard.readLine();
+          double weight = Double.parseDouble(weightString
+          );
           
           try {
                double result = instance.calcWeightOfItem(qty, weight);
@@ -134,15 +145,16 @@ public class ItemView extends View {
 
      }
 
-     private void calcGallons(PrintWriter out) throws ItemControlException {
+     private void calcGallons() throws ItemControlException, IOException {
 
           ItemControl instance = new ItemControl();
           
-           
-           this.console.println("Please enter the Cubic inces volume: ");
-          double volume = this.quantity.readDouble();
+          try { 
+          this.console.println("Please enter the Cubic inces volume: ");
+          String volumeString = this.keyboard.readLine();
+          double volume = Double.parseDouble(volumeString);
           
-          try {
+        
                double result = instance.calcBarrelVolumeToGallons(volume);
                this.console.println("The total number of gallons for your barrel is: " + result);
           }
@@ -155,20 +167,23 @@ public class ItemView extends View {
           }
      }
 
-     private void calcCylinder(PrintWriter out) throws ItemControlException {
+     private void calcCylinder() throws ItemControlException, IOException {
 
           ItemControl instance = new ItemControl();
           
-                    
-           this.console.println("Please enter the diameter of the cylendar: ");
-          double cylDiameter = this.diameter.readDouble();
+          try {         
+          this.console.println("Please enter the diameter of the cylendar: ");
+          String cylDiameterString = this.keyboard.readLine();
+          double cylDiameter = Double.parseDouble(cylDiameterString);
           
-           this.console.println("Please enter the height of the cylendar: ");
-          double cylHeight = this.diameter.readDouble();
+          this.console.println("Please enter the height of the cylendar: ");
+          String cylHeightString = this.keyboard.readLine();
+          double cylHeight = Double.parseDouble(cylHeightString);
           
-          try {
+          
                double result = instance.calcCylinderVolume(cylDiameter, cylHeight);
                this.console.println("\n The volume of the cylendar is: " + result );
+               
           } catch (ItemControlException ex) {
  
                System.out.println("\n ******************************************************");
@@ -178,16 +193,22 @@ public class ItemView extends View {
           }
      }
 
-     private void calcCost(PrintWriter out) throws ItemControlException {
+     private void calcCost() throws ItemControlException, IOException {
 
           ItemControl instance = new ItemControl();
-                     
-           this.console.println("Please enter the number of items: ");
-          double itemQty = this.diameter.readDouble();
-          
-           this.console.println("Please enter the cost for one item: ");
-          double itemCost = this.diameter.readDouble();
-          try {
+            
+          try {      
+               this.console.println("Please enter the number of items: ");
+               String itemQtyString;
+
+               itemQtyString = this.keyboard.readLine();
+               double itemQty = Double.parseDouble(itemQtyString);
+
+               this.console.println("Please enter the cost for one item: ");
+               String itemCostString;
+               itemCostString = this.keyboard.readLine();
+               double itemCost = Double.parseDouble(itemCostString);
+
                double result = instance.getItemCost(itemQty, itemCost);
                this.console.println("\n The cost for these itesms is: " + result );
           } catch (ItemControlException ex) {

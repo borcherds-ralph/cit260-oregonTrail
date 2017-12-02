@@ -64,7 +64,7 @@ public class ItemView extends View {
                          this.calcCost();
                          break;
                     default:
-                         System.out.println("\n*** Invalid selection *** Try again");
+                         this.console.println("\n*** Invalid selection *** Try again");
                          break;
                }
                
@@ -119,8 +119,6 @@ public class ItemView extends View {
 
           ItemControl instance = new ItemControl();
          
-          
-          
           this.console.println("Please enter the qty: ");
           String qtyString = this.keyboard.readLine();
           double qty = Double.parseDouble(qtyString);
@@ -136,9 +134,7 @@ public class ItemView extends View {
                   + "\n" + qty + " Items, each weighing: " + weight);
           } catch (ItemControlException ex) {
 
-               System.out.println("\n ******************************************************");
-               System.out.println("\n " + ex);
-               System.out.println("\n ******************************************************");
+              ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());
 
           }
           
@@ -160,9 +156,7 @@ public class ItemView extends View {
           }
           catch (ItemControlException ex) {
 
-               System.out.println("\n ******************************************************");
-               System.out.println("\n " + ex);
-               System.out.println("\n ******************************************************");
+              ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());
 
           }
      }
@@ -186,9 +180,7 @@ public class ItemView extends View {
                
           } catch (ItemControlException ex) {
  
-               System.out.println("\n ******************************************************");
-               System.out.println("\n " + ex);
-               System.out.println("\n ******************************************************");
+              ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());
 
           }
      }
@@ -213,9 +205,7 @@ public class ItemView extends View {
                this.console.println("\n The cost for these itesms is: " + result );
           } catch (ItemControlException ex) {
 
-               System.out.println("\n ******************************************************");
-               System.out.println("\n " + ex);
-               System.out.println("\n ******************************************************");
+              ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());
 
           }
      }

@@ -60,10 +60,10 @@ public class GamePlayMenu extends View {
                         this.displaySupplies();
                         break;
                    case "R":
-                        System.out.println("\n*** This has not been implemented yet *** Try again");
+                        this.console.println("\n*** This has not been implemented yet *** Try again");
                         break;
                    case "H":
-                        System.out.println("\n*** This has not been implemented yet *** Try again");
+                        this.console.println("\n*** This has not been implemented yet *** Try again");
                         break;
                    case "V":
                         this.displayMap();
@@ -121,12 +121,12 @@ public class GamePlayMenu extends View {
 	for(i=0; i < 10; i++){
 	    n = rand.nextInt(50) + 1;
 	    lists[i] = n;
-	    System.out.println(n);
+	    this.console.println(n);
 	}
 	int total;
 	total = weights.calcTotalSuppliesWeight(lists);
 	
-	System.out.println("The total weight for the 50 items is: " + total + " lbs" );
+	this.console.println("The total weight for the 50 items is: " + total + " lbs" );
     }
     
     public void calcItemDimensions() throws GamePlayMenuException{

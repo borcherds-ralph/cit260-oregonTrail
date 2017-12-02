@@ -45,7 +45,7 @@ public class HelpMenu extends View{
         switch (choice) {
 //           Ra                
             case "T":
-                System.out.println("\n"
+                this.console.println("\n"
                     + "\nDon't die!"
 		    + "\nMake sure you have enough food!"
 		    + "\nSlow pace speeds recovery time"

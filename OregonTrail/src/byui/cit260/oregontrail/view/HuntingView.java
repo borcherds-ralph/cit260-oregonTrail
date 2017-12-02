@@ -51,15 +51,15 @@ public class HuntingView extends View {
     }
 
     private void direction() {
-        System.out.println("\n *** You chose the right direction ***");
+        this.console.println("\n *** You chose the right direction ***");
     }
 
     private void fire() {
-        System.out.println("\n *** You fired the weapon! ***");
+        this.console.println("\n *** You fired the weapon! ***");
     }
 
     private void displayGuidedMenu() {
-        System.out.println("\n *** You are going on a guided hunt! Good luck! ***");
+        this.console.println("\n *** You are going on a guided hunt! Good luck! ***");
     }
     
     private void displayHelpMenu() {

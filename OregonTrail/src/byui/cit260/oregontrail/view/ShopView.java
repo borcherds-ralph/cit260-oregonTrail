@@ -57,7 +57,7 @@ public class ShopView extends View {
                 this.quitGame();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                this.console.println("\n*** Invalid selection *** Try again");
                 break;
         } 
         return false;
@@ -67,17 +67,17 @@ public class ShopView extends View {
     public int costCalc() {
         boolean valid = false;
         while (!valid) {
-            System.out.print(quantityMenu);
+            this.console.print(quantityMenu);
             
             // choicecost = this.choicecost.readLine();
             if (100 >= choicecost && 1 <= choicecost);
             {
                 totalcost = choicecost * 2;
                 valid = true;
-                System.out.print(purchasedmessage);
+                this.console.print(purchasedmessage);
             }
             if (choicecost % 1 != 0) {
-                System.out.print("\nInvalid Entry");
+                this.console.print("\nInvalid Entry");
             }
         }
         return totalcost;

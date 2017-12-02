@@ -46,7 +46,7 @@ public class StartProgramView extends View {
 
          try {
               if (playersName.length() < 2) {
-                   System.out.println("\nInvalid players name: "
+                   this.console.println("\nInvalid players name: "
                            + "The name must be greater than one character in length");
                    return false;
               }
@@ -54,7 +54,7 @@ public class StartProgramView extends View {
               Player player = PersonControl.createPlayer(playersName);
               
               if (player == null) {
-                   System.out.println("\nError creating the player.");
+                   this.console.println("\nError creating the player.");
                    return false;
               }
               
@@ -63,6 +63,7 @@ public class StartProgramView extends View {
              
          } catch (PersonControlException ex) {
               Logger.getLogger(StartProgramView.class.getName()).log(Level.SEVERE, null, ex);
+         ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());
          }
          return true;
     }
@@ -70,7 +71,7 @@ public class StartProgramView extends View {
     private void displayNextView(Player player) {
         
         String userName = player.getName();
-        System.out.println("\n======================================="
+        this.console.println("\n======================================="
                 + "\n Welcome to the game " + userName
                 + "\n Enjoy the game! We wish you the best"
                 + "\n"

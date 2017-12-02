@@ -72,6 +72,8 @@ public class MainMenuView extends View {
         
         try {
              GameControl.getSavedGame(filePath);
+             GamePlayMenu gameMenu = new GamePlayMenu();
+             gameMenu.display();
              
         } catch (Exception ex) {
               ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());

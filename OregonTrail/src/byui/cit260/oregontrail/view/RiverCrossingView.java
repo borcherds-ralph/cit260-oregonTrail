@@ -50,7 +50,7 @@ public class RiverCrossingView extends View {
                this.quitGame();
                break;
            default:
-               System.out.println("\n*** Invalid selection *** Try again");
+               this.console.println("\n*** Invalid selection *** Try again");
                break;
        }
 
@@ -58,14 +58,14 @@ public class RiverCrossingView extends View {
     }
 
     private void wadeAcrossRiver() {
-        System.out.println("*** startExistingGame function called ***");
+        this.console.println("*** startExistingGame function called ***");
     }
 
     private void saveGame() {
-        System.out.println("*** startExistingGame or startSaveGame function called ***");
+        this.console.println("*** startExistingGame or startSaveGame function called ***");
     }
     private void getRiverDetails() {
-        System.out.println("*** Get River Details function called ***");
+        this.console.println("*** Get River Details function called ***");
     }
     private void ferryAccrossRiver() {
         FerryCrossingView ferry = new FerryCrossingView();
@@ -80,7 +80,7 @@ public class RiverCrossingView extends View {
 
 
     void quitGame() {
-        System.out.println("\n*** Invalid selection *** Try again");
+        this.console.println("\n*** Invalid selection *** Try again");
     }
     
 }

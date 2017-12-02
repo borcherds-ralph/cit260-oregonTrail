@@ -1,16 +1,18 @@
 /*
-* To change this license header, choose License Headers in Project Properties.
-* To change this template file, choose Tools | Templates
-* and open the template in the editor.
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package byui.cit260.oregontrail.view;
 
 import byui.cit260.oregontrail.control.GameControl;
 import byui.cit260.oregontrail.exceptions.GamePlayMenuException;
 import byui.cit260.oregontrail.exceptions.MainMenuException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import oregontrail.OregonTrail;
+/**
+ *
+ * @author ralphb
+ */
 
 public class MainMenuView extends View {
 
@@ -50,25 +52,43 @@ public class MainMenuView extends View {
                          this.saveGame();
                          break;
                     default:
-                         this.console.println("\n*** Invalid selection *** Try again");
+                         ErrorView.display("MainMenuView", "*** Invalid selection *** Try Again ***");
                          break;
                }
                
                
           } catch (MainMenuException ex) {
-               Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());
           } catch (GamePlayMenuException ex) {
-               Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
+                ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());
           }
           return false;
     }
 
     private void startExistingGame() {
-        this.console.println("*** startExistingGame function called ***");
+        this.console.println("\n\nEnter the file path fro the filew where the ga is saved.");
+        
+        String filePath = this.getInput();
+        
+        try {
+             GameControl.getSavedGame(filePath);
+             
+        } catch (Exception ex) {
+              ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());
+        }
     }
 
     private void saveGame() {
-        this.console.println("*** startExistingGame or startSaveGame function called ***");
+        this.console.println("\n\nEnter the file path for the file where the game " 
+        + "is to be saved.");
+        String filePath = this.getInput();
+        
+        try {
+             GameControl.saveGame(OregonTrail.getCurrentGame(), filePath);
+             
+        } catch (Exception ex) {
+             ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());
+        }
     }
 
     private void displayHelpMenu() {
@@ -90,9 +110,8 @@ public class MainMenuView extends View {
           gameMenu.display();
           this.console.println("New Game has been created");
         } catch (GamePlayMenuException ex) {
-                  Logger.getLogger(MainMenuView.class.getName()).log(Level.SEVERE, null, ex);
-        ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());     
-        }
+                   ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());
+             }
         }
        
 	

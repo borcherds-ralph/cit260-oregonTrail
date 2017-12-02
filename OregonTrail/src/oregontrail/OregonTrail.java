@@ -88,8 +88,8 @@ public class OregonTrail {
           OregonTrail.currentGame = currentGame;
      }
 
-     public static GameControl getCurrentGame() {
-          GameControl currentGame = null;
+     public static Game getCurrentGame() {
+          Game currentGame = OregonTrail.currentGame;
           return currentGame;
      }
 

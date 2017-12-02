@@ -13,8 +13,11 @@ import byui.cit260.oregontrail.model.InventoryItem;
 import byui.cit260.oregontrail.enums.ItemList;
 import byui.cit260.oregontrail.model.Wagon;
 import byui.cit260.oregontrail.enums.Actorsenum;
+import byui.cit260.oregontrail.exceptions.GameControlException;
+import java.io.FileInputStream;
 
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 
@@ -164,7 +167,7 @@ public class GameControl {
         return inventory;
     }
     
-    public Actorsenum[]  getSortActorList(Actorsenum[] actors) {
+    public Actorsenum[] getSortActorList(Actorsenum[] actors) {
         
         // sort the list of actors by name and profession
         Actorsenum tempActor;
@@ -184,11 +187,21 @@ public class GameControl {
     }
 
 
-    public static void startSavedGame() {
-        System.out.println("*** startSavedGame() called ***");
+    public static void getSavedGame(String filePath) throws GameControlException  {
+       Game game = null;
+       
+       try(FileInputStream fips = new FileInputStream(filePath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+       } catch(Exception e) {
+            throw new GameControlException(e.getMessage());
+       }
+       
+       OregonTrail.setCurrentGame(game);
+       
     }
-    public static void saveGame(Game game, String filepath) 
-        throws Exception {
+    
+    
+    public static void saveGame(Game game, String filepath) throws Exception {
         try(FileOutputStream fops = new FileOutputStream(filepath)) {
             ObjectOutputStream output = new ObjectOutputStream(fops);
             
@@ -196,7 +209,7 @@ public class GameControl {
             
         }
         catch (Exception e) {
-            throw new Exception(e.getMessage());
+            throw new GameControlException(e.getMessage());
         }
     }
     }

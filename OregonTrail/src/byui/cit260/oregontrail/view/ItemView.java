@@ -8,9 +8,6 @@ package byui.cit260.oregontrail.view;
 import byui.cit260.oregontrail.control.ItemControl;
 import byui.cit260.oregontrail.exceptions.ItemControlException;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
 /**
@@ -70,14 +67,13 @@ public class ItemView extends View {
                
           } catch (ItemControlException ex ) {
 
-               System.out.println("\n ******************************************************");
-               System.out.println("\n " + ex);
-               System.out.println("\n ******************************************************");
+              ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());
+
 
           } catch (IOException ex) {
-               System.out.println("\n ******************************************************");
-               System.out.println("\n " + ex);
-               System.out.println("\n ******************************************************");
+              
+              ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());
+
           }
           return false;
      }
@@ -104,9 +100,7 @@ public class ItemView extends View {
                   + "\n Please run #3 - Gallons from Barrel Volume to get the number of gallons. ");
           } catch (ItemControlException ex) {
 
-               System.out.println("\n ******************************************************");
-               System.out.println("\n " + ex);
-               System.out.println("\n ******************************************************");
+              ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());
 
           }
           

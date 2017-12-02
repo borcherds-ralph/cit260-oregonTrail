@@ -56,7 +56,7 @@ public class RestaurantView extends View {
                          this.quitMenu();
                          break;
                     default:
-                         System.out.println("\n*** Invalid selection *** Try again");
+                         this.console.println("\n*** Invalid selection *** Try again");
                          break;
                }
                
@@ -72,33 +72,33 @@ public class RestaurantView extends View {
      }
 
      private void getSteak() throws RestaurantControlException {
-          System.out.println("*** Steak and Pototoes ***");
+          this.console.println("*** Steak and Pototoes ***");
           String result = "Steak";
-          System.out.println("Do you want yours cooked well down, medium rare or rare?");
+          this.console.println("Do you want yours cooked well down, medium rare or rare?");
 
      }
 
      private void getBurger() throws RestaurantControlException {
 
-          System.out.println("*** Hamburger and Fries ***");
+          this.console.println("*** Hamburger and Fries ***");
           String result = "Burger";
-          System.out.println("Do you want yours cooked well down, medium rare or rare?");
+          this.console.println("Do you want yours cooked well down, medium rare or rare?");
      }
 
      private void getChili() throws RestaurantControlException {
-          System.out.println("*** Chili and Cornbread ***");
+          this.console.println("*** Chili and Cornbread ***");
           String result = "Chili";
-          System.out.println("Do you want yours Hot, Medium or Mild?");
+          this.console.println("Do you want yours Hot, Medium or Mild?");
      }
 
      private void getPizza() throws RestaurantControlException {
-          System.out.println("*** Pizza and Salad ***");
+          this.console.println("*** Pizza and Salad ***");
           String result = "Pizza";
-          System.out.println("Do you want Cheese, Pepperoni or Sausage?");
+          this.console.println("Do you want Cheese, Pepperoni or Sausage?");
      }
 
      private void quitMenu() throws RestaurantControlException {
-          System.out.println("*** Return To Previous Scene ***");
+          this.console.println("*** Return To Previous Scene ***");
      }
 
      private void getBill() throws RestaurantControlException, ItemControlException, IOException {
@@ -108,10 +108,10 @@ public class RestaurantView extends View {
           
           Random rand = new Random();
 
-          System.out.println("Please enter your meal");
+          this.console.println("Please enter your meal");
          
       //  double mealprice = this.mealprice.readLine();
-          System.out.println("Enter the qty");
+          this.console.println("Enter the qty");
          
           String qtyString = this.keyboard.readLine();
           Integer qty = Integer.parseInt(qtyString);
@@ -126,7 +126,7 @@ public class RestaurantView extends View {
 
                double total;
                total = mealprice.getMealPrice(lists);
-               System.out.println("The total bill is" + total);
+               this.console.println("The total bill is" + total);
 
      }
 

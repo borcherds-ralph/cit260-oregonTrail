@@ -19,12 +19,12 @@ import java.util.logging.Logger;
  */
 public abstract class View implements ViewInterface {
     protected String displayMessage;
-    private boolean input = true;
+
     protected final BufferedReader keyboard = OregonTrail.getInFile();
     protected final PrintWriter console = OregonTrail.getOutFile();
         
     public View() {
-        this.input = true;
+        
     }
 
      public View(String message) {
@@ -34,11 +34,12 @@ public abstract class View implements ViewInterface {
      
      @Override
      public void display() {
-
+          String value;
           boolean done = false;
+          
           do {
                // prompt for and get players name
-               String value = this.getInput();
+               value = this.getInput();
                if (value.toUpperCase().equals("Q")) // user wants to quit
                {
                     return; // exit the view
@@ -61,14 +62,14 @@ public abstract class View implements ViewInterface {
 
                try {
                     // display the prompt message
-                    System.out.println("\n" + this.displayMessage);
+                    this.console.println("\n" + this.displayMessage);
 
                     // get the value entered from the keyboard
                     value = this.keyboard.readLine();
                     value = value.trim();
 
                     if (value.length() < 1) { // blank value entered
-                         System.out.println("\n*** You must enter a value *** ");
+                         this.console.println("\n*** You must enter a value *** ");
                          continue;
                     }
 

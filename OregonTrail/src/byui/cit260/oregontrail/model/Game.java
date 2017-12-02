@@ -68,7 +68,7 @@ public class Game implements Serializable {
         this.map = map;
     }
      public void createMap(MapControl map) {
-	System.out.println("Map has been created");
+	this.console.println("Map has been created");
 	
     }
     

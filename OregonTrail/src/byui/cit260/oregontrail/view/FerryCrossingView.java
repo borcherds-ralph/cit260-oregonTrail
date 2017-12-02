@@ -33,7 +33,7 @@ public class FerryCrossingView extends View {
         String choice = menuOption.toUpperCase();
         switch (choice) {
             case "CONTINUE":
-                System.out.println("\n"
+                this.console.println("\n"
                 + "\n--------------------------------------------------"
                 + "\n| River Crossed by Ferry                         |"
                 + "\n--------------------------------------------------"

@@ -5,6 +5,7 @@
  */
 package byui.cit260.oregontrail.model;
 
+import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -14,6 +15,9 @@ import java.util.Objects;
  * @author Casey
  */
 public class Supplies implements Serializable{
+
+    
+    public static PrintWriter report;
 
     //variables
   
@@ -26,6 +30,13 @@ public class Supplies implements Serializable{
     public Supplies() {
     }
         
+    private static PrintWriter getReportFile() {
+    return report;
+}
+    
+private static void setReportFile(PrintWriter report) {
+    Supplies.report = report;
+}
     public int getWeight() {
         return weight;
     }

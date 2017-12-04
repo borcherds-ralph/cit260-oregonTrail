@@ -4,6 +4,13 @@
  * and open the template in the editor.
  */
 package byui.cit260.oregontrail.view;
+import byui.cit260.oregontrail.exceptions.SuppliesControlException;
+import byui.cit260.oregontrail.model.Supplies;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import oregontrail.OregonTrail;
 
 /**
  *
@@ -11,26 +18,29 @@ package byui.cit260.oregontrail.view;
  */
 public class SuppliesView extends View {
 
-    public SuppliesView() {
+    public static PrintWriter report = null;
+    
+    public SuppliesView() throws SuppliesControlException{
         super("\n"
                 + "\n *************************************************"
                 + "\n *                 Supply Menu                   *"
                 + "\n *************************************************"
-                + "\nG - Weapon"
-                + "\nA - Ammunition"
-                + "\nW - Water"
-                + "\nF - Flour"
-                + "\nM - Meat"
-                + "\nL - Lard"
-                + "\nS - Sugar"
-                + "\nN - Salt"
-                + "\nE - Eggs"
-                + "\nC - Clothing"
-                + "\nB - Blankets"
-                + "\nR - Rope"
-                + "\nT - Tools"
-                + "\nD - Shovel"
-                + "\nU - Utensils"
+                + "\nP - Save Supplies Report"
+                + "\nG - Display Weapon"
+                + "\nA - Display Ammunition"
+                + "\nW - Display Water"
+                + "\nF - Display Flour"
+                + "\nM - Display Meat"
+                + "\nL - Display Lard"
+                + "\nS - Display Sugar"
+                + "\nN - Display Salt"
+                + "\nE - Display Eggs"
+                + "\nC - Display Clothing"
+                + "\nB - Display Blankets"
+                + "\nR - Display Rope"
+                + "\nT - Display Tools"
+                + "\nD - Display Shovel"
+                + "\nU - Display Utensils"
                 + "\nQ - Quit"
                 + "\n *************************************************"
         );
@@ -39,8 +49,12 @@ public class SuppliesView extends View {
     @Override
     public boolean doAction(String choice) {
         
+        try {
+            
         choice = choice.toUpperCase();
         switch (choice) {
+            case "P":
+                this.displayReport();
             case "G":
                 this.displayWeapon();
                 break;
@@ -90,12 +104,44 @@ public class SuppliesView extends View {
                 this.quitSupplies();
                 break;
             default:
-                this.console.println("Invalid Entry -- Please try again... Ox");
+                this.console.println("Invalid Entry -- Please try again");
                 break;
-        }
-
-        return false;
+            }
+              return false;
+        } catch (SuppliesControlException ex) {
+              this.console.println("\n Please make a valid selection");
+         }
+         return false;
     }
+
+        
+    
+    
+private void displayReport() extends SuppliesControlException {
+    try {
+        String filePath = null;
+        filePath = this.keyboard.nextLine();
+        filePath = filePath.trim();
+        if (filePath.length() < 2 ) {
+            console.out("This file path is not long enough, try again");
+        }
+        
+        
+                
+    }
+    catch (IOException ex) {
+        
+}
+finally {
+        try {
+                Supplies.report.close();
+        } catch (IOException ex) {
+            ErrorView.display(this.getClass().getName(),
+                    "Error Closing File" + e.getMessage());
+            return;
+        }
+    }
+}
 
     private void displayWeapon() {
         this.console.println("***DisplayWeapon Function called ***");
@@ -157,6 +203,12 @@ public class SuppliesView extends View {
         this.console.println("How many forks for the road?");
     }
 
+    private void suppliesreport() {
+        
+        if (Supplies.report != null)
+            Supplies.report.close();
+        
+    }
     private void quitSupplies() {
         this.console.println("quit Supplies function called... Later Gator!");
     }

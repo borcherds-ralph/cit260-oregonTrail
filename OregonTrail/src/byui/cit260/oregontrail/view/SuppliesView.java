@@ -122,7 +122,7 @@ public class SuppliesView extends View {
         
     
     
-private void displayReport(ArrayList<Item> InventoryItem) throws SuppliesControlException, IOException {
+private void displayReport() throws SuppliesControlException, IOException {
     try {
         this.console.println("\n\nEnter the file path to save the report.");
        String filePath = null;
@@ -132,8 +132,8 @@ private void displayReport(ArrayList<Item> InventoryItem) throws SuppliesControl
 
         report.printf("%n%-20s%15s%15s", "Description", "Num in Stock", "Num Required");
         report.write("\nAloeVera" + ItemList.AloeVera);
-        for(ItemList Item : ItemList.values()){
-        report.writef("%n%-20s%7d%7d", Item.getDescription()
+        for(InventoryItem Item : Item.values()){
+        report.printf("%n%-20s%7d%7d", Item.getDescription()
                                         , Item.getQuantityInStock()
                                         , Item.getRequiredAmount());
                 }
@@ -147,9 +147,9 @@ private void displayReport(ArrayList<Item> InventoryItem) throws SuppliesControl
 }
 finally {
                 try {  
-    if (report != null) {
-                report.close(); }
-            } catch (IOException ex) {
+                if (report != null) 
+                report.close(); 
+    } catch (IOException ex) {
                 ErrorView.display(this.getClass().getName(),
                     "Error Closing File" + ex.getMessage());
             }

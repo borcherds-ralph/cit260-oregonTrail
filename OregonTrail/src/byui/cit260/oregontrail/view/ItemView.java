@@ -7,7 +7,13 @@ package byui.cit260.oregontrail.view;
 
 import byui.cit260.oregontrail.control.ItemControl;
 import byui.cit260.oregontrail.exceptions.ItemControlException;
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import oregontrail.OregonTrail;
 
 
 /**
@@ -25,6 +31,7 @@ public class ItemView extends View {
                   + "\n 3 - Gallons from Barrel Volume"
                   + "\n 4 - Calculate volume of cylinder"
                   + "\n 5 - Get total cost of items"
+                  + "\n 6 - Print recommeded list of supplies"
                   + "\n Q - Exit Game"
                   + "\n "
                   + "\n                                                      "
@@ -60,19 +67,18 @@ public class ItemView extends View {
                     case 5:
                          this.calcCost();
                          break;
+                    case 6:
+                         this.outputRecommSupplies();
+                         break;
                     default:
                          this.console.println("\n*** Invalid selection *** Try again");
                          break;
                }
                
-          } catch (ItemControlException ex ) {
+          } catch (ItemControlException | IOException ex ) {
 
               ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());
 
-
-          } catch (IOException ex) {
-              
-              ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());
 
           }
           return false;
@@ -203,4 +209,33 @@ public class ItemView extends View {
 
           }
      }
+     
+     public void outputRecommSupplies() throws ItemControlException {
+         ItemControl recomSupplies = new ItemControl();
+         
+         // Get where to write the file
+          this.console.println("\n\nEnter the file path for the file where the game is to be saved.");
+          String filePath = this.getInput();
+          
+          String saveReport = recomSupplies.WriteOutut();
+        
+        
+          Writer writer = null;
+
+          try {
+               writer = new BufferedWriter(new OutputStreamWriter(
+                    new FileOutputStream(filePath), "utf-8"));
+               writer.write(saveReport);
+               this.console.println("The report was written succesfully.");
+          } catch (IOException ex) {
+              // report
+          } finally {
+               try {writer.close();} catch (IOException ex) {
+               
+                    ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());
+
+               }
+          }
+         
+    }
 }

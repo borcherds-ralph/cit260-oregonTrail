@@ -5,11 +5,14 @@
  */
 package byui.cit260.oregontrail.view;
 
-
-/**
- *
- * @author Casey
- */
+import byui.cit260.oregontrail.exceptions.SuppliesControlException;
+import byui.cit260.oregontrail.model.Shops;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import oregontrail.OregonTrail;
+ 
 public class ShopView extends View {
 
     private char choice;

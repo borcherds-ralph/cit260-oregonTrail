@@ -14,7 +14,7 @@ public enum ItemList implements Serializable {
 
         AloeVera("1", "8-oz jar of aloe vera", .2),
         Alum("1", "8-oz bottle of alum", .2),
-        Bacon("308", "Bacon", 1),
+        Bacon("308 lbs", "Bacon", 1),
         Bullets("3 boxes", "20 bullets", 2),
         Cheese("16 lbs", "cheese", 1),
         CoffeeBeans("20 lbs", "coffee beans", 20),

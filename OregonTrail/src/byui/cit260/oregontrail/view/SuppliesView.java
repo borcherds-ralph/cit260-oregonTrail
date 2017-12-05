@@ -132,10 +132,10 @@ private void displayReport() throws SuppliesControlException, IOException {
 
         report.printf("%n%-20s%15s%15s", "Description", "Num in Stock", "Num Required");
         report.write("\nAloeVera" + ItemList.AloeVera);
-        for(InventoryItem Item : Item.values()){
-        report.printf("%n%-20s%7d%7d", Item.getDescription()
-                                        , Item.getQuantityInStock()
-                                        , Item.getRequiredAmount());
+        for(ItemList ItemList : ItemList.values()){
+        report.printf("%n%-20s%7d%7d", ItemList.getDescription()
+                                        , ItemList.getQuantityInStock()
+                                        , ItemList.getRequiredAmount());
                 }
         report.flush();
         
@@ -146,15 +146,12 @@ private void displayReport() throws SuppliesControlException, IOException {
                     "Error Creating Report" + ex.getMessage());
 }
 finally {
-                try {  
                 if (report != null) 
                 report.close(); 
-    } catch (IOException ex) {
-                ErrorView.display(this.getClass().getName(),
-                    "Error Closing File" + ex.getMessage());
+                this.console.println("Report file closed successfully");
             }
         }
-    }
+    
 
 
     private void displayWeapon() {

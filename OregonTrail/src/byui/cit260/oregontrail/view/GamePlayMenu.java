@@ -114,11 +114,12 @@ public class GamePlayMenu extends View {
           try (PrintWriter out = new PrintWriter(filePath)) { 
                
                out.println("\n\n                                         List of recommended items");
-               out.printf("%n%-35s%10s%10s", "Actors Name", "Actor Description", "Cash on Hand", "Numb in Family");
-               out.printf("%n%-35s%10s%10s", "-----------", "-----------------", "------------", "--------------");
+               out.printf("%n%-35s%60s%16s%16s", "Actors Name", "Actor Description", "Cash on Hand", "Numb in Family");
+               out.printf("%n%-35s%60s%16s%16s", "-----------", "-----------------", "------------", "--------------");
 
                for (Actorsenum actorsList : Actorsenum.values()) {
-                    out.printf("%n%-20s%60s%10.2f%10d",actorsList.getName(),
+                    out.printf("%n%-35s%60s%16.2f%16d",actorsList.getName(),
+                            actorsList.getdescription(),
                             actorsList.getcash(),
                             actorsList.getfamilyMembers());
                }

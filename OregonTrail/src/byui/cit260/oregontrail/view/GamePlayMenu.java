@@ -9,6 +9,7 @@ import byui.cit260.oregontrail.control.ItemControl;
 import java.util.Random;
 
 import byui.cit260.oregontrail.exceptions.GamePlayMenuException;
+import byui.cit260.oregontrail.exceptions.OutputRecommendedSupplies;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -33,6 +34,7 @@ public class GamePlayMenu extends View {
                 + "\n U - See Supplies"
 		+ "\n W - Get Total Weight of Supplies"
 		+ "\n I - Calculate item dimensions"
+                + "\n P - Output to file the recommended list of items"
 		+ "\n V - View Map"
                 + "\n R - Rest"
                 + "\n H - Help"
@@ -73,6 +75,8 @@ public class GamePlayMenu extends View {
                         break;
                    case "I":
                         this.calcItemDimensions();
+                        break;
+                  
                    case "X":
                         this.quitGame();
                         break;
@@ -112,7 +116,7 @@ public class GamePlayMenu extends View {
         
     }
     
-    private void calcSupplyWeight() throws GamePlayMenuException {
+    public void calcSupplyWeight() throws GamePlayMenuException {
 	ItemControl weights = new ItemControl();
 	int i;
 	Random rand = new Random();
@@ -129,11 +133,13 @@ public class GamePlayMenu extends View {
 	this.console.println("The total weight for the 50 items is: " + total + " lbs" );
     }
     
-    public void calcItemDimensions() throws GamePlayMenuException{
+    public void calcItemDimensions() throws GamePlayMenuException {
         ItemView item = new ItemView();
 	item.display();
         
     } 
+    
+    
 
     void quitGame() throws GamePlayMenuException {
         return;

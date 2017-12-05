@@ -8,6 +8,8 @@ package byui.cit260.oregontrail.control;
 
 import byui.cit260.oregontrail.model.Item;
 import byui.cit260.oregontrail.exceptions.ItemControlException;
+import java.io.PrintWriter;
+import oregontrail.OregonTrail;
 
 /**
  *
@@ -109,6 +111,16 @@ public class ItemControl {
 	}
 	return total;
     } 
+
+     public String WriteOutut() {
+        
+        Item item = new Item();
+        String outputString = item.printList();
+        
+        return outputString;
+     }
+     
+     
 
     
 

@@ -8,14 +8,8 @@ package byui.cit260.oregontrail.view;
 import byui.cit260.oregontrail.control.ItemControl;
 import byui.cit260.oregontrail.enums.ItemList;
 import byui.cit260.oregontrail.exceptions.ItemControlException;
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
-import java.io.Writer;
-import oregontrail.OregonTrail;
 
 
 /**

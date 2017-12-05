@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.oregontrail.view;
+
 import byui.cit260.oregontrail.control.SupplyControl;
 import byui.cit260.oregontrail.enums.ItemList;
 import byui.cit260.oregontrail.enums.ToolList;
@@ -27,8 +28,8 @@ import oregontrail.OregonTrail;
 public class SuppliesView extends View {
 
     public static PrintWriter report = null;
-    
-    public SuppliesView() throws SuppliesControlException, IOException{
+
+    public SuppliesView() throws SuppliesControlException, IOException {
         super("\n"
                 + "\n *************************************************"
                 + "\n *                 Supply Menu                   *"
@@ -55,7 +56,7 @@ public class SuppliesView extends View {
     }
 
     @Override
-    public boolean doAction(String choice) {          
+    public boolean doAction(String choice) {
         try {
             choice = choice.toUpperCase();
             switch (choice) {
@@ -118,43 +119,36 @@ public class SuppliesView extends View {
             Logger.getLogger(SuppliesView.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
-        } 
-    
-
-        
-    
-    
-private void displayReport() throws SuppliesControlException, IOException {
-    try {
-        this.console.println("\n\nEnter the file path to save the report.");
-       String filePath = null;
-        PrintWriter report = new PrintWriter(filePath, "utf-8");
-        filePath = this.keyboard.readLine();
-        filePath = filePath.trim();
-
-        report.printf("%n%-20s%15s%15s", "Description", "Num in Stock", "Num Required");
-        report.write("\nAloeVera" + ItemList.AloeVera);
-        for(ToolList ToolList : ToolList.values()){
-        report.printf("%n%-8s%20s%7.4f", ToolList.getNum()
-                                        , ToolList.getName()
-                                        , ToolList.getWeight());
-                }
-        report.flush();
-        
-         this.console.println("Report created successfully");
     }
-    catch (IOException ex) {
-        ErrorView.display(this.getClass().getName(),
-                    "Error Creating Report" + ex.getMessage());
-}
-finally {
-                if (report != null) 
-                report.close(); 
-                this.console.println("Report file closed successfully");
-            }
-        }
-    
 
+    private void displayReport() throws SuppliesControlException, IOException {
+         try {
+            this.console.println("\n\nEnter the file path to save the report.");
+            String filePath = null;
+            PrintWriter report = new PrintWriter(filePath, "utf-8");
+            filePath = this.keyboard.readLine();
+            filePath = filePath.trim();
+
+            report.printf("%n%-20s%15s%15s", "Description", "Num in Stock", "Num Required");
+            report.write("\nAloeVera" + ItemList.AloeVera);
+            for (ToolList ToolList : ToolList.values()) {
+                report.printf("%n%-8s%20s%7.4f", ToolList.getNum(),
+                         ToolList.getName(),
+                         ToolList.getWeight());
+            }
+            report.flush();
+
+            this.console.println("Report created successfully");
+        } catch (IOException ex) {
+            ErrorView.display(this.getClass().getName(),
+                    "Error Creating Report" + ex.getMessage());
+        } finally {
+            if (report != null) {
+                report.close();
+            }
+            this.console.println("Report file closed successfully");
+        }
+    }
 
     private void displayWeapon() {
         this.console.println("***DisplayWeapon Function called ***");
@@ -216,12 +210,6 @@ finally {
         this.console.println("How many forks for the road?");
     }
 
-    private void suppliesreport() {
-        
-        if (Supplies.report != null)
-            Supplies.report.close();
-        
-    }
     private void quitSupplies() {
         this.console.println("quit Supplies function called... Later Gator!");
     }

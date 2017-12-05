@@ -103,7 +103,7 @@ public class GamePlayMenu extends View {
     public String getMenuList() throws GamePlayMenuException {
         return menuList;
     }
-
+ 
     public void getActors() throws IOException, GamePlayMenuException {
                  
          // Get where to write the file

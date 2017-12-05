@@ -6,12 +6,14 @@
 package byui.cit260.oregontrail.view;
 
 import byui.cit260.oregontrail.control.ItemControl;
+import byui.cit260.oregontrail.enums.ItemList;
 import byui.cit260.oregontrail.exceptions.ItemControlException;
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
 import java.io.Writer;
 import oregontrail.OregonTrail;
 
@@ -217,25 +219,25 @@ public class ItemView extends View {
           this.console.println("\n\nEnter the file path for the file where the game is to be saved.");
           String filePath = this.getInput();
           
-          String saveReport = recomSupplies.WriteOutut();
-        
-        
-          Writer writer = null;
-
-          try {
-               writer = new BufferedWriter(new OutputStreamWriter(
-                    new FileOutputStream(filePath), "utf-8"));
-               writer.write(saveReport);
-               this.console.println("The report was written succesfully.");
-          } catch (IOException ex) {
-              // report
-          } finally {
-               try {writer.close();} catch (IOException ex) {
+                
+          try (PrintWriter out = new PrintWriter(filePath)) { 
                
-                    ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());
+               out.println("\n\n                                         List of recommended items");
+               out.printf("%n%-35s%10s%10s", "Item Description", "Recommended Qty", "Weight");
+               out.printf("%n%-35s%10s%10s", "----------------", "---------------", "------");
 
+               for (ItemList itemList : ItemList.values()) {
+                    out.printf("%n%-35s%10s%13.3f",itemList.getItemName(),
+                            itemList.getQty(),
+                            itemList.getWeight());
                }
+               
+               this.console.println("File created successfully");
+          } catch (IOException ex) {
+               ErrorView.display(this.getClass().getName(), "Error creating file: " + ex.getMessage());
           }
+         
+          
          
     }
 }

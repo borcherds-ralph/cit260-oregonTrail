@@ -31,20 +31,10 @@ public class Item  extends Supplies implements Serializable{
 
     }
     
-    public String printList() {
-         String printList = "";
-         String recommQty;
-         String itemDesc;
-         double itemWeight;
-
-         for (ItemList itemList : ItemList.values()) {
-              itemDesc = itemList.getItemName();
-              recommQty = itemList.getQty();
-              itemWeight = itemList.getWeight();
-              printList = printList + itemDesc + "    " + recommQty + "    " + itemWeight + "\n";
-         }
+    public ItemList[] getItemList() {
+         ItemList[] itemList = ItemList.values();
          
-         return printList;
+         return itemList;
     }
 /*
     public void setItemName(String itemName) {

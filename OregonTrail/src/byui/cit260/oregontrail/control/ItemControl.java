@@ -6,6 +6,7 @@
 package byui.cit260.oregontrail.control;
 
 
+import byui.cit260.oregontrail.enums.ItemList;
 import byui.cit260.oregontrail.model.Item;
 import byui.cit260.oregontrail.exceptions.ItemControlException;
 import java.io.PrintWriter;
@@ -112,12 +113,10 @@ public class ItemControl {
 	return total;
     } 
 
-     public String WriteOutut() {
-        
-        Item item = new Item();
-        String outputString = item.printList();
-        
-        return outputString;
+     public ItemList[] WriteOutut() {
+          ItemList[] itemList = ItemList.values();
+          
+          return itemList;
      }
      
      

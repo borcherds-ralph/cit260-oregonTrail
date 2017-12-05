@@ -12,16 +12,16 @@ import java.io.Serializable;
  */
 public enum Actorsenum {
 
-        Bob_Banker("Bob Banker","The banker has  the most money and only a spouse", "1,000", "2"),
-        Fred_Farmer("Fred Farmer", "The farmer has some money but a spouse and 3 children", "500", "5"),
-        Chris_Carpenter("Chris Carpenter","The carpenter has a little money, 1 spouse and 1 child", "300", "3"),;
+        Bob_Banker("Bob Banker","The banker has  the most money and only a spouse", 1000.00, 2),
+        Fred_Farmer("Fred Farmer", "The farmer has some money but a spouse and 3 children", 500, 5),
+        Chris_Carpenter("Chris Carpenter","The carpenter has a little money, 1 spouse and 1 child", 300.00, 3);
         
         private final String name;
         private final String description;
-        private final String cash;
-        private final String familyMembers;
+        private final double cash;
+        private final int familyMembers;
         
-        private Actorsenum(String name, String description, String cash, String familyMembers) {
+        private Actorsenum(String name, String description, double cash, int familyMembers) {
             this.name = name;
              this.description = description;
             this.cash = cash;
@@ -32,11 +32,11 @@ public enum Actorsenum {
         return this.description;
         }
         
-        public String getcash() {
+        public double getcash() {
             return this.cash;
         }
 
-        public String getfamilyMembers() {
+        public int getfamilyMembers() {
             return this.familyMembers;
         }
         

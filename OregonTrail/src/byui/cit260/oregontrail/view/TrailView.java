@@ -5,6 +5,11 @@
  */
 package byui.cit260.oregontrail.view;
 
+import byui.cit260.oregontrail.exceptions.SuppliesControlException;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Casey
@@ -74,8 +79,14 @@ public abstract class TrailView extends View {
     }
 
     private void displaySuppliesView() {
-        SuppliesView Supplies = new SuppliesView();
-        Supplies.display();
+        try {
+            SuppliesView Supplies = new SuppliesView();
+            Supplies.display();
+        } catch (SuppliesControlException ex) {
+            Logger.getLogger(TrailView.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(TrailView.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     private void quitGame() {

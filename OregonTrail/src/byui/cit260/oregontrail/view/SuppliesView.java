@@ -4,12 +4,18 @@
  * and open the template in the editor.
  */
 package byui.cit260.oregontrail.view;
+import byui.cit260.oregontrail.enums.ItemList;
 import byui.cit260.oregontrail.exceptions.SuppliesControlException;
+import byui.cit260.oregontrail.model.Item;
+import byui.cit260.oregontrail.model.InventoryItem;
 import byui.cit260.oregontrail.model.Supplies;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import oregontrail.OregonTrail;
 
 /**
@@ -20,7 +26,7 @@ public class SuppliesView extends View {
 
     public static PrintWriter report = null;
     
-    public SuppliesView() throws SuppliesControlException{
+    public SuppliesView() throws SuppliesControlException, IOException{
         super("\n"
                 + "\n *************************************************"
                 + "\n *                 Supply Menu                   *"
@@ -47,101 +53,108 @@ public class SuppliesView extends View {
     }
 
     @Override
-    public boolean doAction(String choice) {
-        
+    public boolean doAction(String choice) {          
         try {
-            
-        choice = choice.toUpperCase();
-        switch (choice) {
-            case "P":
-                this.displayReport();
-            case "G":
-                this.displayWeapon();
-                break;
-            case "A":
-                this.displayAmmo();
-                break;
-            case "W":
-                this.displayWater();
-                break;
-            case "F":
-                this.displayFlour();
-                break;
-            case "M":
-                this.displayMeat();
-                break;
-            case "L":
-                this.displayLard();
-                break;
-            case "S":
-                this.displaySugar();
-                break;
-            case "N":
-                this.displaySalt();
-                break;
-            case "E":
-                this.displayEggs();
-                break;
-            case "C":
-                this.displayClothing();
-                break;
-            case "B":
-                this.displayBlankets();
-                break;
-            case "R":
-                this.displayRope();
-                break;
-            case "T":
-                this.displayTools();
-                break;
-            case "D":
-                this.displayShovel();
-                break;
-            case "U":
-                this.displayUtensils();
-                break;
-            case "Q": //to quit this menu
-                this.quitSupplies();
-                break;
-            default:
-                this.console.println("Invalid Entry -- Please try again");
-                break;
+            choice = choice.toUpperCase();
+            switch (choice) {
+                case "P":
+                    this.displayReport();
+                case "G":
+                    this.displayWeapon();
+                    break;
+                case "A":
+                    this.displayAmmo();
+                    break;
+                case "W":
+                    this.displayWater();
+                    break;
+                case "F":
+                    this.displayFlour();
+                    break;
+                case "M":
+                    this.displayMeat();
+                    break;
+                case "L":
+                    this.displayLard();
+                    break;
+                case "S":
+                    this.displaySugar();
+                    break;
+                case "N":
+                    this.displaySalt();
+                    break;
+                case "E":
+                    this.displayEggs();
+                    break;
+                case "C":
+                    this.displayClothing();
+                    break;
+                case "B":
+                    this.displayBlankets();
+                    break;
+                case "R":
+                    this.displayRope();
+                    break;
+                case "T":
+                    this.displayTools();
+                    break;
+                case "D":
+                    this.displayShovel();
+                    break;
+                case "U":
+                    this.displayUtensils();
+                    break;
+                case "Q": //to quit this menu
+                    this.quitSupplies();
+                    break;
+                default:
+                    this.console.println("Invalid Entry -- Please try again");
+                    break;
             }
-              return false;
-        } catch (SuppliesControlException ex) {
-              this.console.println("\n Please make a valid selection");
-         }
-         return false;
-    }
+            return false;
+        } catch (SuppliesControlException | IOException ex) {
+            Logger.getLogger(SuppliesView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+        } 
+    
 
         
     
     
-private void displayReport() extends SuppliesControlException {
+private void displayReport(ArrayList<Item> InventoryItem) throws SuppliesControlException, IOException {
     try {
-        String filePath = null;
-        filePath = this.keyboard.nextLine();
+       String filePath = null;
+        PrintWriter report = new PrintWriter(filePath);
+        filePath = this.keyboard.readLine();
         filePath = filePath.trim();
-        if (filePath.length() < 2 ) {
-            console.out("This file path is not long enough, try again");
+
+        report.writef("%n%-20s%15s%15s", "Description", "Num in Stock", "Num Required");
+        report.write("\nAloeVera" + ItemList.AloeVera);
+        for(item InventoryItem : InventoryItem){
+        report.writef("%n%-20s%7d%7d", InventoryItem.getDescription()
+                                        , InventoryItem.getQuantityInStock()
+                                        , InventoryItem.getRequiredAmount());
+                }
+        report.flush();
         }
         
-        
-                
-    }
     catch (IOException ex) {
-        
+        ErrorView.display(this.getClass().getName(),
+                    "Error Creating Report" + ex.getMessage());
 }
 finally {
-        try {
-                Supplies.report.close();
-        } catch (IOException ex) {
-            ErrorView.display(this.getClass().getName(),
-                    "Error Closing File" + e.getMessage());
-            return;
+        if (report != null) {
+            try {
+                report.close(); 
+            } catch (IOException ex) {
+                ErrorView.display(this.getClass().getName(),
+                    "Error Closing File" + ex.getMessage());
+            }
         }
     }
 }
+
 
     private void displayWeapon() {
         this.console.println("***DisplayWeapon Function called ***");

@@ -124,36 +124,37 @@ public class SuppliesView extends View {
     
 private void displayReport(ArrayList<Item> InventoryItem) throws SuppliesControlException, IOException {
     try {
+        this.console.println("\n\nEnter the file path to save the report.");
        String filePath = null;
-        PrintWriter report = new PrintWriter(filePath);
+        PrintWriter report = new PrintWriter(filePath, "utf-8");
         filePath = this.keyboard.readLine();
         filePath = filePath.trim();
 
-        report.writef("%n%-20s%15s%15s", "Description", "Num in Stock", "Num Required");
+        report.printf("%n%-20s%15s%15s", "Description", "Num in Stock", "Num Required");
         report.write("\nAloeVera" + ItemList.AloeVera);
-        for(item InventoryItem : InventoryItem){
-        report.writef("%n%-20s%7d%7d", InventoryItem.getDescription()
-                                        , InventoryItem.getQuantityInStock()
-                                        , InventoryItem.getRequiredAmount());
+        for(ItemList Item : ItemList.values()){
+        report.writef("%n%-20s%7d%7d", Item.getDescription()
+                                        , Item.getQuantityInStock()
+                                        , Item.getRequiredAmount());
                 }
         report.flush();
-        }
         
+         this.console.println("Report created successfully");
+    }
     catch (IOException ex) {
         ErrorView.display(this.getClass().getName(),
                     "Error Creating Report" + ex.getMessage());
 }
 finally {
-        if (report != null) {
-            try {
-                report.close(); 
+                try {  
+    if (report != null) {
+                report.close(); }
             } catch (IOException ex) {
                 ErrorView.display(this.getClass().getName(),
                     "Error Closing File" + ex.getMessage());
             }
         }
     }
-}
 
 
     private void displayWeapon() {

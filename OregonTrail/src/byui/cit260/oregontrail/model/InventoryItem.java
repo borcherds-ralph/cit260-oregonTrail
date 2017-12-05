@@ -6,6 +6,7 @@
 package byui.cit260.oregontrail.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -14,6 +15,7 @@ import java.util.Objects;
  */
 public class InventoryItem implements Serializable {
     
+    private ArrayList<Item> itemlist;
     private String description;
     private double quantityInStock;
     private double requiredAmount;
@@ -30,7 +32,11 @@ public class InventoryItem implements Serializable {
     public String getDescription() {
         return description;
     }
+    
 
+     
+
+      
     public void setDescription(String description) {
         this.description = description;
     }

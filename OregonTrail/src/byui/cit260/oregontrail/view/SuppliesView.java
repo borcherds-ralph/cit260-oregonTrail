@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package byui.cit260.oregontrail.view;
+import byui.cit260.oregontrail.control.SupplyControl;
 import byui.cit260.oregontrail.enums.ItemList;
+import byui.cit260.oregontrail.enums.ToolList;
 import byui.cit260.oregontrail.exceptions.SuppliesControlException;
 import byui.cit260.oregontrail.model.Item;
 import byui.cit260.oregontrail.model.InventoryItem;
@@ -132,10 +134,10 @@ private void displayReport() throws SuppliesControlException, IOException {
 
         report.printf("%n%-20s%15s%15s", "Description", "Num in Stock", "Num Required");
         report.write("\nAloeVera" + ItemList.AloeVera);
-        for(ItemList ItemList : ItemList.values()){
-        report.printf("%n%-20s%7d%7d", ItemList.getDescription()
-                                        , ItemList.getQuantityInStock()
-                                        , ItemList.getRequiredAmount());
+        for(ToolList ToolList : ToolList.values()){
+        report.printf("%n%-8s%20s%7.4f", ToolList.getNum()
+                                        , ToolList.getName()
+                                        , ToolList.getWeight());
                 }
         report.flush();
         

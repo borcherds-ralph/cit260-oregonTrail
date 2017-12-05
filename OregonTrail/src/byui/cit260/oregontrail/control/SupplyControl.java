@@ -5,12 +5,19 @@
  */
 package byui.cit260.oregontrail.control;
 
+import byui.cit260.oregontrail.model.Item;
+import java.util.ArrayList;
+
 /**
  *
  * @author Casey
  */
 public class SupplyControl {
 
+    private ArrayList<Item> itemlist;
+    private String description;
+    private double quantityInStock;
+    private double requiredAmount;
     //this simply tests weight and cost, but it does not check if the values are correct like they are 
     //defined in the 
     public double getweight(int weight) {

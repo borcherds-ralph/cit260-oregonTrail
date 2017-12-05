@@ -24,7 +24,6 @@ public enum Locationsenum {
      private int milageMatch;
     
      Locationsenum(String Name, String Type, int milage) {
-         this.milageMatch = milageMatch;
             LocationName = Name;
             LocationType = Type;
             LocationMilage = milage;

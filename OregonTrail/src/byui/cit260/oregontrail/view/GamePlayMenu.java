@@ -6,10 +6,13 @@
 package byui.cit260.oregontrail.view;
 
 import byui.cit260.oregontrail.control.ItemControl;
+import byui.cit260.oregontrail.enums.Actorsenum;
 import java.util.Random;
 
 import byui.cit260.oregontrail.exceptions.GamePlayMenuException;
 import byui.cit260.oregontrail.exceptions.OutputRecommendedSupplies;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -34,7 +37,7 @@ public class GamePlayMenu extends View {
                 + "\n U - See Supplies"
 		+ "\n W - Get Total Weight of Supplies"
 		+ "\n I - Calculate item dimensions"
-                + "\n P - Output to file the recommended list of items"
+                + "\n A - Write List of Actors"
 		+ "\n V - View Map"
                 + "\n R - Rest"
                 + "\n H - Help"
@@ -61,8 +64,8 @@ public class GamePlayMenu extends View {
                    case "U":
                         this.displaySupplies();
                         break;
-                   case "R":
-                        this.console.println("\n*** This has not been implemented yet *** Try again");
+                   case "A":
+                        this.getActors();
                         break;
                    case "H":
                         this.console.println("\n*** This has not been implemented yet *** Try again");
@@ -87,7 +90,9 @@ public class GamePlayMenu extends View {
               return false;
          } catch (GamePlayMenuException ex) {
               this.console.println("\n Please make a valid selection");
-         }
+         } catch (IOException ex) {
+            Logger.getLogger(GamePlayMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
          return false;
     }
 
@@ -99,7 +104,32 @@ public class GamePlayMenu extends View {
         return menuList;
     }
 
-   
+    public void getActors() throws IOException, GamePlayMenuException {
+                 
+         // Get where to write the file
+          this.console.println("\n\nEnter the file path for the file where the game is to be saved.");
+          String filePath = this.getInput();
+          
+                
+          try (PrintWriter out = new PrintWriter(filePath)) { 
+               
+               out.println("\n\n                                         List of recommended items");
+               out.printf("%n%-35s%60s%16s%16s", "Actors Name", "Actor Description", "Cash on Hand", "Numb in Family");
+               out.printf("%n%-35s%60s%16s%16s", "-----------", "-----------------", "------------", "--------------");
+
+               for (Actorsenum actorsList : Actorsenum.values()) {
+                    out.printf("%n%-35s%60s%16.2f%16d",actorsList.getName(),
+                            actorsList.getdescription(),
+                            actorsList.getcash(),
+                            actorsList.getfamilyMembers());
+               }
+               
+               this.console.println("File created successfully");
+          } catch (IOException ex) {
+               ErrorView.display(this.getClass().getName(), "Error creating file: " + ex.getMessage());
+          }
+         
+    }
     
     private void displayHotelView() throws GamePlayMenuException {
         HotelView hotel = new HotelView();

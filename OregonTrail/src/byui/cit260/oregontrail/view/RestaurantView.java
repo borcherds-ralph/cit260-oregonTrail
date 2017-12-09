@@ -61,13 +61,9 @@ public class RestaurantView extends View {
                }
                
                
-          } catch (RestaurantControlException ex) {
+          } catch (RestaurantControlException | ItemControlException | IOException ex) {
                Logger.getLogger(RestaurantView.class.getName()).log(Level.SEVERE, null, ex);
-          } catch (ItemControlException ex) {
-              Logger.getLogger(RestaurantView.class.getName()).log(Level.SEVERE, null, ex);
-         } catch (IOException ex) {
-              Logger.getLogger(RestaurantView.class.getName()).log(Level.SEVERE, null, ex);
-         }
+          }
           return false;
      }
 

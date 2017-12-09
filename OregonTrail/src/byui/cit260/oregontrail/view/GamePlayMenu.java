@@ -41,7 +41,7 @@ public class GamePlayMenu extends View {
 		+ "\n V - View Map"
                 + "\n R - Rest"
                 + "\n H - Help"
-                + "\n X - Exit Game"
+                + "\n Q - Quit Game"
                 + "\n "
                 + "\n "
                 + "\n "

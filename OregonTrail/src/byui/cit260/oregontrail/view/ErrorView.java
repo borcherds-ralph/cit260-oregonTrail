@@ -20,9 +20,9 @@ public class ErrorView {
     public static void display(String className, String errorMessage) {
         
         errorFile.println(
-        "*********************************************************"
+        "\n *********************************************************"
        +"\n There was an error" + className + errorMessage
-       +"***********************************************************");
+       +"\n ***********************************************************");
         
         //Log the Error
         logFile.println(className + ":" + errorMessage);

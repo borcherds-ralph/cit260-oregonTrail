@@ -83,27 +83,61 @@ public class ItemView extends View {
      private void calcVolumeBarrel() throws ItemControlException, IOException {
 
           ItemControl instance = new ItemControl();
-
-          this.console.println("Please enter the top diameter of the barrel:");
-          String topDiameterString = this.keyboard.readLine();
-          double topDiameter = Double.parseDouble(topDiameterString);
-
-          this.console.println("Please enter the center diameter of the barrel:");
-          String centerDiameterString = this.keyboard.readLine();
-          double centerDiameter = Double.parseDouble(centerDiameterString);
-
-          this.console.println("Please enter the height of the barrel:");
-          String barrelHeightString = this.keyboard.readLine();
-          double barrelHeight = Double.parseDouble(barrelHeightString);
+         
+          double barrelHeight;
+          double centerDiameter;
+          double topDiameter;
+          boolean valid = false;
           
           try {
+               
+               do {
+                     this.console.println("Please enter the top diameter of the barrel:");
+               String topDiameterString = this.keyboard.readLine();
+               
+              
+                    topDiameter = Double.parseDouble(topDiameterString); 
+                    if (topDiameter <= 0 || topDiameter > 30) { // Top or Bottom diameter is out of range
+                         this.console.println("\nYou cannot have a top diameter less than 1 or greater than 30 inches");
+                    } else valid = true;
+               } while (!valid);
+               
+               valid = false;
+               
+               do {
+                    this.console.println("Please enter the center diameter of the barrel:");
+                    String centerDiameterString = this.keyboard.readLine();
+               
+                    centerDiameter = Double.parseDouble(centerDiameterString);
+                    if (centerDiameter <= 0 || centerDiameter > 36) { // Center diameter is out of range
+                         this.console.println("\nYou cannot have a center diameter less than"
+                          + "\n the top diameter or greater than 36 inches");
+                    } else valid = true;
+               } while (!true);
+               
+               valid = false;
+               
+               do {
+                    this.console.println("Please enter the height of the barrel:");
+                    String barrelHeightString = this.keyboard.readLine();
+              
+                    barrelHeight = Double.parseDouble(barrelHeightString);
+                    if (barrelHeight < 1 || barrelHeight >= 35) { // height is out of range
+                         this.console.println("\nYou cannot have a height less than 1 or higher than 35 inches");
+                    }  else valid = true;
+               } while (!true);
+               
              double result = instance.calcVolumeOfBarrel(barrelHeight, centerDiameter, topDiameter); 
-             this.console.println("The total volume of the barrel is: " + result + " cubic inches."
+             this.console.println("\nThe total volume of the barrel is: " + result + " cubic inches."
                   + "\n Please run #3 - Gallons from Barrel Volume to get the number of gallons. ");
+          
+
           } catch (ItemControlException ex) {
 
               ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());
 
+          } catch (NumberFormatException nx) {
+               this.console.println("\n You have enter an invalid number. Try Again");
           }
           
 
@@ -114,17 +148,23 @@ public class ItemView extends View {
      private void calcWeight() throws ItemControlException, IOException {
 
           ItemControl instance = new ItemControl();
-         
-          this.console.println("Please enter the qty: ");
-          String qtyString = this.keyboard.readLine();
-          double qty = Double.parseDouble(qtyString);
-          
-          this.console.println("\nPlease enter the weight of 1 item");
-          String weightString = this.keyboard.readLine();
-          double weight = Double.parseDouble(weightString
-          );
-          
+          double qty;
+          double weight;
+                  
           try {
+               do {
+                    this.console.println("Please enter the qty: ");
+                    String qtyString = this.keyboard.readLine();
+                    qty = Double.parseDouble(qtyString);
+               } while (!true);
+               
+               do {
+                    this.console.println("\nPlease enter the weight of 1 item");
+                    String weightString = this.keyboard.readLine();
+                    weight = Double.parseDouble(weightString);
+               } while (!true);
+               
+         
                double result = instance.calcWeightOfItem(qty, weight);
                this.console.println("The total weight is: " + result + " for."
                   + "\n" + qty + " Items, each weighing: " + weight);
@@ -132,6 +172,8 @@ public class ItemView extends View {
 
               ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());
 
+          } catch (NumberFormatException nx) {
+               this.console.println("\n You have enter an invalid number. Try Again");
           }
           
 
@@ -140,11 +182,15 @@ public class ItemView extends View {
      private void calcGallons() throws ItemControlException, IOException {
 
           ItemControl instance = new ItemControl();
+          double volume;
           
           try { 
-          this.console.println("Please enter the Cubic inces volume: ");
-          String volumeString = this.keyboard.readLine();
-          double volume = Double.parseDouble(volumeString);
+               do {
+                    this.console.println("Please enter the Cubic inces volume: ");
+                    String volumeString = this.keyboard.readLine();
+                    volume = Double.parseDouble(volumeString);
+               } while (!true);
+               
           
         
                double result = instance.calcBarrelVolumeToGallons(volume);
@@ -154,6 +200,8 @@ public class ItemView extends View {
 
               ErrorView.display(this.getClass().getName(), "Error reading input" + ex.getMessage());
 
+          } catch (NumberFormatException nx) {
+               this.console.println("\n You have enter an invalid number. Try Again");
           }
      }
 
@@ -161,14 +209,23 @@ public class ItemView extends View {
 
           ItemControl instance = new ItemControl();
           
-          try {         
-          this.console.println("Please enter the diameter of the cylendar: ");
-          String cylDiameterString = this.keyboard.readLine();
-          double cylDiameter = Double.parseDouble(cylDiameterString);
-          
-          this.console.println("Please enter the height of the cylendar: ");
-          String cylHeightString = this.keyboard.readLine();
-          double cylHeight = Double.parseDouble(cylHeightString);
+          double cylHeight;
+          double cylDiameter;
+                  
+          try {     
+               do {
+                    this.console.println("Please enter the diameter of the cylendar: ");
+                    String cylDiameterString = this.keyboard.readLine();
+                    cylDiameter = Double.parseDouble(cylDiameterString);
+
+               } while (!true);
+               
+               do {
+                   this.console.println("Please enter the height of the cylendar: ");
+                    String cylHeightString = this.keyboard.readLine();
+                    cylHeight = Double.parseDouble(cylHeightString); 
+               } while (!true);
+               
           
           
                double result = instance.calcCylinderVolume(cylDiameter, cylHeight);
@@ -184,18 +241,26 @@ public class ItemView extends View {
      private void calcCost() throws ItemControlException, IOException {
 
           ItemControl instance = new ItemControl();
+          double itemQty;
+          double itemCost;
             
-          try {      
-               this.console.println("Please enter the number of items: ");
-               String itemQtyString;
+          try {  
+               do {
+                    this.console.println("Please enter the number of items: ");
+                    String itemQtyString;
 
-               itemQtyString = this.keyboard.readLine();
-               double itemQty = Double.parseDouble(itemQtyString);
+                    itemQtyString = this.keyboard.readLine();
+                    itemQty = Double.parseDouble(itemQtyString);
+               } while (!true);
+               
 
-               this.console.println("Please enter the cost for one item: ");
-               String itemCostString;
-               itemCostString = this.keyboard.readLine();
-               double itemCost = Double.parseDouble(itemCostString);
+               do {
+                    this.console.println("Please enter the cost for one item: ");
+                    String itemCostString;
+                    itemCostString = this.keyboard.readLine();
+                    itemCost = Double.parseDouble(itemCostString);
+               } while (!true);
+               
 
                double result = instance.getItemCost(itemQty, itemCost);
                this.console.println("\n The cost for these itesms is: " + result );

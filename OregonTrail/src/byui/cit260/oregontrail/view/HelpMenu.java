@@ -15,34 +15,32 @@ import java.io.IOException;
  *
  * @author Br33h3rr3ra
  */
-public class HelpMenu extends View{
-    
+public class HelpMenu extends View {
+
     String line = null;
     private char choice;
     private String tips;
     private String returnPrevious;
     String filename = new File("src/byui/cit260/oregontrail/view/tips.txt").getAbsolutePath();
 
-    
     public HelpMenu() {
         super("\n********************************************************"
-            + "\n*                                                      *"
-            + "\n***********************HELP MENU************************"
-	    + "\n*                                                      *"
-            + "\n*                      'T' for Tips                    *"
-            + "\n*                      'Q' to Exit                     *"
-	    + "\n*                                                      *"
-	    + "\n*                                                      *"
-            + "\n*     The goal of the game is to make it to Oregon     *"
-            + "\n*                                                      *"
-            + "\n*                                                      *"
-            + "\n*                                                      *"
-            + "\n*                                                      *"
-            + "\n********************************************************"
-            + "\n"
+                + "\n*                                                      *"
+                + "\n***********************HELP MENU************************"
+                + "\n*                                                      *"
+                + "\n*                      'T' for Tips                    *"
+                + "\n*                      'Q' to Exit                     *"
+                + "\n*                                                      *"
+                + "\n*                                                      *"
+                + "\n*     The goal of the game is to make it to Oregon     *"
+                + "\n*                                                      *"
+                + "\n*                                                      *"
+                + "\n*                                                      *"
+                + "\n*                                                      *"
+                + "\n********************************************************"
+                + "\n"
         );
     }
-    
 
     @Override
     public boolean doAction(String menuOption) {
@@ -52,45 +50,36 @@ public class HelpMenu extends View{
 //           Ra                
             case "T":
                 this.getTips();
-                /*this.console.println("\n"
-                    + "\nDon't die!"
-		    + "\nMake sure you have enough food!"
-		    + "\nSlow pace speeds recovery time"
-		    + "\nKeep track of the calendar");
-                     */
                 break;
             default:
                 this.console.println("\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
-         
 
     }
+
     public void getTips() {
         try {
             FileReader filereader = new FileReader(filename);
             BufferedReader bfReader = new BufferedReader(filereader);
-          this.console.println("File Opened Sucessfully!");
-            while ((line = bfReader.readLine()) != null)
-            {
-          this.console.println(line);
+            this.console.println("File Opened Sucessfully!");
+            //while there are lines left in the file, it will read another line and stop when no lines are found.
+            while ((line = bfReader.readLine()) != null) {
+                this.console.println(line);
             }
-          bfReader.close();
-        }
-        //For some reason this is not getting the file.
-        catch(FileNotFoundException filereader) {
+            bfReader.close();
+        } catch (FileNotFoundException filereader) {
             this.console.println(
-                "Unable to open file '" + 
-                filename + "'");                
-        }
-        catch(IOException filereader) {
+                    "Unable to open file '"
+                    + filename + "'");
+        } catch (IOException filereader) {
             this.console.println(
-                "Error reading file '" 
-                + filename + "'");  
+                    "Error reading file '"
+                    + filename + "'");
+        }
     }
-    }
-        
+
     public void setTips(String tips) {
         this.tips = tips;
     }
@@ -104,4 +93,3 @@ public class HelpMenu extends View{
 //        this.returnPrevious = returnPrevious;
 //    }
 }
- 

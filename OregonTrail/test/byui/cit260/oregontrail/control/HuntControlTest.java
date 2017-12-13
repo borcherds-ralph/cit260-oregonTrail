@@ -38,8 +38,8 @@ public class HuntControlTest {
         int guide = 0;
         HuntControl instance = new HuntControl();
         double expResult = 0.0;
-        double result = instance.calcFoodWeight(baseWeight1, baseWeight2, guide);
-        assertEquals(expResult, result, 0.0);
+        //double result = instance.calcFoodWeight(baseWeight1, baseWeight2, guide);
+        //assertEquals(expResult, result, 0.0);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

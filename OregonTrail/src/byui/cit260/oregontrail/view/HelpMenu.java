@@ -9,7 +9,10 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
 
 /**
  *
@@ -30,6 +33,7 @@ public class HelpMenu extends View {
                 + "\n*                                                      *"
                 + "\n*                      'T' for Tips                    *"
                 + "\n*                      'Q' to Exit                     *"
+                + "\n*                    'N' to Add Tips                   *"
                 + "\n*                                                      *"
                 + "\n*                                                      *"
                 + "\n*     The goal of the game is to make it to Oregon     *"
@@ -47,9 +51,11 @@ public class HelpMenu extends View {
 
         String choice = menuOption.toUpperCase();
         switch (choice) {
-//           Ra                
             case "T":
                 this.getTips();
+                break;
+            case "N":
+                this.addTips();
                 break;
             default:
                 this.console.println("\n*** Invalid selection *** Try again");
@@ -79,6 +85,24 @@ public class HelpMenu extends View {
                     + filename + "'");
         }
     }
+public void addTips() {
+    try
+{
+    console.println("Enter a new tip! (Developers Only) ");
+    Scanner reader = new Scanner(keyboard);
+    String tip = reader.nextLine();
+    FileWriter filewriter = new FileWriter(filename, true);
+    filewriter.write("\n");
+    filewriter.write(tip);
+    filewriter.close();
+
+}
+catch(IOException e)
+{
+    System.err.println("IOException: " + e.getMessage());
+}
+ 
+}
 
     public void setTips(String tips) {
         this.tips = tips;

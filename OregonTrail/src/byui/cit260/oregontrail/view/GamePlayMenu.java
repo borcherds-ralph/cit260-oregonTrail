@@ -68,7 +68,7 @@ public class GamePlayMenu extends View {
                         this.getActors();
                         break;
                    case "H":
-                        this.console.println("\n*** This has not been implemented yet *** Try again");
+                        this.displayHelp();
                         break;
                    case "V":
                         this.displayMap();
@@ -169,7 +169,10 @@ public class GamePlayMenu extends View {
         
     } 
     
-    
+    public void displayHelp() {
+            HelpMenu help = new HelpMenu();
+    help.display();
+    }
 
     void quitGame() throws GamePlayMenuException {
         return;
